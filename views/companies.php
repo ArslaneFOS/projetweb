@@ -24,6 +24,7 @@
         
                     response.forEach(company => {
                         var image = new Image();
+                        
                         image.src = 'data:image;base64,' + company.logo_com;
                         image.className = 'company-logo';
                         document.body.appendChild(image);

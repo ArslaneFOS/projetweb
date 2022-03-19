@@ -13,7 +13,7 @@ Projet Developpement Web A2 du cycle prépa à CESI École d'Ingénieurs(es)
 ### Le back :        
 - Base de données
 - Le modèle (MVC)
-- Les contrôleurs (Pour chaque requête y a un contrôleur )
+- Les contrôleurs (Pour chaque requête y a un contrôleur)
 - PHP SQL MyAdmin
 - Serveur Apache (config)
 
