@@ -501,6 +501,17 @@ section {
     max-width: 90%;
   }
 }
+.offers.img{
+  background-color: #111;
+  background-image: #999 ;
+  width: 50%;
+}
+
+.offers.txt{
+    background-color: #000;
+    width: 50%;
+  }
+}
 
 /*--------------------------------------------------------------
 # Companies
