@@ -25,7 +25,7 @@
     <div class="container d-flex align-items-center justify-content-between">
 
       <div class="logo">
-        <h1 class="text-light"><a href="index.html"><span>The |KING|</span></a></h1>
+        <h1 class="text-light"><a href="home.php"><span>The |KING|</span></a></h1>
       
       </div>
 
