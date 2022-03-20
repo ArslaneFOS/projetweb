@@ -14,12 +14,15 @@ $params = array(
 
 $bdd = new DB();
 
-$results = $bdd->select('select * from offer  WHERE INSTR(name_offer, :search) > 0 order by id_offer LIMIT :offset, :limit;', $params);
+$results = $bdd->select('SELECT * from offer WHERE INSTR(name_offer, :search) > 0 order by id_offer LIMIT :offset, :limit;', $params);
+$total = $bdd->select('SELECT COUNT(*) as total from offer WHERE INSTR(name_offer, :search) > 0 order by id_offer LIMIT :offset, :limit;', $params);
+$total = $total[0]['total'];
 
 $echo = array(
     'page' => $page,
     'limit' => $limit,
     'search' => $search,
+    'total' => $total,
     'data' => $results
 );
 

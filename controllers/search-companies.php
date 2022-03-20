@@ -14,7 +14,9 @@ $params = array(
 
 $bdd = new DB();
 
-$results = $bdd->select('select * from company  WHERE INSTR(name_com, :search) > 0 order by id_com LIMIT :offset, :limit;', $params);
+$results = $bdd->select('SELECT * from company  WHERE INSTR(name_com, :search) > 0 order by id_com LIMIT :offset, :limit;', $params);
+$total = $bdd->select('SELECT COUNT(*) as total from company  WHERE INSTR(name_com, :search) > 0 order by id_com LIMIT :offset, :limit;', $params);
+$total = $total[0]['total'];
 
 $resultEncode = array();
 foreach ($results as $key => $value) {
@@ -27,6 +29,7 @@ $echo = array(
     'page' => $page,
     'limit' => $limit,
     'search' => $search,
+    'total' => $total,
     'data' => $resultEncode
 );
 

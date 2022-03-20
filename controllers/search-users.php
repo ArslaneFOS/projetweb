@@ -16,14 +16,16 @@ $params = array(
 
 $bdd = new DB();
 
-$results = $bdd->select('select * from user WHERE INSTR(firstname, :firstname) > 0 AND INSTR(lastname, :lastname) > 0 order by id_user LIMIT :offset, :limit;', $params);
-
+$results = $bdd->select('SELECT * from user WHERE INSTR(firstname, :firstname) > 0 AND INSTR(lastname, :lastname) > 0 order by id_user LIMIT :offset, :limit;', $params);
+$total = $bdd->select('SELECT COUNT(*) as total from user WHERE INSTR(firstname, :firstname) > 0 AND INSTR(lastname, :lastname) > 0 order by id_user LIMIT :offset, :limit;', $params);
+$total = $total[0]['total'];
 
 $echo = array(
     'page' => $page,
     'limit' => $limit,
     'firstname' => $firstname,
     'lastname' => $lastname,
+    'total' => $total,
     'data' => $results
 );
 
