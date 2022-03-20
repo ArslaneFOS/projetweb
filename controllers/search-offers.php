@@ -25,6 +25,7 @@ foreach ($results as $key => $value) {
 $echo = array(
     'page' => $page,
     'limit' => $limit,
+    'search' => $search,
     'data' => $resultEncode
 );
 
