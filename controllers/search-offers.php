@@ -9,7 +9,7 @@ $offset = ($page - 1) * $limit;
 $params = array(
     ':limit' => array($limit, PDO::PARAM_INT),
     ':offset' => array($offset, PDO::PARAM_INT),
-    ':search' => array($search, PDO::PARAM_STR_CHAR)
+    ':search' => array($search, PDO::PARAM_STR)
 );
 
 $bdd = new DB();
