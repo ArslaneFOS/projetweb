@@ -13,7 +13,7 @@
 </head>
 <body>
     <h1>Companies</h1>
-    <script>
+    <!--<script>
         const getLogos = () => {
             var xhr = new XMLHttpRequest();
             xhr.open("GET", "http://127.0.0.1/controllers/get-all-companies-logos.php", true);
@@ -39,6 +39,6 @@
             getLogos();
         }
 
-    </script>
+    </script>-->
 </body>
 </html>

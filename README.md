@@ -16,5 +16,3 @@ Projet Developpement Web A2 du cycle prépa à CESI École d'Ingénieurs(es)
 - Les contrôleurs (Pour chaque requête y a un contrôleur)
 - PHP SQL MyAdmin
 - Serveur Apache (config)
-
-Ceci est un test 2
