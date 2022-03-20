@@ -469,43 +469,43 @@ section {
 }
 
 /*--------------------------------------------------------------
-# About
+# offers
 --------------------------------------------------------------*/
-.about h3 {
+.offers h3 {
   font-weight: 700;
   font-size: 34px;
   color: #4e4039;
 }
-.about h4 {
+.offers h4 {
   font-size: 20px;
   font-weight: 700;
   margin-top: 5px;
   color: #7a6960;
 }
-.about i {
+.offers i {
   font-size: 48px;
   margin-top: 15px;
   color: #f39e7a;
 }
-.about p {
+.offers p {
   font-size: 15px;
   color: #5a6570;
 }
 @media (max-width: 991px) {
-  .about .about-img img {
+  .offers .offers-img img {
     max-width: 70%;
   }
 }
 @media (max-width: 767px) {
-  .about .about-img img {
+  .offers .offers-img img {
     max-width: 90%;
   }
 }
 
 /*--------------------------------------------------------------
-# Services
+# Companies
 --------------------------------------------------------------*/
-.services .icon-box {
+.companies .icon-box {
   padding: 30px;
   position: relative;
   overflow: hidden;
@@ -517,25 +517,25 @@ section {
   text-align: center;
   border-bottom: 3px solid #fff;
 }
-.services .icon-box:hover {
+.Companies .icon-box:hover {
   transform: translateY(-5px);
   border-color: #ef7f4d;
 }
-.services .icon i {
+.Companies .icon i {
   font-size: 48px;
   line-height: 1;
   margin-bottom: 15px;
   color: #ef7f4d;
 }
-.services .title {
+.Companies .title {
   font-weight: 700;
   margin-bottom: 15px;
   font-size: 18px;
 }
-.services .title a {
+.Companies .title a {
   color: #111;
 }
-.services .description {
+.Companies .description {
   font-size: 15px;
   line-height: 28px;
   margin-bottom: 0;
