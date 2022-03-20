@@ -31,4 +31,4 @@ $echo = array(
 );
 
 header('Content-type: application/json');
-echo json_encode(count($results) == 0 ? null : $echo);
+echo json_encode($echo);

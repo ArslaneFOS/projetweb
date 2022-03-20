@@ -18,20 +18,14 @@ $bdd = new DB();
 
 $results = $bdd->select('select * from user WHERE INSTR(firstname, :firstname) > 0 AND INSTR(lastname, :lastname) > 0 order by id_user LIMIT :offset, :limit;', $params);
 
-$resultEncode = array();
-foreach ($results as $key => $value) {
-    # code...
-    $resultEncode[$key] = $results[$key];
-  
-}
 
 $echo = array(
     'page' => $page,
     'limit' => $limit,
     'firstname' => $firstname,
     'lastname' => $lastname,
-    'data' => $resultEncode
+    'data' => $results
 );
 
 header('Content-type: application/json');
-echo json_encode(count($results) == 0 ? null : $echo);
+echo json_encode($echo);

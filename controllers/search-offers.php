@@ -16,18 +16,12 @@ $bdd = new DB();
 
 $results = $bdd->select('select * from offer  WHERE INSTR(name_offer, :search) > 0 order by id_offer LIMIT :offset, :limit;', $params);
 
-$resultEncode = array();
-foreach ($results as $key => $value) {
-    # code...
-    $resultEncode[$key] = $results[$key];
-}
-
 $echo = array(
     'page' => $page,
     'limit' => $limit,
     'search' => $search,
-    'data' => $resultEncode
+    'data' => $results
 );
 
 header('Content-type: application/json');
-echo json_encode(count($results) == 0 ? null : $echo);
+echo json_encode($echo);
