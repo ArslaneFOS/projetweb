@@ -27,11 +27,20 @@ class DB {
     $result = false;
     try {
       $this->stmt = $this->pdo->prepare($sql);
-      $this->stmt->execute($cond);
+      if ($cond) {
+        
+        foreach ($cond as $key => $value) {
+            $this->stmt->bindValue($key, $value[0], $value[1]);
+        }
+      }
+      
+      $this->stmt->execute();
       $result = $this->stmt->fetchAll();
+      
       return $result;
     } catch (Exception $ex) { 
       $this->error = $ex->getMessage(); 
+      echo $this->error;
       return false;
     }
   }
