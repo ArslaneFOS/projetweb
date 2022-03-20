@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -65,7 +68,7 @@
             </ul>
           </li>
           <li><a class="nav-link scrollto" href="#contact">Contact</a></li> -->
-          <li><a class="getstarted scrollto" href="#Login">Login</a></li>
+          <li><a class="getstarted scrollto" href="./login.html">Login</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -223,3 +226,9 @@
 
 
 </html>
+
+<?php
+  if (@$_SESSION['status'] != 'logged-in') {
+    session_destroy();
+  }
+?>
