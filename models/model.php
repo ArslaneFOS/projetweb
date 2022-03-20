@@ -33,6 +33,7 @@ class DB {
             $this->stmt->bindValue($key, $value[0], $value[1]);
         }
       }
+      
       $this->stmt->execute();
       $result = $this->stmt->fetchAll();
       
