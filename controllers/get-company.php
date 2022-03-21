@@ -4,13 +4,13 @@ require '../models/model.php';
 
 $id_com = isset($_GET['id']) ? (int)$_GET['id'] : 1;
 
-$params = array(
+/*$params = array(
     ':id_com' => array($id_com, PDO::PARAM_INT)
-);
+);*/
 
 $bdd = new DB();
 
-$results = $bdd->select("SELECT * from company WHERE id_com = :id_com", $params);
+$results = $bdd->select("SELECT * from company WHERE id_com = {$id_com}");
 
 if ($results) {
     $echo = $results[0];

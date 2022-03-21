@@ -29,7 +29,15 @@ $user_type = @$_SESSION['user-type'];
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
   <script src="assets/js/main.js"></script>
- 
+  <script>
+    <?php
+    if (isset($_SESSION['status'])) {
+    ?>
+    alert("<?=@$_SESSION['status'];?>");
+    <?php
+    }
+    ?>
+  </script>
 </head>
 
 <body>

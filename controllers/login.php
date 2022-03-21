@@ -8,16 +8,16 @@ if (isset($_POST['submit'])) {
 
     $bdd = new DB();
 
-    $results = $bdd->select("SELECT * FROM login where login = '$login';");
+    $results = $bdd->select("SELECT * FROM login where login = '{$login}';");
     if ($results) {
         $data = $results[0];
         if (password_verify($password, $data['password'])) {
             $id_login = $data['id_login'];
 
-            $isstudent = $bdd->select("SELECT 1 from student WHERE id_login = '$id_login';");
-            $isrep = $bdd->select("SELECT 1 from representative WHERE id_login = '$id_login';");
-            $ispilot = $bdd->select("SELECT 1 from pilot WHERE id_login = '$id_login';");
-            $isadmin = $bdd->select("SELECT 1 from admin WHERE id_login = '$id_login';");
+            $isstudent = $bdd->select("SELECT 1 from student WHERE id_login = {$id_login};");
+            $isrep = $bdd->select("SELECT 1 from representative WHERE id_login = {$id_login};");
+            $ispilot = $bdd->select("SELECT 1 from pilot WHERE id_login = {$id_login};");
+            $isadmin = $bdd->select("SELECT 1 from admin WHERE id_login = {$id_login};");
 
             if ($isstudent) 
                 $_SESSION['user-type'] = 'student';
