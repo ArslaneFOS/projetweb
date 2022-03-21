@@ -15,8 +15,9 @@ $params = array(
 $bdd = new DB();
 
 $results = $bdd->select('SELECT * from company  WHERE INSTR(name_com, :search) > 0 order by id_com LIMIT :offset, :limit;', $params);
-$total = $bdd->select('SELECT COUNT(*) as total from company  WHERE INSTR(name_com, :search) > 0 order by id_com LIMIT :offset, :limit;', $params);
-$total = $total[0]['total'];
+$total = $bdd->select('SELECT COUNT(*) as total from company  WHERE INSTR(name_com, :search);', array(':search' => array($search, PDO::PARAM_STR)));
+
+$total = (int)$total[0]['total'];
 
 $resultEncode = array();
 foreach ($results as $key => $value) {

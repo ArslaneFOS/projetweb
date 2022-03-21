@@ -33,7 +33,6 @@ $user_type = @$_SESSION['user-type'];
 </head>
 
 <body>
-  
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top d-flex align-items-center">
     <div class="container d-flex align-items-center justify-content-between">
@@ -79,7 +78,7 @@ $user_type = @$_SESSION['user-type'];
 
   <!-- Main Section -->
   <main id="main">
-
+  
   <section id="about" class="offers">
       <div class="container">
 
@@ -88,6 +87,7 @@ $user_type = @$_SESSION['user-type'];
             <img src="assets/img/about-img.svg" class="img-fluid" alt="" data-aos="zoom-in">
           </div>
           <div class="col-lg-6 pt-5 pt-lg-0">
+
             <h3 data-aos="fade-up">Voluptatem dignissimos provident quasi</h3>
             <p data-aos="fade-up" data-aos-delay="100">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit

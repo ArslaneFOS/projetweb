@@ -15,8 +15,8 @@ $params = array(
 $bdd = new DB();
 
 $results = $bdd->select('SELECT * from offer WHERE INSTR(name_offer, :search) > 0 order by id_offer LIMIT :offset, :limit;', $params);
-$total = $bdd->select('SELECT COUNT(*) as total from offer WHERE INSTR(name_offer, :search) > 0 order by id_offer LIMIT :offset, :limit;', $params);
-$total = $total[0]['total'];
+$total = $bdd->select('SELECT COUNT(*) as total from offer WHERE INSTR(name_offer, :search);', array(':search' => array($search, PDO::PARAM_STR)));
+$total = (int)$total[0]['total'];
 
 $echo = array(
     'page' => $page,
