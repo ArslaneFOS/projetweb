@@ -8,7 +8,7 @@ if (isset($_POST['submit'])) {
 
     $bdd = new DB();
 
-    $results = $bdd->select("SELECT * FROM login where login = '$login' ;");
+    $results = $bdd->select("SELECT * FROM login where login = '$login';");
     if ($results) {
         $data = $results[0];
         if (password_verify($password, $data['password'])) {
