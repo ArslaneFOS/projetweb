@@ -26,14 +26,13 @@ class DB {
   function select ($sql, $cond=null) {
     $result = false;
     try {
-      /*if ($cond) {
-        
+      $this->stmt = $this->pdo->prepare($sql);
+      if ($cond) {
         foreach ($cond as $key => $value) {
             $this->stmt->bindValue($key, $value[0], $value[1]);
         }
-      }*/
+      }
       
-      $this->stmt = $this->pdo->prepare($sql);
       
       $this->stmt->execute();
       $result = $this->stmt->fetchAll();

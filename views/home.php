@@ -33,7 +33,7 @@ $user_type = @$_SESSION['user-type'];
     <?php
     if (isset($_SESSION['status'])) {
     ?>
-    alert("<?=@$_SESSION['status'];?>");
+    alert("<?=@$_SESSION['status'];?> <?=@$_SESSION['user-type'];?>");
     <?php
     }
     ?>
