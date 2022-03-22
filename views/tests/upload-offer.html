@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form method="post" action="../../controllers/create-offer.php">
+    <form method="post" action="/controllers/create-offer.php">
         <label for="name_offer">Name</label><br>
         <input type="text" name="name_offer" id="name_offer"/><br>
 
@@ -45,7 +45,7 @@
     <script>
         const getCompanies = () => {
             var xhr = new XMLHttpRequest();
-            xhr.open("GET", "http://127.0.0.1/controllers/get-company-names.php", true);
+            xhr.open("GET", "/controllers/get-company-names.php", true);
             xhr.onload = function () {
                 var html = "";
                 if (xhr.status == 200) {

@@ -42,6 +42,20 @@ if (isset($_GET['page'])) {
         case 'offers':
             include('views/offers.php');
             break;*/
+        case 'test/login':
+            include('views/tests/login.html');
+            break;
+
+        case 'test/upload-company':
+            include('views/tests/upload-company.html');
+            break;
+
+        case 'test/upload-offer':
+            include('views/tests/upload-offer.html');
+            break;
+        case 'test/passhasher':
+            include('views/tests/password-hasher.html');
+            break;
         default:
             echo '404';
             break;
