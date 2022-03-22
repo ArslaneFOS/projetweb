@@ -1,2 +1,2 @@
 <?php
-echo password_hash($_GET['password'], PASSWORD_DEFAULT);
+echo password_hash($_POST['password'], PASSWORD_DEFAULT);
