@@ -43,7 +43,5 @@ if (isset($_GET['page'])) {
             break;*/
     }
 } else {
-    echo 'no page provided';
-    die();
     include('views/home.php');
 }

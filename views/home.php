@@ -12,23 +12,23 @@ $user_type = @$_SESSION['user-type'];
   <title>ProjectX</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
-  <link href="./views/assets/img/favicon.png" rel="icon">
-  <link href="./views/assets/img/apple-touch-icon.png" rel="apple-touch-icon"> 
+  <link href="/views/assets/img/favicon.png" rel="icon">
+  <link href="/views/assets/img/apple-touch-icon.png" rel="apple-touch-icon"> 
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
-  <link href="./views/assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="./views/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="./views/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="./views/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="./views/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="./views/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-  <link href="./views/assets/css/style.css" rel="stylesheet">
-  <script src="./views/assets/vendor/aos/aos.js"></script>
-  <script src="./views/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="./views/assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="./views/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="./views/assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="./views/assets/vendor/php-email-form/validate.js"></script>
-  <script src="./views/assets/js/main.js"></script>
+  <link href="/views/assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="/views/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/views/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="/views/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="/views/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="/views/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="/views/assets/css/style.css" rel="stylesheet">
+  <script src="/views/assets/vendor/aos/aos.js"></script>
+  <script src="/views/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/views/assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="/views/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="/views/assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="/views/assets/vendor/php-email-form/validate.js"></script>
+  <script src="/views/assets/js/main.js"></script>
   <script>
     <?php
     if (isset($_SESSION['status'])) {
@@ -48,7 +48,7 @@ $user_type = @$_SESSION['user-type'];
       <div class="logo">
         <h1 class="text-light"><a href="home.php"><span>The |KING|</span></a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
-        <!-- <a href="index.html"><img src="./views/assets/img/logo.png" alt="" class="img-fluid"></a>-->
+        <!-- <a href="index.html"><img src="/views/assets/img/logo.png" alt="" class="img-fluid"></a>-->
       </div>
 
       <nav id="navbar" class="navbar">
@@ -92,7 +92,7 @@ $user_type = @$_SESSION['user-type'];
 
         <div class="row justify-content-between">
           <div class="col-lg-5 d-flex align-items-center justify-content-center about-img offers img">
-            <img src="./views/assets/img/about-img.svg" class="img-fluid" alt="" data-aos="zoom-in">
+            <img src="/views/assets/img/about-img.svg" class="img-fluid" alt="" data-aos="zoom-in">
           </div>
           <div class="col-lg-6 pt-5 pt-lg-0">
 
@@ -123,7 +123,7 @@ $user_type = @$_SESSION['user-type'];
 
         <div class="row justify-content-between ">
           <div class="col-lg-5 d-flex align-items-center justify-content-center about-img">
-            <img src="./views/assets/img/about-img.svg" class="img-fluid" alt="" data-aos="zoom-in">
+            <img src="/views/assets/img/about-img.svg" class="img-fluid" alt="" data-aos="zoom-in">
           </div>
           <div class="col-lg-6 pt-5 pt-lg-0 offers txt">
             <h3 data-aos="fade-up">Voluptatem dignissimos provident quasi</h3>
