@@ -16,7 +16,7 @@
     <script>
         const getLogos = () => {
             var xhr = new XMLHttpRequest();
-            xhr.open("GET", "http://127.0.0.1/controllers/search-companies.php", true);
+            xhr.open("GET", "./controllers/search-companies.php", true);
             xhr.onload = function () {
                 var html = "";
                 if (xhr.status == 200) {
