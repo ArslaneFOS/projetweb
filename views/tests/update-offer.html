@@ -72,7 +72,7 @@
             getCompanies();
         }
     
-        document.getElementById('id_offer').oninput = () => {
+        document.getElementById('id_offer').onchange = () => {
             var xhr = new XMLHttpRequest();
             xhr.open("GET", "/controllers/get-offer.php?id=" + document.getElementById('id_offer').value, true);
             xhr.onload = function () {

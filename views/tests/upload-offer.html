@@ -47,17 +47,17 @@
             var xhr = new XMLHttpRequest();
             xhr.open("GET", "/controllers/get-company-names.php", true);
             xhr.onload = function () {
-                var html = "";
+                
                 if (xhr.status == 200) {
                     var companies = JSON.parse(xhr.response);
                     
                     companies.forEach(company => {
-                        html += '<option value="' + company.id_com + '">' + company.name_com + '</option>';
+                        var option = new Option(company.name_com, company.id_com);
+                        document.getElementById('id_com').appendChild(option);
                     });
 
                 }
                 else { }
-                document.getElementById('id_com').innerHTML = html;
             };
             xhr.send(); //Envoi de la requête au serveur (asynchrone par défaut)
         };

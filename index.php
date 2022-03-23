@@ -63,6 +63,6 @@ if (isset($_GET['page'])) {
             echo '404';
             break;
     }
-} /*else {
+} else {
     include('views/home.php');
-}*/
+}
