@@ -14,7 +14,7 @@ if (isset($_GET['page'])) {
         case 'wishlist':
             include('views/wishlist.php');
             break;
-        /*
+            /*
         case 'offers':
             include('views/offers.php');
             break;
@@ -56,10 +56,13 @@ if (isset($_GET['page'])) {
         case 'test/passhasher':
             include('views/tests/password-hasher.html');
             break;
+        case 'test/update-offer':
+            include('views/tests/update-offer.html');
+            break;
         default:
             echo '404';
             break;
     }
-} else {
+} /*else {
     include('views/home.php');
-}
+}*/
