@@ -59,8 +59,8 @@ if (isset($_GET['page'])) {
         case 'test/update-offer':
             include('views/tests/update-offer.html');
             break;
-        default:
-            echo '404';
+        case 'test/update-company':
+            include('views/tests/update-company.html');
             break;
     }
 } else {
