@@ -1,3 +1,13 @@
+<?php
+require 'controllers/check-session.php';
+if (!(has_student_access_level() || has_admin_access_level() || has_pilot_access_level())) {
+    echo "403 Forbidden";
+    die();
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,6 +22,7 @@
     </style>
 </head>
 <body>
+    <?='Logged in as: '.$_SESSION['name'];?>
     <h1>Companies</h1>
     <script>
         const getLogos = () => {
