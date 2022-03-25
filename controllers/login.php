@@ -32,19 +32,24 @@ if (isset($_POST['submit'])) {
             elseif ($isadmin)
                 $_SESSION['user-type'] = 'admin';
 
+                $user = $bdd->select("SELECT * from user WHERE id_login = :id_login;", array(':id_login' => array($id_login, PDO::PARAM_INT)))[0];
+
             $_SESSION['status'] = 'logged-in';
             $_SESSION['login'] = $login;
-            header("Location: ../views/home.php"); 
-            exit();
+            $_SESSION['name'] = $user['firstname'].' '.$user['lastname'];
+            header("Location: ../views/home.php");
+            die();
         } else {
-            $_SESSION['status'] = 'wrong-pass';
-            header("Location: ../views/home.php"); 
-            exit();
+            //$_SESSION['status'] = 'wrong-pass';
+            //header("Location: ../views/home.php"); 
+            echo "wrong-pass";
+            die();
         }
     } else {
-        $_SESSION['status'] = 'user-not-exist';
-        header("Location: ../views/home.php"); 
-        exit();
+        //$_SESSION['status'] = 'user-not-exist';
+        //header("Location: ../views/home.php"); 
+        echo "user-not-exist.";
+        die();
     }
 }
 ?>
