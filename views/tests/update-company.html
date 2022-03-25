@@ -49,6 +49,7 @@
         document.getElementById('id_com').oninput = () => {
             var xhr = new XMLHttpRequest();
             xhr.open("GET", "/controllers/get-company.php?id=" + document.getElementById('id_com').value, true);
+            xhr.withCredentials = true;
             xhr.onload = function () {
                 if (xhr.status == 200) {
                     var company = JSON.parse(xhr.response);

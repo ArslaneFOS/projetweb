@@ -1,5 +1,13 @@
 <?php
-// connection a la database
+// checks access requirements
+require 'check-session.php';
+
+if (!(has_student_access_level() || has_admin_access_level() || has_pilot_access_level())) {
+    echo "Access Denied";
+    die();
+}
+
+// connection to database
 require '../models/model.php';
 
 $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;

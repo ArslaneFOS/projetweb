@@ -28,6 +28,7 @@ if (!(has_student_access_level() || has_admin_access_level() || has_pilot_access
         const getLogos = () => {
             var xhr = new XMLHttpRequest();
             xhr.open("GET", "./controllers/search-companies.php?limit=50", true);
+            xhr.withCredentials = true;
             xhr.onload = function () {
                 var html = "";
                 if (xhr.status == 200) {

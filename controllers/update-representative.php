@@ -1,4 +1,13 @@
 <?php
+// checks access requirements
+require 'check-session.php';
+
+if (!(has_admin_access_level() || has_pilot_access_level())) {
+    echo "Access Denied";
+    die();
+}
+
+
 require '../models/model.php';
 
 if (isset($_POST['id_user'])) {

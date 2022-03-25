@@ -50,6 +50,7 @@
         const getCompanies = () => {
             var xhr = new XMLHttpRequest();
             xhr.open("GET", "/controllers/get-company-names.php", true);
+            xhr.withCredentials = true;
             xhr.onload = function () {
                 var html = "";
                 if (xhr.status == 200) {
@@ -72,9 +73,10 @@
             getCompanies();
         }
     
-        document.getElementById('id_offer').onchange = () => {
+        document.getElementById('id_offer').oninput = () => {
             var xhr = new XMLHttpRequest();
             xhr.open("GET", "/controllers/get-offer.php?id=" + document.getElementById('id_offer').value, true);
+            xhr.withCredentials = true;
             xhr.onload = function () {
                 if (xhr.status == 200) {
                     var offer = JSON.parse(xhr.response);

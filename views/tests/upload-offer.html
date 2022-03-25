@@ -46,6 +46,7 @@
         const getCompanies = () => {
             var xhr = new XMLHttpRequest();
             xhr.open("GET", "/controllers/get-company-names.php", true);
+            xhr.withCredentials = true;
             xhr.onload = function () {
                 
                 if (xhr.status == 200) {
