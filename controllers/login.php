@@ -36,6 +36,7 @@ if (isset($_POST['submit'])) {
 
             $_SESSION['status'] = 'logged-in';
             $_SESSION['login'] = $login;
+            $_SESSION['id_login'] = $id_login;
             $_SESSION['name'] = $user['firstname'].' '.$user['lastname'];
             header("Location: ../views/home.php");
             die();
