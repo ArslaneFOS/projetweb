@@ -32,11 +32,11 @@ if (isset($_POST['submit'])) {
             elseif ($isadmin)
                 $_SESSION['user-type'] = 'admin';
 
-                $user = $bdd->select("SELECT * from user WHERE id_login = :id_login;", array(':id_login' => array($id_login, PDO::PARAM_INT)))[0];
+            $user = $bdd->select("SELECT * from user WHERE id_login = :id_login;", array(':id_login' => array($id_login, PDO::PARAM_INT)))[0];
 
             $_SESSION['status'] = 'logged-in';
             $_SESSION['login'] = $login;
-            $_SESSION['id_login'] = $id_login;
+            $_SESSION['id_user'] = $user['id_user'];
             $_SESSION['name'] = $user['firstname'].' '.$user['lastname'];
             header("Location: ../views/home.php");
             die();
