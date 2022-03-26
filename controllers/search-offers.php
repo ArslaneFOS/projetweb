@@ -21,16 +21,23 @@ $binds = array(
 
 $bdd = new DB();
 
-$results = $bdd->select("SELECT * from offer WHERE INSTR(name_offer, :search) > 0 order by id_offer LIMIT :offset, :limit;", $binds);
+$results = $bdd->select("SELECT offer.*, company.name_com, company.sector_com, company.logo_com from offer INNER JOIN company ON offer.id_com = company.id_com WHERE INSTR(name_offer, :search) > 0 order by id_offer LIMIT :offset, :limit;", $binds);
 $total = $bdd->select("SELECT COUNT(*) as total from offer WHERE INSTR(name_offer, :search);", array(':search' => array($search, PDO::PARAM_STR)));
 $total = (int)$total[0]['total'];
+
+$resultEncode = array();
+foreach ($results as $key => $value) {
+    # code...
+    $resultEncode[$key] = $results[$key];
+    $resultEncode[$key]['logo_com'] = base64_encode($results[$key]['logo_com']);
+}
 
 $echo = array(
     'page' => $page,
     'limit' => $limit,
     'search' => $search,
     'total' => $total,
-    'data' => $results
+    'data' => $resultEncode
 );
 
 header('Content-type: application/json');
