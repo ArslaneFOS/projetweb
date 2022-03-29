@@ -63,8 +63,11 @@ if (isset($_GET['page'])) {
             include('views/tests/update-company.html');
             break;
         case 'test/setrepauth':
-            include('views/tests/checkbox.html');
+            include('views/tests/set-rep-auth.html');
             die();
+            case 'test/application':
+                include('views/tests/application.html');
+                die();
     }
 } else {
     include('views/home.php');
