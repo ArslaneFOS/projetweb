@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test upload comp</title>
+</head>
+<body>
+    <form method="post" action="/controllers/apply-offer.php" enctype="multipart/form-data">
+        <label for="id_offer">id offer</label><br>
+        <input type="number" name="id_offer" id="id_offer"/><br>
+
+        
+        <label for="resume">Resume</label><br>
+        <input type="file" id="resume" name="resume"/><br>
+
+        <label for="motivation">Motivation Letter</label><br>
+        <input type="file" id="motivation" name="motivation"/><br>
+
+        <button type="submit" name="submit" value="submit">Submit</button>
+
+    </form>
+</body>
+</html>
