@@ -1,14 +1,15 @@
 <?php
+//sfx11
 // checks access requirements
 require 'check-session.php';
-// admins and pilots
-if (!(has_admin_access_level() || has_pilot_access_level())) {
+// admins, pilots and authorized reps
+if (!(has_admin_access_level() || has_pilot_access_level() || has_representative_access_level('sfx11'))) {
     echo "Access Denied";
     die();
 }
 
 // connection a la database
-require '../models/model.php';
+require_once('../models/model.php');
 
 if(!isset($_GET['id'])) {
     echo "Deletion Failed: No ID provided";

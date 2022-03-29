@@ -62,6 +62,9 @@ if (isset($_GET['page'])) {
         case 'test/update-company':
             include('views/tests/update-company.html');
             break;
+        case 'test/checkbox':
+            include('views/tests/checkbox.html');
+            die();
     }
 } else {
     include('views/home.php');

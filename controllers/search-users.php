@@ -1,14 +1,16 @@
 <?php
+//sfx13,17,22
 // checks access requirements
 require 'check-session.php';
 
-if (!(has_admin_access_level() || has_pilot_access_level())) {
+// admins, pilots and authorized reps
+if (!(has_admin_access_level() || has_pilot_access_level() || has_representative_access_level('sfx13') || has_representative_access_level('sfx17') || has_representative_access_level('sfx22'))) {
     echo "Access Denied";
     die();
 }
 
 // connection a la database
-require '../models/model.php';
+require_once('../models/model.php');
 
 $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
 $limit = isset($_GET['limit']) ? (int)$_GET['limit'] : 10;

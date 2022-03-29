@@ -1,13 +1,15 @@
 <?php
+//sfx10
 // checks access requirements
 require 'check-session.php';
 
-if (!(has_admin_access_level() || has_pilot_access_level())) {
+// admins, pilots and authorized reps
+if (!(has_admin_access_level() || has_pilot_access_level() || has_representative_access_level('sfx10'))) {
     echo "Access Denied";
     die();
 }
 
-require '../models/model.php';
+require_once('../models/model.php');
 
 if (isset($_POST['id_offer'])) {
     $bdd = new DB();

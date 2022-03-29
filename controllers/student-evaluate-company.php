@@ -1,8 +1,10 @@
 <?php
-require '../models/model.php';
+//sfx5
+require_once('../models/model.php');
 // checks access requirements
 require 'check-session.php';
-// admins and pilots
+
+// admins and students
 if (!(has_admin_access_level() || has_student_access_level())) {
     echo "Access Denied";
     die();

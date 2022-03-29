@@ -1,6 +1,7 @@
 <?php
+//sfx1
 session_start();
-require "../models/model.php";
+require_once('../models/model.php');
 
 if (isset($_POST['submit'])) {
     $login = isset($_POST['login']) ?  $_POST['login'] : '';

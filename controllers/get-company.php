@@ -1,6 +1,7 @@
 <?php
+//sfx2
 // connection a la database
-require '../models/model.php';
+require_once('../models/model.php');
 
 $id_com = isset($_GET['id']) ? (int)$_GET['id'] : 1;
 

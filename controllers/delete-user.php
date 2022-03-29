@@ -1,15 +1,15 @@
 <?php
+//sfx16,20,25
 // checks access requirements
 require 'check-session.php';
 // admins and pilots
-if (!(has_admin_access_level() || has_pilot_access_level())) {
+if (!(has_admin_access_level() || has_pilot_access_level() || has_representative_access_level('sfx16') || has_representative_access_level('sfx20') || has_representative_access_level('sfx25'))) {
     echo "Access Denied";
     die();
 }
 
 // connection a la database
-require '../models/model.php';
-
+require_once('../models/model.php');
 if(!isset($_GET['login'])) {
     echo "Deletion Failed: No Login provided";
     die();

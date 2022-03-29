@@ -1,5 +1,6 @@
 <?php
-require '../models/model.php';
+//sfx5
+require_once('../models/model.php');
 // checks access requirements
 require 'check-session.php';
 // admins and pilots
@@ -16,19 +17,18 @@ if (isset($_GET['id_com']) && isset($_SESSION['id_user']) && isset($_GET['rating
             die();
         }
     }
-    
+
     // --------------------------------------------------
     $id_com = $_GET['id_com'];
     $id_pilot = $_SESSION['id_user'];
     $rating = $_GET['rating'];
-    
-    
+
     $binds = array(
         ':id_pilot' => array($id_pilot, PDO::PARAM_INT),
         ':id_com' => array($id_com, PDO::PARAM_INT),
         ':rating' => array($rating, PDO::PARAM_STR),
     );
-    
+
     // --------------------------------------------------
     $isexist = $bdd->select("SELECT 1 from pilots_evals where id_com = {$id_com} AND id_pilot = {$id_pilot};");
 
@@ -39,7 +39,7 @@ if (isset($_GET['id_com']) && isset($_SESSION['id_user']) && isset($_GET['rating
         // create
         $success = $bdd->create("INSERT INTO `pilots_evals` (`id_pilot`, `id_com`, `pilot_eval`) VALUES (:id_pilot, :id_com, :rating);", $binds);
     }
-    
+
     // --------------------------------------------------
 
     if ($success) {
@@ -50,7 +50,7 @@ if (isset($_GET['id_com']) && isset($_SESSION['id_user']) && isset($_GET['rating
         echo 'Evaluation Failed: SQL Error.';
         die();
     }
-    
+
 } else {
     echo 'Evaluation Failed: No parameters provided';
     die();

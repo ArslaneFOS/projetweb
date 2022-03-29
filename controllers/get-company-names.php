@@ -1,6 +1,6 @@
 <?php
 // connection a la database
-require '../models/model.php';
+require_once('../models/model.php');
 
 $bdd = new DB();
 

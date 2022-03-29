@@ -1,14 +1,15 @@
 <?php
+//sfx28
 // checks access requirements
 require 'check-session.php';
-// admins and pilots
+// admins and students
 if (!(has_admin_access_level() || has_student_access_level())) {
     echo "Access Denied";
     die();
 }
 
 // connection a la database
-require '../models/model.php';
+require_once('../models/model.php');
 
 if(!isset($_GET['id_offer']) && isset($_SESSION['id_user'])) {
     echo "Deletion Failed: No ID provided";

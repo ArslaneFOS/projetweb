@@ -1,9 +1,10 @@
 <?php
-require '../models/model.php';
+//sfx9
+require_once('../models/model.php');
 // checks access requirements
 require 'check-session.php';
-// admins and pilots
-if (!(has_admin_access_level() || has_pilot_access_level())) {
+// admins, pilots and authorized reps
+if (!(has_admin_access_level() || has_pilot_access_level()  || has_representative_access_level('sfx9'))) {
     echo "Access Denied";
     die();
 }

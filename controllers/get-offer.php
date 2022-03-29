@@ -1,6 +1,7 @@
 <?php
+//sfx8
 // connection a la database
-require '../models/model.php';
+require_once('../models/model.php');
 
 $id_offer = isset($_GET['id']) ? (int)$_GET['id'] : 1;
 

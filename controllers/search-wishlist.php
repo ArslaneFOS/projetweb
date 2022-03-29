@@ -1,13 +1,14 @@
 <?php
 require 'check-session.php';
 
+// admins and students
 if (!(has_student_access_level() || has_admin_access_level())) {
     echo "Access Denied";
     die();
 }
 
 // connection a la database
-require '../models/model.php';
+require_once('../models/model.php');
 
 $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
 $limit = isset($_GET['limit']) ? (int)$_GET['limit'] : 10;
