@@ -60,6 +60,18 @@ $success = $bdd->create("INSERT INTO applications(id_student, id_offer, resume, 
 
 if ($success) {
     echo "Application Successful.";
+    $company = $bdd->select("SELECT name_com, email_com from company where id_com = (select id_com from offer where id_offer = :id_offer);", array(':id_offer' => array($id_offer, PDO::PARAM_INT)))[0];
+    $offer = $bdd->select("SELECT name_offer from offer where id_offer = :id_offer;", array(':id_offer' => array($id_offer, PDO::PARAM_INT)))[0];
+    $name_com = urlencode($company['name_com']);
+    $email = urlencode($company['email_com']);
+    $subject = urlencode("My Internship Application at ").$name_com;
+    $body = urlencode(
+"Greetings,
+I am contacting you to apply for your offer: ".$offer['name_offer'].".
+!!!!!!!!!!!!!!!!!!!!!!!!!!DELETE THIS LINE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Please attach your resume and motivation letter again.
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+    header('location: mailto:'.$email.'?subject='.$subject."&body=".$body);
     die();
 } else {
     echo "Application failed: SQL Error.";
