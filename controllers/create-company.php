@@ -17,6 +17,14 @@ if (isset($_POST['name_com'])) {
             die();
         }
     }
+
+    $ALLOWED_MIME = array('image/png', 'image/jpeg');
+
+    if (!in_array($_FILES['logo_com']['type'], $ALLOWED_MIME)) {
+        echo "NOT A PNG OR JPEG FILE.";
+        die();
+    }
+
     // --------------------------------------------------
     if ($_FILES['logo_com']['size'] == 0) {
         echo 'Creation Failed: No thumbnail provided.';

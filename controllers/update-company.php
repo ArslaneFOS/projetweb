@@ -55,6 +55,12 @@ if (isset($_POST['id_com'])) {
         WHERE id_com = :id_com;", $binds);
     
     if ($_FILES['logo_com']['size'] != 0) {
+        $ALLOWED_MIME = array('image/png', 'image/jpeg');
+
+        if (!in_array($_FILES['logo_com']['type'], $ALLOWED_MIME)) {
+            echo "NOT A PNG OR JPEG FILE.";
+            die();
+        }
         $logo_com = file_get_contents($_FILES['logo_com']['tmp_name']);
         $bind_logo = array(
             ':logo_com' => array($logo_com, PDO::PARAM_LOB),
