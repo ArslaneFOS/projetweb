@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test update comp</title>
+</head>
+<body>
+    <form method="post" action="/controllers/update-company.php" enctype="multipart/form-data">
+        <label for="id_com">ID</label><br>
+        <input type="number" name="id_com" id="id_com"/><br>
+        
+        <label for="name_com">Company Name</label><br>
+        <input type="text" name="name_com" id="name_com"/><br>
+
+        <label for="sector_com">Sector</label><br>
+        <select name="sector_com" id="sector_com">
+            <option value="Assistance">Assistance</option>
+            <option value="Conseils, audit">Conseil, audit</option>
+            <option value="Developpement logiciel">Développement logiciel</option>
+            <option value="Developpement progiciel, gestion">Développement progiciel</option>
+            <option value="Fournisseur Internet">Fournisseur internet</option>
+            <option value="Hebergement de site web">Hébergement sites web</option>
+            <option value="Industriel">Industriel</option>
+            <option value="Installation, maintenance reseaux">Installation Réseaux</option>
+            <option value="Developpement et programmation">Dev et programmation</option>
+        </select><br>
+
+        <label for="nb_interns_com">Number of interns</label><br>
+        <input type="number" name="nb_interns_com" id="nb_interns_com"/><br>
+
+        <label for="description_com">Description</label><br>
+        <textarea id="description_com" name="description_com"></textarea><br>
+
+        <label for="email_com">Email</label><br>
+        <input type="email" name="email_com" id="email_com"/><br>
+
+        <label for="logo_com">Thumbnail</label><br>
+        <input type="file" id="logo_com" name="logo_com"/><br>
+        <div id="logo" style="width: 128px; height: 128px;border: 2px solid black;">
+    
+        </div>
+
+        <button type="submit" name="submit" value="submit">Submit</button>
+
+    </form>
+    <script>
+        document.getElementById('id_com').oninput = () => {
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "/controllers/get-company.php?id=" + document.getElementById('id_com').value, true);
+            xhr.withCredentials = true;
+            xhr.onload = function () {
+                if (xhr.status == 200) {
+                    var company = JSON.parse(xhr.response);
+                    
+                    document.getElementById('name_com').value = company.name_com;
+                    document.getElementById('sector_com').value = company.sector_com;
+                    document.getElementById('nb_interns_com').value = company.nb_interns_com;
+                    document.getElementById('email_com').value = company.email_com;
+                    document.getElementById('description_com').value = company.description_com;
+                    var logo = new Image();
+                    logo.src = 'data:image;base64,' + company.logo_com;
+                    logo.className = 'company-logo';
+                    logo.style = 'width:100%;';
+                    document.getElementById('logo').replaceChildren(logo);
+                }
+                else { }
+            };
+            xhr.send(); //Envoi de la requête au serveur (asynchrone par défaut)
+        }
+    </script>
+</body>
+</html>

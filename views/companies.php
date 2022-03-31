@@ -1,3 +1,13 @@
+<?php
+require 'controllers/check-session.php';
+if (!(has_student_access_level() || has_admin_access_level() || has_pilot_access_level())) {
+    echo "403 Forbidden";
+    die();
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,17 +22,19 @@
     </style>
 </head>
 <body>
+    <?='Logged in as: '.$_SESSION['name'];?>
     <h1>Companies</h1>
-    <!--<script>
+    <script>
         const getLogos = () => {
             var xhr = new XMLHttpRequest();
-            xhr.open("GET", "http://127.0.0.1/controllers/get-all-companies-logos.php", true);
+            xhr.open("GET", "./controllers/search-companies.php?limit=50", true);
+            xhr.withCredentials = true;
             xhr.onload = function () {
                 var html = "";
                 if (xhr.status == 200) {
                     var response = JSON.parse(xhr.response);
-        
-                    response.forEach(company => {
+                    var data = response.data;
+                    data.forEach(company => {
                         var image = new Image();
                         
                         image.src = 'data:image;base64,' + company.logo_com;
@@ -39,6 +51,6 @@
             getLogos();
         }
 
-    </script>-->
+    </script>
 </body>
 </html>

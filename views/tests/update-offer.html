@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="post" action="/controllers/update-offer.php">
+        <label for="id_offer">ID</label><br>
+        <input type="number" name="id_offer" id="id_offer"/><br>
+        
+        <label for="name_offer">Name</label><br>
+        <input type="text" name="name_offer" id="name_offer"/><br>
+
+        <label for="level_offer">Level</label>
+        <select name="level_offer" id="level_offer">
+            <option value="A1">A1</option>
+            <option value="A2">A2</option>
+            <option value="A3">A3</option>
+            <option value="A4">A4</option>
+            <option value="A5">A5</option>
+        </select><br>
+
+        <label for="internship_length_offer">Length</label><br>
+        <input type="number" name="internship_length_offer" id="internship_length_offer"/><br>
+
+        <label for="pay_offer">Pay</label><br>
+        <input type="number" name="pay_offer" id="pay_offer"/><br>
+
+        <label for="date_offer">Date</label><br>
+        <input type="date" name="date_offer"  id="date_offer"/><br>
+
+        <label for="available_places_offer">Places available</label><br>
+        <input type="number" name="available_places_offer" id="available_places_offer"><br>
+
+        <label for="description_offer">Description</label><br>
+        <textarea name="description_offer" id="description_offer" cols="30" rows="10"></textarea><br>
+            
+        
+        <label for="id_com">Company</label><br>
+        <select name="id_com" id="id_com"></select><br>
+
+        <button name="submit" value="submit">Submit</button>
+    </form>
+
+    <script>
+        var option;
+        const getCompanies = () => {
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "/controllers/get-company-names.php", true);
+            xhr.withCredentials = true;
+            xhr.onload = function () {
+                var html = "";
+                if (xhr.status == 200) {
+                    companies = JSON.parse(xhr.response);
+                    
+                    companies.forEach(company => {
+                        option = new Option(company.name_com, company.id_com);
+                        document.getElementById('id_com').appendChild(option);
+                    });
+
+                }
+                else { }
+                
+                // console.log(document.getElementById('id_com'));
+            };
+            xhr.send(); //Envoi de la requête au serveur (asynchrone par défaut)
+        };
+
+        document.body.onload = () => {
+            getCompanies();
+        }
+    
+        document.getElementById('id_offer').oninput = () => {
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "/controllers/get-offer.php?id=" + document.getElementById('id_offer').value, true);
+            xhr.withCredentials = true;
+            xhr.onload = function () {
+                if (xhr.status == 200) {
+                    var offer = JSON.parse(xhr.response);
+                    
+                    document.getElementById('name_offer').value = offer.name_offer;
+                    document.getElementById('level_offer').value = offer.level_offer;
+                    document.getElementById('internship_length_offer').value = offer.internship_length_offer;
+                    document.getElementById('pay_offer').value = offer.pay_offer;
+                    document.getElementById('date_offer').value = offer.date_offer;
+                    document.getElementById('available_places_offer').value = offer.available_places_offer;
+                    document.getElementById('description_offer').value = offer.description_offer;
+                    document.getElementById('id_com').value = offer.id_com;
+                }
+                else { }
+            };
+            xhr.send(); //Envoi de la requête au serveur (asynchrone par défaut)
+        }
+    </script>
+</body>
+</html>

@@ -1,3 +1,7 @@
+<?php
+session_start();
+$user_type = @$_SESSION['user-type'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,28 +12,35 @@
   <title>ProjectX-Home</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon"> 
+  <!--<link href="/views/assets/img/favicon.png" rel="icon">-->
+  <link href="/views/assets/img/apple-touch-icon.png" rel="apple-touch-icon"> 
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-  <link href="assets/css/style.css" rel="stylesheet">
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/js/main.js"></script>
- 
+  <link href="/views/assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="/views/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/views/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="/views/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="/views/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="/views/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="/views/assets/css/style.css" rel="stylesheet">
+  <script src="/views/assets/vendor/aos/aos.js"></script>
+  <script src="/views/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/views/assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="/views/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="/views/assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="/views/assets/vendor/php-email-form/validate.js"></script>
+  <script src="/views/assets/js/main.js"></script>
+  <script>
+    <?php
+    if (isset($_SESSION['status'])) {
+    ?>
+    alert("<?=@$_SESSION['status'];?> <?=@$_SESSION['user-type'];?>");
+    <?php
+    }
+    ?>
+  </script>
 </head>
 
 <body>
-
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top d-flex align-items-center">
     <div class="container d-flex align-items-center justify-content-between">
@@ -37,7 +48,7 @@
       <div class="logo">
         <h1 class="text-light"><a href="home.php"><span>The |KING|</span></a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
-        <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+        <!-- <a href="index.html"><img src="/views/assets/img/logo.png" alt="" class="img-fluid"></a>-->
       </div>
 
       <nav id="navbar" class="navbar">
@@ -65,7 +76,7 @@
             </ul>
           </li>
           <li><a class="nav-link scrollto" href="#contact">Contact</a></li> -->
-          <li><a class="getstarted scrollto" href="#Login">Login</a></li>
+          <li><a class="getstarted scrollto" href="./login.html">Login</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -75,15 +86,16 @@
 
   <!-- Main Section -->
   <main id="main">
-
+  
   <section id="about" class="offers">
       <div class="container">
 
         <div class="row justify-content-between">
           <div class="col-lg-5 d-flex align-items-center justify-content-center about-img offers img">
-            <img src="assets/img/about-img.svg" class="img-fluid" alt="" data-aos="zoom-in">
+            <img src="/views/assets/img/about-img.svg" class="img-fluid" alt="" data-aos="zoom-in">
           </div>
           <div class="col-lg-6 pt-5 pt-lg-0">
+
             <h3 data-aos="fade-up">Voluptatem dignissimos provident quasi</h3>
             <p data-aos="fade-up" data-aos-delay="100">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
@@ -111,7 +123,7 @@
 
         <div class="row justify-content-between ">
           <div class="col-lg-5 d-flex align-items-center justify-content-center about-img">
-            <img src="assets/img/about-img.svg" class="img-fluid" alt="" data-aos="zoom-in">
+            <img src="/views/assets/img/about-img.svg" class="img-fluid" alt="" data-aos="zoom-in">
           </div>
           <div class="col-lg-6 pt-5 pt-lg-0 offers txt">
             <h3 data-aos="fade-up">Voluptatem dignissimos provident quasi</h3>
@@ -220,3 +232,9 @@
 
 
 </html>
+
+<?php
+  if (@$_SESSION['status'] != 'logged-in') {
+    session_destroy();
+  }
+?>

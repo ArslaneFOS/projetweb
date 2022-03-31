@@ -28,11 +28,11 @@ class DB {
     try {
       $this->stmt = $this->pdo->prepare($sql);
       if ($cond) {
-        
         foreach ($cond as $key => $value) {
             $this->stmt->bindValue($key, $value[0], $value[1]);
         }
       }
+      
       
       $this->stmt->execute();
       $result = $this->stmt->fetchAll();
@@ -44,6 +44,8 @@ class DB {
       return false;
     }
   }
+
+
   function create ($sql, $cond=null) {
     $result = false;
     try {
@@ -51,37 +53,44 @@ class DB {
       foreach ($cond as $key => $value) {
           $this->stmt->bindValue($key, $value[0], $value[1]);
       }
+      
       $result = $this->stmt->execute();
-
       return $result;
     } catch (Exception $ex) { 
       $this->error = $ex->getMessage(); 
+      echo $this->error.'\n';
       return false;
     }
   }
+
+  
 
   function delete ($sql, $cond=null) {
     $result = false;
     try {
       $this->stmt = $this->pdo->prepare($sql);
       foreach ($cond as $key => $value) {
-          $this->stmt->bindValue($key, $value, PDO::PARAM_INT);
+          $this->stmt->bindValue($key, $value[0], $value[1]);
       }
+      
       $result = $this->stmt->execute();
-
       return $result;
     } catch (Exception $ex) { 
       $this->error = $ex->getMessage(); 
+      echo $this->error.'\n';
       return false;
     }
   }
+
 
   function update ($sql, $cond=null) {
     $result = false;
     try {
       $this->stmt = $this->pdo->prepare($sql);
-      foreach ($cond as $key => $value) {
-          $this->stmt->bindValue($key, $value[0], $value[1]);
+      if ($cond) {
+        foreach ($cond as $key => $value) {
+            $this->stmt->bindValue($key, $value[0], $value[1]);
+        }
       }
       $result = $this->stmt->execute();
 

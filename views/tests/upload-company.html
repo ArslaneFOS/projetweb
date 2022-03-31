@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test upload comp</title>
+</head>
+<body>
+    <form method="post" action="/controllers/create-company.php" enctype="multipart/form-data">
+        <label for="name_com">Company Name</label><br>
+        <input type="text" name="name_com" id="name_com"/><br>
+
+        <label for="sector_com">Sector</label><br>
+        <select name="sector_com" id="sector_com">
+            <option value="1">Assistance</option>
+            <option value="2">Conseil, audit</option>
+            <option value="3">Développement logiciel</option>
+            <option value="4">Développement progiciel</option>
+            <option value="5">Fournisseur internet</option>
+            <option value="6">Hébergement sites web</option>
+            <option value="7">Industriel</option>
+            <option value="8">Installation Réseaux</option>
+            <option value="9">Dev et programmation</option>
+        </select><br>
+
+        <label for="nb_interns_com">Number of interns</label><br>
+        <input type="number" name="nb_interns_com" id="nb_interns_com"/><br>
+
+        <label for="description_com">Description</label><br>
+        <textarea id="description_com" name="description_com"></textarea><br>
+
+        <label for="email_com">Email</label><br>
+        <input type="email" name="email_com" id="email_com"/><br>
+
+        <label for="logo_com">Thumbnail</label><br>
+        <input type="file" id="logo_com" name="logo_com"/><br>
+
+        <button type="submit" name="submit" value="submit">Submit</button>
+
+    </form>
+</body>
+</html>
