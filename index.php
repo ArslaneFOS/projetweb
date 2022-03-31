@@ -65,9 +65,12 @@ if (isset($_GET['page'])) {
         case 'test/setrepauth':
             include('views/tests/set-rep-auth.html');
             die();
-            case 'test/application':
-                include('views/tests/application.html');
-                die();
+        case 'test/application':
+            include('views/tests/application.html');
+            die();
+        case 'test/application-update':
+            include('views/tests/application-update.html');
+            die();
     }
 } else {
     include('views/home.php');
