@@ -1,4 +1,4 @@
-!
+
 <!DOCTYPE html>
 <html>
 
@@ -51,7 +51,6 @@
                     </ul>
                   </li>
                   <li><a class="nav-link scrollto" href="#contact">Contact</a></li> -->
-<<<<<<< HEAD
                   <li><a class="nav-link scrollto" href="./login.html">Login</a></li>
                 </ul>
                 
@@ -66,7 +65,6 @@
     </div>
   
   </body>
-=======
           <li><a class="nav-link scrollto" href="./login.html">Login</a></li>
         </ul>
 
@@ -137,4 +135,3 @@
     }
   </script>
 </body>
->>>>>>> f39eacd78576be32521320a008573f286d56ee8b

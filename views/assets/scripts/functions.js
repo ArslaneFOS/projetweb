@@ -383,6 +383,61 @@ const getOffer = (id_offer) => {
     xhr.send(); //Envoi de la requête au serveur (asynchrone par défaut)
 }
 
+const deleteOfferAdmin = (id_offer) => {
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "/controllers/delete-offer.php?id_offer=" + id_offer, true);
+    xhr.withCredentials = true;
+    xhr.onload = function () {
+        if (xhr.status == 200) {
+            window.location.reload(true);
+        }
+        else { }
+    };
+    xhr.send(); //Envoi de la requête au serveur (asynchrone par défaut)
+}
+
+const searchOfferAdmin = (search, page) => {
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "http://localhost/controllers/search-offers.php?limit=10000&search=" + encodeURIComponent(search) + "&page=" + page, true);
+    xhr.withCredentials = true;
+    xhr.onload = function () {
+        var html = "";
+        if (xhr.status == 200) {
+            result = JSON.parse(xhr.response);
+            offers = result.data;
+            offers.forEach(offer => {
+                var src = 'data:image;base64,' + offer.logo_com;
+                const table = document.querySelector('tbody');
+
+
+                table.innerHTML += `<tr>
+                <td>${offer.id_offer}</td>
+                <td>${offer.name_offer}</td>
+                <td>${offer.level_offer}</td>
+                <td>${offer.internship_length_offer}</td>
+                <td>${offer.pay_offer}</td> 
+                <td>${offer.date_offer}</td>
+                <td>${offer.available_places_offer}</td>
+                <td>${offer.description_com.substring(0, 50) + '...'}</td>
+                <td>${offer.id_com}</td> 
+
+                <td id='logo-${offer.id_offer}'></td> 
+                <td><a type="button" onclick="deleteOfferAdmin(${offer.id_offer})" class="btn btn-danger">Delete</a></td>
+                <td><a href="#" type="button" onclick="getOffe(${offer.id_offer})" class="btn btn-warning">Upload</a></td>
+                </tr>`;
+                document.getElementById("logo-" + offer.id_offer).replaceChildren(logo);
+
+
+            });
+
+        }
+        else { }
+
+        //document.getElementById("companies-cards").innerHTML = html;
+    };
+    xhr.send(); //Envoi de la requête au serveur (asynchrone par défaut)
+};
+
 const searchCompanies = (search, page) => {
     var xhr = new XMLHttpRequest();
     xhr.open("GET", "http://localhost/controllers/search-companies.php?limit=10000&search=" + encodeURIComponent(search) + "&page=" + page, true);

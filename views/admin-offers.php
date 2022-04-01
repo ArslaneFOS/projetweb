@@ -1,3 +1,13 @@
+<?php
+require_once('/home/arslane/www-prj/projetweb-1/controllers/check-session.php');
+if (!(has_admin_access_level() || has_pilot_access_level() || (has_representative_access_level('sfx3') && has_representative_access_level('sfx4') && has_representative_access_level('sfx5') && has_representative_access_level('sfx6')))) {
+  echo "Access Denied.";
+  die();
+}
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -307,5 +317,12 @@
       </div>
     </div>
   </footer>
+  <script>
+    document.body.onload = () => {
+      offer();
+      searchOfferAdmin('', 1);
+      document.getElementById('id_offer').oninput = () => getOffer(document.getElementById('id_offer').value);
+    }
+  </script>
 </body>
 </html>
