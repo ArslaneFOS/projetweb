@@ -1,4 +1,5 @@
 <?php
+//sfx29
 // checks access requirements
 require 'check-session.php';
 // admins and students

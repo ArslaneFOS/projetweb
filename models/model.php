@@ -87,8 +87,10 @@ class DB {
     $result = false;
     try {
       $this->stmt = $this->pdo->prepare($sql);
-      foreach ($cond as $key => $value) {
-          $this->stmt->bindValue($key, $value[0], $value[1]);
+      if ($cond) {
+        foreach ($cond as $key => $value) {
+            $this->stmt->bindValue($key, $value[0], $value[1]);
+        }
       }
       $result = $this->stmt->execute();
 

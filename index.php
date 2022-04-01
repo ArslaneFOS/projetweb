@@ -16,10 +16,15 @@ if (isset($_GET['page'])) {
             break;
             
         case 'login':
+<<<<<<< HEAD
             include('views/login.php');
             break;
 
             /*
+=======
+            include('views/login.html');
+            break;/*
+>>>>>>> 756ea0bed142f9d00678e0ae60c027c8cc2c9079
         case 'offers':
             include('views/offers.php');
             break;
@@ -67,9 +72,12 @@ if (isset($_GET['page'])) {
         case 'test/setrepauth':
             include('views/tests/set-rep-auth.html');
             die();
-            case 'test/application':
-                include('views/tests/application.html');
-                die();
+        case 'test/application':
+            include('views/tests/application.html');
+            die();
+        case 'test/application-update':
+            include('views/tests/application-update.html');
+            die();
     }
 } else {
     include('views/home.php');

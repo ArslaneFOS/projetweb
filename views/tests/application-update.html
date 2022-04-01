@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test upload comp</title>
+</head>
+<body>
+    <form method="post" action="/controllers/update-application.php" enctype="multipart/form-data">
+        <fieldset>
+            <legend>etape 2 (dans la partie candidatures de l'etudiant, pour chaque candid, on passera le id offer en paramettre d'une fonction JS)</legend>
+            <label for="id_offer">id offer</label><br>
+            <input type="number" name="id_offer" id="id_offer"/><br>
+    
+            <button type="submit" name="submit" value="step 2-response">I have received a response</button>
+            <button type="submit" name="submit" value="step 2-no-response">I have NOT received a response</button>
+        </fieldset>
+    </form>
+
+    <form method="post" action="/controllers/update-application.php" enctype="multipart/form-data">
+        <fieldset>
+            <legend>etape 3 (dans la partie admin des candidatures, pareil pour l'id offer et id student)</legend>
+            <label for="id_student">id student</label><br>
+            <input type="number" name="id_student" id="id_student"/><br>
+            <label for="id_offer">id offer</label><br>
+            <input type="number" name="id_offer" id="id_offer"/><br>
+            <label for="validation_form">Validation Form</label><br>
+            <input type="file" id="validation_form" name="validation_form"/><br>
+            <button type="submit" name="submit" value="step 3">Submit company validation form</button>
+        </fieldset>
+    </form>
+
+    <form method="post" action="/controllers/update-application.php" enctype="multipart/form-data">
+        <fieldset>
+            <legend>etape 4 (dans la partie admin des candidatures, pareil pour l'id offer et id student)</legend>
+            <label for="id_student">id student</label><br>
+            <input type="number" name="id_student" id="id_student"/><br>
+            <label for="id_offer">id offer</label><br>
+            <input type="number" name="id_offer" id="id_offer"/><br>
+            <label for="validation_form">Signed Validation Form</label><br>
+            <input type="file" id="validation_form" name="validation_form"/><br>
+            <button type="submit" name="submit" value="step 4">Submit signed validation form</button>
+        </fieldset>
+    </form>
+
+
+    <form method="post" action="/controllers/update-application.php" enctype="multipart/form-data">
+        <fieldset>
+            <legend>etape 5 (dans la partie admin des candidatures, pareil pour l'id offer et id student)</legend>
+            <label for="id_student">id student</label><br>
+            <input type="number" name="id_student" id="id_student"/><br>
+            <label for="id_offer">id offer</label><br>
+            <input type="number" name="id_offer" id="id_offer"/><br>
+            <label for="internship_agreement">Signed Validation Form</label><br>
+            <input type="file" id="internship_agreement" name="internship_agreement"/><br>
+            <button type="submit" name="submit" value="step 5">Submit agreement</button>
+        </fieldset>
+    </form>
+
+    <form method="post" action="/controllers/update-application.php" enctype="multipart/form-data">
+        <fieldset>
+            <legend>etape 6 (dans la partie admin des candidatures, pareil pour l'id offer et id student)</legend>
+            <label for="id_student">id student</label><br>
+            <input type="number" name="id_student" id="id_student"/><br>
+            <label for="id_offer">id offer</label><br>
+            <input type="number" name="id_offer" id="id_offer"/><br>
+            <label for="internship_agreement">Signed Validation Form</label><br>
+            <input type="file" id="internship_agreement" name="internship_agreement"/><br>
+            <button type="submit" name="submit" value="step 6">Submit agreement</button>
+        </fieldset>
+    </form>
+
+</body>
+</html>
