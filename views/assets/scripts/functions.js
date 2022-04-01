@@ -102,7 +102,7 @@ const searchCompaniesAdmin = (search, page) => {
 
 const searchOffers = (search, page) => {
     var xhr = new XMLHttpRequest();
-    xhr.open("GET", "http://localhost/controllers/search-offers.php?search=" + encodeURIComponent(search) + "&page=" + page, true);
+    xhr.open("GET", "http://localhost/controllers/search-offers.php?limit=10000&search=" + encodeURIComponent(search) + "&page=" + page, true);
     xhr.withCredentials = true;
     xhr.onload = function () {
         var html = "";
@@ -110,17 +110,35 @@ const searchOffers = (search, page) => {
             result = JSON.parse(xhr.response);
             offers = result.data;
             offers.forEach(offer => {
-                var logo = new Image();
+                var src = 'data:image;base64,' + offer.logo_com;
+                
 
-                logo.src = 'data:image;base64,' + offer.logo_com;
-                logo.className = "company-logo";
-                logo.style = "width: 128px;";
-                // generer les cards ici
-                //...
-                /*
-                document.body.innerHTML += (`<p> ${offer.name_offer} ${offer.level_offer} ${offer.pay_offer} ${offer.date_offer} ${offer.available_places_offer} ${offer.description_offer} ${offer.name_com} ${offer.sector_com}</p>`);
-                document.body.appendChild(logo);
-                */
+                document.getElementById('offers-cards').innerHTML += `
+                <div class="card-offer" style="width: 80%;">
+                <div class="card mb-3" >
+                    <div class="row g-0">
+                      <div class="col-md-4">
+                        <img src="${src}" class="img-fluid" alt="${offer.name_offer}" style="height: 160px; margin: 20px; border-radius: 10px;
+                        object-fit: contain;
+                        width: 145px;
+                        background-color: #efefef;">
+                      </div>
+                      <div class="col-md-6">
+                        <div class="card-body">
+                          <h5 class="card-title">${offer.name_offer}</h5>
+                          <p class="card-text"><small class="text-muted">from ${offer.name_com}</small></p>
+                          <p class="card-text">${offer.description_offer.substring(0, 200) + '...'}</p>
+                        </div>
+                      </div>
+                      <div class="col-md-2 d-flex justify-content-center align-items-center flex-column">
+                      <h6 class="card-title">${offer.internship_length_offer} Months</h5>
+                      <h6 class="card-title">${offer.available_places_offer} Places</h5>
+                      <h6 class="card-title">${offer.level_offer} Level</h5>
+                      </div>
+                    </div>
+                  </div>
+            </div>`
+
             });
         }
         else { }
@@ -389,7 +407,7 @@ const searchCompanies = (search, page) => {
                 <div class="heading-description">
                   <div class="x7-skills-of-highly-e">${company.name_com}</div>
                   <p class="our-team-was-inspire">
-                    ${company.description_com.substring(0,150) + '...'}
+                    ${company.description_com.substring(0, 150) + '...'}
                   </p>
                 </div>
                 <div class="read-more opensans-semi-bold-azure-radiance-11px">
