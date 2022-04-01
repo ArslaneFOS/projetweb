@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 
@@ -62,8 +63,20 @@
   <!--<div class="searchbar">
         
     </div>
+<<<<<<< HEAD
  </div>
   </header> End Header -->
+=======
+  
+  </body>
+          <li><a class="nav-link scrollto" href="./login.html">Login</a></li>
+        </ul>
+
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+>>>>>>> ff8523b93e1d1c6d495896200d7ca72b86a686f8
 
   <!--
   <div class="searchbar">
