@@ -57,7 +57,10 @@ main{
     color: white;
     text-decoration: none;
   }
- 
+  .logo{
+      width: 2.5rem;
+      height: 2.5rem;
+  }
   .navbar {
     padding: 0;
     

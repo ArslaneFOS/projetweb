@@ -1,3 +1,6 @@
+<<<<<<< HEAD
+!<!DOCTYPE html>
+=======
 <!DOCTYPE html>
 <<<<<<< HEAD
 <html lang="en">
@@ -9,25 +12,26 @@
 >>>>>>> 15db795fb188fba600929472728d6457dbfacd3e
 
 <<<<<<< HEAD
+>>>>>>> 9b95b34eb4b6c9ee5937d180c550970561b740cd
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <link href="/views/assets/css/login.css" rel="stylesheet">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/views/assets/css/login.css" rel="stylesheet">
         <link href="/views/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
         <link href="/views/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script src="/views/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-       
-    </head>
-    <body>
-        <header id="header" class="fixed-top d-flex align-items-center">
+  </head>
+  <body>
+  <header id="header" class="fixed-top d-flex align-items-center">
             <div class="container d-flex align-items-center justify-content-between">
         
               <div class="logo">
-                <img src="/views/assets/img/neo-neo-logo_1.svg">
+                <img  class="logo" src="/views/assets/img/neo-neo-logo_1.svg">
               </div>
         
               <nav id="navbar" class="navbar">
@@ -63,6 +67,13 @@
         
             </div>
           </header><!-- End Header -->
+<<<<<<< HEAD
+          
+    
+    
+    <script src="" async defer></script>
+  </body>
+=======
 <body>
 
 =======
@@ -262,4 +273,5 @@
   <script src="assets/js/main.js"></script>
 </body>
 
+>>>>>>> 9b95b34eb4b6c9ee5937d180c550970561b740cd
 </html>
