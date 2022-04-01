@@ -13,7 +13,7 @@ require_once('../models/model.php');
 
 $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
 $limit = isset($_GET['limit']) ? (int)$_GET['limit'] : 10;
-$search = isset($_GET['search']) ? $_GET['search'] : '';
+$search = isset($_GET['search']) ? ($_GET['search']) : '';
 $offset = ($page - 1) * $limit;
 $binds = array(
     ':limit' => array($limit, PDO::PARAM_INT),

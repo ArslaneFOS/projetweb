@@ -11,12 +11,12 @@ if (!(has_admin_access_level() || has_pilot_access_level() || has_representative
 // connection a la database
 require_once('../models/model.php');
 
-if(!isset($_GET['id'])) {
+if(!isset($_GET['id_offer'])) {
     echo "Deletion Failed: No ID provided";
     die();
 }
 
-$id_offer = $_GET['id'];
+$id_offer = $_GET['id_offer'];
 
 $binds = array(
     ':id_offer' => array($id_offer, PDO::PARAM_INT)

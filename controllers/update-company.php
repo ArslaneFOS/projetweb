@@ -54,7 +54,7 @@ if (isset($_POST['id_com'])) {
         SET name_com = :name_com, sector_com = :sector_com, nb_interns_com = :nb_interns_com, description_com = :description_com, email_com = :email_com
         WHERE id_com = :id_com;", $binds);
     
-    if ($_FILES['logo_com']['size'] != 0) {
+    if (isset($_FILES['logo_com']) && $_FILES['logo_com']['size'] != 0) {
         $ALLOWED_MIME = array('image/png', 'image/jpeg');
 
         if (!in_array($_FILES['logo_com']['type'], $ALLOWED_MIME)) {

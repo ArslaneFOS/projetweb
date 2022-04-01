@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="/views/assets/scripts/functions.js"></script>
 </head>
 <body>
     <form method="post" action="/controllers/update-offer.php">
@@ -42,58 +43,18 @@
         <label for="id_com">Company</label><br>
         <select name="id_com" id="id_com"></select><br>
 
-        <button name="submit" value="submit">Submit</button>
+        <button type="submit" name="create" id="create">Create</button>
+        <button type="submit" name="update" id="update">Update</button>
+        <button type="reset">Reset</button>
     </form>
 
     <script>
-        var option;
-        const getCompanies = () => {
-            var xhr = new XMLHttpRequest();
-            xhr.open("GET", "/controllers/get-company-names.php", true);
-            xhr.withCredentials = true;
-            xhr.onload = function () {
-                var html = "";
-                if (xhr.status == 200) {
-                    companies = JSON.parse(xhr.response);
-                    
-                    companies.forEach(company => {
-                        option = new Option(company.name_com, company.id_com);
-                        document.getElementById('id_com').appendChild(option);
-                    });
-
-                }
-                else { }
-                
-                // console.log(document.getElementById('id_com'));
-            };
-            xhr.send(); //Envoi de la requête au serveur (asynchrone par défaut)
-        };
-
         document.body.onload = () => {
-            getCompanies();
+            getCompaniesNames();
+            document.getElementById('id_offer').oninput = () => getOffer(document.getElementById('id_offer').value);
+            offer();
         }
     
-        document.getElementById('id_offer').oninput = () => {
-            var xhr = new XMLHttpRequest();
-            xhr.open("GET", "/controllers/get-offer.php?id=" + document.getElementById('id_offer').value, true);
-            xhr.withCredentials = true;
-            xhr.onload = function () {
-                if (xhr.status == 200) {
-                    var offer = JSON.parse(xhr.response);
-                    
-                    document.getElementById('name_offer').value = offer.name_offer;
-                    document.getElementById('level_offer').value = offer.level_offer;
-                    document.getElementById('internship_length_offer').value = offer.internship_length_offer;
-                    document.getElementById('pay_offer').value = offer.pay_offer;
-                    document.getElementById('date_offer').value = offer.date_offer;
-                    document.getElementById('available_places_offer').value = offer.available_places_offer;
-                    document.getElementById('description_offer').value = offer.description_offer;
-                    document.getElementById('id_com').value = offer.id_com;
-                }
-                else { }
-            };
-            xhr.send(); //Envoi de la requête au serveur (asynchrone par défaut)
-        }
     </script>
 </body>
 </html>

@@ -14,41 +14,36 @@ if (isset($_GET['page'])) {
         case 'wishlist':
             include('views/wishlist.php');
             break;
-            
         case 'login':
-<<<<<<< HEAD
             include('views/login.php');
             break;
+        case 'users':
+            include('views/users.php');
+            break;
 
-            /*
-=======
-            include('views/login.html');
-            break;/*
->>>>>>> 756ea0bed142f9d00678e0ae60c027c8cc2c9079
-        case 'offers':
-            include('views/offers.php');
+        case 'admin/companies':
+            include('views/admin-companies.php');
             break;
-        case 'offers':
-            include('views/offers.php');
+        case 'admin/offers':
+            include('views/admin-offers.php');
             break;
-        case 'offers':
-            include('views/offers.php');
+        case 'admin/pilots':
+            include('views/admin-pilots.php');
             break;
-        case 'offers':
-            include('views/offers.php');
+        case 'admin/students':
+            include('views/admin-students.php');
             break;
-        case 'offers':
-            include('views/offers.php');
+        case 'admin/representatives':
+            include('views/admin-reps.php');
             break;
-        case 'offers':
-            include('views/offers.php');
+        case 'admin/promotions':
+            include('views/admin-promos.php');
             break;
-        case 'offers':
-            include('views/offers.php');
+        case 'admin/applications':
+            include('views/admin-applications.php');
             break;
-        case 'offers':
-            include('views/offers.php');
-            break;*/
+
+            
         case 'test/login':
             include('views/tests/login.html');
             break;
@@ -77,6 +72,9 @@ if (isset($_GET['page'])) {
             die();
         case 'test/application-update':
             include('views/tests/application-update.html');
+            die();
+        default:
+            echo 404;
             die();
     }
 } else {

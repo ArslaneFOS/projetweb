@@ -3,7 +3,7 @@
 // connection a la database
 require_once('../models/model.php');
 
-$id_com = isset($_GET['id']) ? (int)$_GET['id'] : 1;
+$id_com = isset($_GET['id_com']) ? (int)$_GET['id_com'] : 1;
 
 $binds = array(
     ':id_com' => array($id_com, PDO::PARAM_INT)

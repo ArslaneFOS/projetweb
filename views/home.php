@@ -23,16 +23,10 @@ $user_type = @$_SESSION['user-type'];
   <link href="/views/assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="/views/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="/views/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="/views/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="/views/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="/views/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-  <link href="/views/assets/css/style.css" rel="stylesheet">
+ 
+  <link href="/views/assets/css/home.css" rel="stylesheet">
   <script src="/views/assets/vendor/aos/aos.js"></script>
   <script src="/views/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="/views/assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="/views/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="/views/assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="/views/assets/vendor/php-email-form/validate.js"></script>
   <script src="/views/assets/js/main.js"></script>
   <link rel="icon" href="https://img.icons8.com/external-smashingstocks-isometric-smashing-stocks/55/000000/external-web-link-seo-and-marketing-smashingstocks-isometric-smashing-stocks.png">
   <script>
@@ -47,192 +41,173 @@ $user_type = @$_SESSION['user-type'];
 </head>
 
 <body>
-  <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top d-flex align-items-center">
-    <div class="container d-flex align-items-center justify-content-between">
-
-      <div class="logo">
-        <h1 class="text-light"><a href="home.php"><span>TEST</span></a></h1>
-        <!-- Uncomment below if you prefer to use an image logo -->
-        <!-- <a href="index.html"><img src="/views/assets/img/logo.png" alt="" class="img-fluid"></a>-->
-      </div>
-
-      <nav id="navbar" class="navbar">
-        <ul>
-          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-          <li><a class="nav-link scrollto" href="#offers">Offers</a></li>
-          <li><a class="nav-link scrollto" href="#companies">Companies</a></li>
-          <li><a class="nav-link scrollto" href="#portfolio">Interns</a></li>
-          <!--<li><a class="nav-link scrollto" href="#team">Login</a></li>
-          <li class="dropdown"><a href="#"><span>Random DropDown</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="#">Drop Down 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
-                <ul>
-                  <li><a href="#">Deep Drop Down 1</a></li>
-                  <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Drop Down 2</a></li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
-            </ul>
-          </li>
-          <li><a class="nav-link scrollto" href="#contact">Contact</a></li> -->
-          <li><a class="getstarted scrollto" href="/views/login.php">Login</a></li>
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
-
-    </div>
-  </header><!-- End Header -->
-
-  <!-- Main Section -->
-  <main id="main">
-  
-  <section id="about" class="offers">
-      <div class="container">
-
-        <div class="row justify-content-between">
-          <div class="col-lg-5 d-flex align-items-center justify-content-center about-img offers img">
-            <img src="/views/assets/img/about-img.svg" class="img-fluid" alt="" data-aos="zoom-in">
-          </div>
-          <div class="col-lg-6 pt-5 pt-lg-0">
-
-            <h3 data-aos="fade-up">Voluptatem dignissimos provident quasi</h3>
-            <p data-aos="fade-up" data-aos-delay="100">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
-            </p>
-            <div class="row">
-              <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
-                <i class="bx bx-receipt"></i>
-                <h4>Corporis voluptates sit</h4>
-                <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip</p>
-              </div>
-              <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
-                <i class="bx bx-cube-alt"></i>
-                <h4>Ullamco laboris nisi</h4>
-                <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <section id="about2" class="about2">
-      <div class="container">
-
-        <div class="row justify-content-between ">
-          <div class="col-lg-5 d-flex align-items-center justify-content-center about-img">
-            <img src="/views/assets/img/about-img.svg" class="img-fluid" alt="" data-aos="zoom-in">
-          </div>
-          <div class="col-lg-6 pt-5 pt-lg-0 offers txt">
-            <h3 data-aos="fade-up">Voluptatem dignissimos provident quasi</h3>
-            <p data-aos="fade-up" data-aos-delay="100">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
-            </p>
-            <div class="row">
-              <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
-                <i class="bx bx-receipt"></i>
-                <h4>Corporis voluptates sit</h4>
-                <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip</p>
-              </div>
-              <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
-                <i class="bx bx-cube-alt"></i>
-                <h4>Ullamco laboris nisi</h4>
-                <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-</main>
-
-    <!-- End Of Main Section -->
-
-  <footer id="footer">
-
-    <div class="footer-newsletter">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-lg-6">
-            
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="footer-top">
-      <div class="container">
-        <div class="row">
-
-          <div class="col-lg-3 col-md-6 footer-contact">
-            <h3>Telhaguhoum Inc</h3>
-            <p>
-             Je m'en fou <br>
-              Birkhadem<br>
-              United Tixeraines <br><br>
-              <strong>Phone:</strong> +213 550 214 991<br>
-              <strong>Email:</strong> amine.adoul.dz@viacesi.fr<br>
-            </p>
-          </div>
-
-          <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Useful Links</h4>
-            <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
-            </ul>
-          </div>
-
-          <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Our Services</h4>
-            <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
-            </ul>
-          </div>
-
-          <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Our Social Networks</h4>
-            <p>Je rigole khatina les reseaux</p>
-            <div class="social-links mt-3">
-              <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-              <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-              <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-              <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-              <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-
-    <div class="container py-4">
-      <div class="copyright">
-        &copy; Copyright <strong><span>Ninestars</span></strong>. All Rights Reserved
-      </div>
-      <div class="credits">
+<header id="header" class="d-flex align-items-center">
+            <div class="container d-flex align-items-center justify-content-between">
         
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+              <div class="logo">
+                <img class="logo" src="/views/assets/img/neo-neo-logo_1.svg">
+              </div>
+        
+              <nav id="navbar" class="navbar">
+                <ul>
+                  <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+                  <li><a class="nav-link scrollto" href="#offers">Offers</a></li>
+                  <li><a class="nav-link scrollto" href="#companies">Companies</a></li>
+                  <li><a class="nav-link scrollto" href="#portfolio">Interns</a></li>
+                  <li><a class="nav-link scrollto" href="#portfolio">|</a></li>
+                  <!--<li><a class="nav-link scrollto" href="#team">Login</a></li>
+                  <li class="dropdown"><a href="#"><span>Random DropDown</span> <i class="bi bi-chevron-down"></i></a>
+                    <ul>
+                      <li><a href="#">Drop Down 1</a></li>
+                      <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
+                        <ul>
+                          <li><a href="#">Deep Drop Down 1</a></li>
+                          <li><a href="#">Deep Drop Down 2</a></li>
+                          <li><a href="#">Deep Drop Down 3</a></li>
+                          <li><a href="#">Deep Drop Down 4</a></li>
+                          <li><a href="#">Deep Drop Down 5</a></li>
+                        </ul>
+                      </li>
+                      <li><a href="#">Drop Down 2</a></li>
+                      <li><a href="#">Drop Down 3</a></li>
+                      <li><a href="#">Drop Down 4</a></li>
+                    </ul>
+                  </li>
+                  <li><a class="nav-link scrollto" href="#contact">Contact</a></li> -->
+                  <li><a class="nav-link scrollto" href="./login.html">Login</a></li>
+                </ul>
+                
+              </nav><!-- .navbar -->
+        
+            </div>
+          </header><!-- End Header -->
+         
+<main>
+        <div class="home-hero">
+          <div class="px-4 py-5 my-5 text-center">
+              <img class="d-block mx-auto mb-4" src="/views/assets/img/neo-neo-logo_1.svg" alt="" width="72" height="57">
+                <h1 class="display-5 fw-bold">JOB INTERN</h1>
+                <h6 class="display-5">The best web site for your internships</h6>
+                <div class="col-lg-6 mx-auto">
+                <p class="lead mb-4">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+                <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                <button type="button" class="btn btn-primary btn-lg px-4 gap-3">Find Out More</button>
+                </div>
+                </div>
+          </div>
+          </div>
+          <div class="container col-xxl-8 px-4 py-5">
+    <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+      <div class="col-10 col-sm-8 col-lg-6">
+        <img src="https://images.pexels.com/photos/4240580/pexels-photo-4240580.jpeg?cs=srgb&dl=pexels-ivan-samkov-4240580.jpg&fm=jpg" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
+      </div>
+      <div class="col-lg-6">
+        <h1 class="display-4 fw-bold lh-1 mb-3">Internships, just for you.</h1>
+        <h4 class="display-8 fw-bold lh-1 mb-3">They do be just for you.</h4>
+        <p class="lead">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+        <button type="button" class="btn btn-outline-secondary btn-lg px-4">Browse our offers</button>
+        </div>
       </div>
     </div>
-  </footer>
-  
+  </div>
+
+
+  <div class="container col-xxl-8 px-4 py-5 background-color-black">
+    <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+      <div class="col-lg-6">
+      <h1 class="display-4 fw-bold lh-1 mb-3">Trustworty Hirers</h1>
+        <h4 class="display-8 fw-bold lh-1 mb-3">MULTIPLE COMPAGNIES AVAILABLE IN A CLICK.</h4>
+        <p class="lead">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+          <button type="button" class="btn btn-primary btn-lg px-4 me-md-2">Check Out Our Partners</button>
+          
+        </div>
+      </div>
+      <div class="col-10 col-sm-8 col-lg-6">
+        <img src="https://images.pexels.com/photos/7793921/pexels-photo-7793921.jpeg?cs=srgb&dl=pexels-yan-krukov-7793921.jpg&fm=jpg" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="container col-xxl-8 px-4 py-5">
+    <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+      <div class="col-10 col-sm-8 col-lg-6">
+        <img src="https://images.pexels.com/photos/6615092/pexels-photo-6615092.jpeg?cs=srgb&dl=pexels-tima-miroshnichenko-6615092.jpg&fm=jpg" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
+      </div>
+      <div class="col-lg-6">
+      <h1 class="display-4 fw-bold lh-1 mb-3">Are You looking for new interns?</h1>
+        <h4 class="display-8 fw-bold lh-1 mb-3">Hire some of the best students out here.</h4>
+        <p class="lead">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+          <button type="button" class="btn btn-outline-secondary btn-lg px-4">Find a Student</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+<footer>
+    
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                
+
+                <div class="col-md-6 col-xs-12">
+                    <div class="second">
+                        <h4> Navigate</h4>
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Offers</a></li>
+                            <li><a href="#">Compagnies</a></li>
+                            <li><a href="#">Interns</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-xs-12">
+                    <div class="third">
+                        <h4> Contact</h4>
+                        <ul>
+                            <li>CESI Exia </li>
+                            <li></li>
+
+
+                          <li><i class="far fa-envelope"></i> Random Adress</li>
+                            <li><i class="far fa-envelope"></i> email@yahoo.com</li>
+
+
+                          <li><i class="fas fa-map-marker-alt"></i> Algier, Algeria </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-8">
+                        <p class="copyright">
+                          Copyright © 2022 All rights reserved |Cesi EXIA </a>
+                        </p>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="line"></div>
+                    <div class="second2">
+                        <a href="https://codepen.io/AndreeaBunget" target="_blank"> <i class="fab fa-codepen fa-2x margin"></i></a>
+                        <a href="https://github.com/WebDeveloperCodeRep" target="_blank"> <i class="fab fa-github fa-2x margin"></i></a>
+                        <a href="https://www.linkedin.com/in/andreea-mihaela-bunget-a4248812b/" target="_blank"> <i class="fab fa-linkedin fa-2x margin"></i></a>
+                        <a href="https://www.youtube.com/channel/UCX674BUbomzBCakbb75lhfA?view_as=subscriber" target="_blank"><i class="fab fa-youtube fa-2x margin" ></i></a>
+
+                    </div>
+
+                </div>
+            </div>
+            </div>
+    </div>
+</footer>
+ 
 </body>
 
 
