@@ -3,7 +3,7 @@
 // connection a la database
 require_once('../models/model.php');
 
-$id_offer = isset($_GET['id']) ? (int)$_GET['id'] : 1;
+$id_offer = isset($_GET['id_offer']) ? (int)$_GET['id_offer'] : 1;
 
 $binds = array(
     ':id_offer' => array($id_offer, PDO::PARAM_INT)

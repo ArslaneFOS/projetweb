@@ -5,9 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>test update comp</title>
+    <script src="/views/assets/scripts/functions.js"></script>
 </head>
 <body>
-    <form method="post" action="/controllers/update-company.php" enctype="multipart/form-data">
+    <form>
         <label for="id_com">ID</label><br>
         <input type="number" name="id_com" id="id_com"/><br>
         
@@ -42,32 +43,15 @@
     
         </div>
 
-        <button type="submit" name="submit" value="submit">Submit</button>
+        <button type="submit" name="create" id="create">Create</button>
+        <button type="submit" name="update" id="update">Update</button>
+        <button type="reset">Reset</button>
 
     </form>
     <script>
-        document.getElementById('id_com').oninput = () => {
-            var xhr = new XMLHttpRequest();
-            xhr.open("GET", "/controllers/get-company.php?id=" + document.getElementById('id_com').value, true);
-            xhr.withCredentials = true;
-            xhr.onload = function () {
-                if (xhr.status == 200) {
-                    var company = JSON.parse(xhr.response);
-                    
-                    document.getElementById('name_com').value = company.name_com;
-                    document.getElementById('sector_com').value = company.sector_com;
-                    document.getElementById('nb_interns_com').value = company.nb_interns_com;
-                    document.getElementById('email_com').value = company.email_com;
-                    document.getElementById('description_com').value = company.description_com;
-                    var logo = new Image();
-                    logo.src = 'data:image;base64,' + company.logo_com;
-                    logo.className = 'company-logo';
-                    logo.style = 'width:100%;';
-                    document.getElementById('logo').replaceChildren(logo);
-                }
-                else { }
-            };
-            xhr.send(); //Envoi de la requête au serveur (asynchrone par défaut)
+        document.body.onload = () => {
+            company();
+            document.getElementById('id_com').oninput = () => getCompany(document.getElementById('id_com').value);
         }
     </script>
 </body>

@@ -39,5 +39,46 @@
         <button type="submit" name="submit" value="submit">Submit</button>
 
     </form>
+    <script>
+        
+        // define URL and for element
+        const url = "/controllers/create-company.php";
+        const form = document.querySelector('form');
+
+        // add event listener
+        form.addEventListener('submit', e => {
+
+            // disable default action
+            e.preventDefault();
+
+            // collect files
+            const files = document.querySelector('[name=logo_com]').files;
+            const formData = new FormData();
+            const inputs = document.querySelectorAll('input, textarea, select');
+            
+            inputs.forEach(input => {
+                console.log(input);
+                name_input = input.name;
+                if(name_input!='logo_com') {
+                    value = input.value;
+                    formData.append(name_input, value);
+                }
+            });
+
+            formData.append('logo_com', files[0]);
+
+            // post form data
+            const xhr = new XMLHttpRequest();
+            xhr.withCredentials = false;
+            // log response
+            xhr.onload = () => {
+                alert(xhr.responseText);
+            };
+
+            // create and send the reqeust
+            xhr.open('POST', url);
+            xhr.send(formData);
+        });
+    </script>
 </body>
 </html>

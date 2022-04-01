@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="/views/assets/scripts/functions.js"></script>
 </head>
 <body>
     <form method="post" action="/controllers/create-offer.php">
@@ -43,28 +44,9 @@
     </form>
 
     <script>
-        const getCompanies = () => {
-            var xhr = new XMLHttpRequest();
-            xhr.open("GET", "/controllers/get-company-names.php", true);
-            xhr.withCredentials = true;
-            xhr.onload = function () {
-                
-                if (xhr.status == 200) {
-                    var companies = JSON.parse(xhr.response);
-                    
-                    companies.forEach(company => {
-                        var option = new Option(company.name_com, company.id_com);
-                        document.getElementById('id_com').appendChild(option);
-                    });
-
-                }
-                else { }
-            };
-            xhr.send(); //Envoi de la requête au serveur (asynchrone par défaut)
-        };
-
         document.body.onload = () => {
-            getCompanies();
+            getCompaniesNames();
+            createOffer();
         }
     </script>
 </body>
