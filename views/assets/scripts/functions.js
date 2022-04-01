@@ -36,7 +36,9 @@ const getCompanyAdmin = (id_com) => {
             logo.src = 'data:image;base64,' + company.logo_com;
             logo.className = 'company-logo';
             logo.style = 'width:100%;';
-            document.getElementById('logo').replaceChildren(logo);
+            //document.getElementById('logo').replaceChildren(logo);
+            document.querySelector('#update').disabled = false;
+            document.querySelector('#create').disabled = true;
         }
         else { }
     };
@@ -79,11 +81,11 @@ const searchCompaniesAdmin = (search, page) => {
                 <td>${company.name_com}</td>
                 <td>${company.sector_com}</td>
                 <td>${company.nb_interns_com}</td>
-                <td>${company.description_com.substring(1, 50) + '...'}</td> 
+                <td>${company.description_com.substring(0, 50) + '...'}</td> 
                 <td>${company.email_com}</td> 
                 <td id='logo-${company.id_com}'></td> 
-                <td><button type="button" onclick="deleteCompanyAdmin(${company.id_com})" class="btn btn-danger">Delete</button></td>
-                <td><button type="button" onclick="getCompanyAdmin(${company.id_com})" class="btn btn-warning">Upload</button></td>
+                <td><a type="button" onclick="deleteCompanyAdmin(${company.id_com})" class="btn btn-danger">Delete</a></td>
+                <td><a href="#" type="button" onclick="getCompanyAdmin(${company.id_com})" class="btn btn-warning">Upload</a></td>
                 </tr>`;
                 document.getElementById("logo-" + company.id_com).replaceChildren(logo);
 
@@ -100,7 +102,7 @@ const searchCompaniesAdmin = (search, page) => {
 
 const searchOffers = (search, page) => {
     var xhr = new XMLHttpRequest();
-    xhr.open("GET", "http://localhost/controllers/search-offers.php?search=" + encodeURIComponent(search) + "&page=" + page, true);
+    xhr.open("GET", "http://localhost/controllers/search-offers.php?limit=10000&search=" + encodeURIComponent(search) + "&page=" + page, true);
     xhr.withCredentials = true;
     xhr.onload = function () {
         var html = "";
@@ -108,17 +110,35 @@ const searchOffers = (search, page) => {
             result = JSON.parse(xhr.response);
             offers = result.data;
             offers.forEach(offer => {
-                var logo = new Image();
+                var src = 'data:image;base64,' + offer.logo_com;
+                
 
-                logo.src = 'data:image;base64,' + offer.logo_com;
-                logo.className = "company-logo";
-                logo.style = "width: 128px;";
-                // generer les cards ici
-                //...
-                /*
-                document.body.innerHTML += (`<p> ${offer.name_offer} ${offer.level_offer} ${offer.pay_offer} ${offer.date_offer} ${offer.available_places_offer} ${offer.description_offer} ${offer.name_com} ${offer.sector_com}</p>`);
-                document.body.appendChild(logo);
-                */
+                document.getElementById('offers-cards').innerHTML += `
+                <div class="card-offer" style="width: 80%;">
+                <div class="card mb-3" >
+                    <div class="row g-0">
+                      <div class="col-md-4">
+                        <img src="${src}" class="img-fluid" alt="${offer.name_offer}" style="height: 160px; margin: 20px; border-radius: 10px;
+                        object-fit: contain;
+                        width: 145px;
+                        background-color: #efefef;">
+                      </div>
+                      <div class="col-md-6">
+                        <div class="card-body">
+                          <h5 class="card-title">${offer.name_offer}</h5>
+                          <p class="card-text"><small class="text-muted">from ${offer.name_com}</small></p>
+                          <p class="card-text">${offer.description_offer.substring(0, 200) + '...'}</p>
+                        </div>
+                      </div>
+                      <div class="col-md-2 d-flex justify-content-center align-items-center flex-column">
+                      <h6 class="card-title">${offer.internship_length_offer} Months</h5>
+                      <h6 class="card-title">${offer.available_places_offer} Places</h5>
+                      <h6 class="card-title">${offer.level_offer} Level</h5>
+                      </div>
+                    </div>
+                  </div>
+            </div>`
+
             });
         }
         else { }
@@ -220,7 +240,7 @@ const company = () => {
         xhr.open('POST', url);
         xhr.send(formData);
         form.reset();
-        window.location.reload(true);
+        //window.location.reload(true);
     });
 
     const update = document.querySelector('#update');
@@ -259,6 +279,8 @@ const company = () => {
         xhr.open('POST', url);
         xhr.send(formData);
         form.reset();
+        create.disabled = false;
+        update.disabled = true;
         window.location.reload(true);
     });
 
@@ -360,3 +382,47 @@ const getOffer = (id_offer) => {
     };
     xhr.send(); //Envoi de la requête au serveur (asynchrone par défaut)
 }
+
+const searchCompanies = (search, page) => {
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "http://localhost/controllers/search-companies.php?limit=10000&search=" + encodeURIComponent(search) + "&page=" + page, true);
+    xhr.withCredentials = true;
+    xhr.onload = function () {
+        var html = "";
+        if (xhr.status == 200) {
+            result = JSON.parse(xhr.response);
+            companies = result.data;
+            companies.forEach(company => {
+                var src = 'data:image;base64,' + company.logo_com;
+                var card_area = document.querySelector('#companies-cards');
+
+                card_area.innerHTML += `<div class="mini-card-4" id="card-${company.id_com}">
+                <div class="overlap-group1">
+                  <img class="image-3" src="${src}" id="logo-${company.id_com}"/>
+                </div>
+                <div class="flex-row-1">
+                  <div class="productivity">${company.sector_com}</div>
+                  <div class="x3-days-ago">${company.nb_interns_com} Interns</div>
+                </div>
+                <div class="heading-description">
+                  <div class="x7-skills-of-highly-e">${company.name_com}</div>
+                  <p class="our-team-was-inspire">
+                    ${company.description_com.substring(0, 150) + '...'}
+                  </p>
+                </div>
+                <div class="read-more opensans-semi-bold-azure-radiance-11px">
+                  <a href="#" class="opensans-semi-bold-azure-radiance-11px">Read more </a>
+                </div>
+              </div>`;
+                //document.getElementById("logo-" + company.id_com).replaceChildren(logo);
+
+
+            });
+
+        }
+        else { }
+
+        //document.getElementById("companies-cards").innerHTML = html;
+    };
+    xhr.send(); //Envoi de la requête au serveur (asynchrone par défaut)
+};
