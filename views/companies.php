@@ -24,33 +24,12 @@ if (!(has_student_access_level() || has_admin_access_level() || has_pilot_access
 <body>
     <?='Logged in as: '.$_SESSION['name'];?>
     <h1>Companies</h1>
+    <input id="search" type="text" oninput="searchCompanies(document.getElementById('search').value ,1)">
+    <script src="/views/assets/scripts/functions.js"></script>
     <script>
-        const getLogos = () => {
-            var xhr = new XMLHttpRequest();
-            xhr.open("GET", "./controllers/search-companies.php?limit=50", true);
-            xhr.withCredentials = true;
-            xhr.onload = function () {
-                var html = "";
-                if (xhr.status == 200) {
-                    var response = JSON.parse(xhr.response);
-                    var data = response.data;
-                    data.forEach(company => {
-                        var image = new Image();
-                        
-                        image.src = 'data:image;base64,' + company.logo_com;
-                        image.className = 'company-logo';
-                        document.body.appendChild(image);
-                    });
-                }
-                else { }
-            };
-            xhr.send(); //Envoi de la requête au serveur (asynchrone par défaut)
-        };
-
         document.body.onload = () => {
-            getLogos();
+            searchCompanies('', 1);
         }
-
     </script>
 </body>
 </html>

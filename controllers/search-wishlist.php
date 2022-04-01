@@ -12,7 +12,7 @@ require_once('../models/model.php');
 
 $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
 $limit = isset($_GET['limit']) ? (int)$_GET['limit'] : 10;
-$search = isset($_GET['search']) ? $_GET['search'] : '';
+$search = isset($_GET['search']) ? ($_GET['search']) : '';
 $id_student = $_SESSION['id_user'];
 $offset = ($page - 1) * $limit;
 $binds = array(

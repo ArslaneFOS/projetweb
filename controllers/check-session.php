@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once('../models/model.php');
+require_once('/home/arslane/www-prj/projetweb-1/models/model.php');
 
 function has_student_access_level()
 {
