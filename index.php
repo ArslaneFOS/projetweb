@@ -15,7 +15,7 @@ if (isset($_GET['page'])) {
             include('views/wishlist.php');
             break;
         case 'login':
-            include('views/login.html');
+            include('views/login.php');
             break;
         case 'users':
             include('views/users.php');
