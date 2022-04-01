@@ -15,7 +15,20 @@ if (isset($_GET['page'])) {
             include('views/wishlist.php');
             break;
         case 'login':
+<<<<<<< HEAD
+            include('views/login.php');
+            break;
+
+            /*
+=======
             include('views/login.html');
+<<<<<<< HEAD
+=======
+            break;/*
+>>>>>>> 756ea0bed142f9d00678e0ae60c027c8cc2c9079
+        case 'offers':
+            include('views/offers.php');
+>>>>>>> 15db795fb188fba600929472728d6457dbfacd3e
             break;
         case 'users':
             include('views/users.php');

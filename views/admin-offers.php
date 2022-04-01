@@ -33,7 +33,7 @@
     <div class="container d-flex align-items-center justify-content-between">
 
       <div class="logo">
-        <h1 class="text-light"><a href="home.php"><span>TEST</span></a></h1>
+        <h1 class="text-light"><a href="home.php"><span>OFFERS</span></a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html"><img src="/views/assets/img/logo.png" alt="" class="img-fluid"></a>-->
       </div>
@@ -213,7 +213,7 @@
                 <td><button type="button">Delete</button></td>
                 <td><button type="button">Upload</button></td>
             </tr>
-            
+
         </tbody>
         <tfoot>
            <tr>
