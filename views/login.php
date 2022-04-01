@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 
 <html>
@@ -11,14 +12,14 @@
         <link href="/views/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script src="/views/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    
+       
     </head>
     <body>
         <header id="header" class="fixed-top d-flex align-items-center">
             <div class="container d-flex align-items-center justify-content-between">
         
               <div class="logo">
-                <img src="/views/assets/img/neo-neo-logo.svg">
+                <img src="/views/assets/img/neo-neo-logo_1.svg">
               </div>
         
               <nav id="navbar" class="navbar">
@@ -132,7 +133,7 @@
     <div class="card mb-3" style="max-width: 540px;">
         <div class="row g-0">
           <div class="col-md-4">
-            <img src="..." class="img-fluid rounded-start" alt="...">
+            <img src="" class="img-fluid rounded-start" alt="...">
           </div>
           <div class="col-md-8">
             <div class="card-body">
