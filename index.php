@@ -14,10 +14,10 @@ if (isset($_GET['page'])) {
         case 'wishlist':
             include('views/wishlist.php');
             break;
-            /*
-        case 'offers':
-            include('views/offers.php');
-            break;
+            
+        case 'login':
+            include('views/login.html');
+            break;/*
         case 'offers':
             include('views/offers.php');
             break;
