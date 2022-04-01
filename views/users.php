@@ -7,6 +7,15 @@
     <title>Interns</title>
 </head>
 <body>
-    
+    <h1>Users</h1>
+    <input id="firstname" type="text" oninput="searchUsers(document.getElementById('firstname').value, document.getElementById('lastname').value ,1)">
+    <input id="lastname" type="text" oninput="searchUsers(document.getElementById('firstname').value, document.getElementById('lastname').value ,1)">
+
+    <script src="/views/assets/scripts/functions.js"></script>
+    <script>
+        document.body.onload = () => {
+            searchUsers('', '', 1);
+        }
+    </script>
 </body>
 </html>

@@ -14,13 +14,12 @@ if (isset($_GET['page'])) {
         case 'wishlist':
             include('views/wishlist.php');
             break;
-            
         case 'login':
             include('views/login.html');
-            break;/*
-        case 'offers':
-            include('views/offers.php');
             break;
+        case 'users':
+            include('views/users.php');
+            break;/*
         case 'offers':
             include('views/offers.php');
             break;
@@ -70,6 +69,9 @@ if (isset($_GET['page'])) {
             die();
         case 'test/application-update':
             include('views/tests/application-update.html');
+            die();
+        default:
+            echo 404;
             die();
     }
 } else {

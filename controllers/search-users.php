@@ -14,8 +14,8 @@ require_once('../models/model.php');
 
 $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
 $limit = isset($_GET['limit']) ? (int)$_GET['limit'] : 10;
-$firstname = isset($_GET['firstname']) ? $_GET['firstname'] : '';
-$lastname = isset($_GET['lastname']) ? $_GET['lastname'] : '';
+$firstname = isset($_GET['firstname']) ? ($_GET['firstname']) : '';
+$lastname = isset($_GET['lastname']) ? ($_GET['lastname']) : '';
 $offset = ($page - 1) * $limit;
 $binds = array(
     ':limit' => array($limit, PDO::PARAM_INT),
