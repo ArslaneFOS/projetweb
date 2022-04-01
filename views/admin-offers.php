@@ -57,22 +57,26 @@
         <thead>
             <tr>
                 <th>ID</th>
-                <th>Last Name</th>
-                <th>FirstName</th>
-                <th>ID Promotion</th>
-                <th>Login</th>
-                <th>Password</th> 
-                <th>Id Center</th> 
+                <th>Name</th>
+                <th>Level</th>
+                <th>duration</th>
+                <th>Pay(Euro/h)</th> 
+                <th>Date Posted</th> 
+                <th>Places</th> 
+                <th>Description</th> 
+                <th>Id Company</th> 
                 <th></th>
                 <th></th>
             </tr>
             <tr>
                 <th> <input size="5" id="input" type="text" name="ID"></th>
-                <th><input size="15" id="example" type="text" name="last Name"></th>
-                <th><input size="15" id="example" type="text" name="First Name"></th>
-                <th><input size="5" list="Id Promotion"><datalist id="Id Promotion"><option value="1"><option value="2"><option value="3"><option value="4"><option value="5"></datalist></th> 
-                <th><input size="10" id="example" type="text" name="Login"></th>
-                <th><input size="10" id="example" type="text" name="Password"></th>
+                <th><input size="15" id="Description" type="text" name="Name"></th>
+                <th><input size="5" list="Level"><datalist id="Level"><option value="A1"><option value="A2"><option value="A3"><option value="A4"><option value="A5"></datalist></th> 
+                <th><input size="5" list="Duration"><datalist id="Duration"><option value="1"><option value="2"><option value="3"><option value="4"><option value="5"><option value="6"><option value="7"><option value="8"><option value="9"><option value="10"><option value="11"><option value="12"></datalist></th>
+                <th><input type="number" id="pay" name="pay" min="12" max="150"></th>
+                <th><input id="date posted" type="date" value="2022-04-01"></th>
+                <th><input size="5" list="Places"><datalist id="Places"><option value="1"><option value="2"><option value="3"><option value="4"><option value="5"></datalist></th> 
+                <th><input size="25" id="Description" type="text" name="Description"></th>
                 <th><input size="5" list="Id Center"><datalist id="Id Center"><option value="1"><option value="2"><option value="3"><option value="4"><option value="5"></datalist></th> 
                 <th><button type="button">Add</button></th>
                 <th><button type="button">Download</button></th>
@@ -81,102 +85,147 @@
         <tbody>
             <tr>
                 <td>1</td>
-                <td>Sahlaka</td>
-                <td>Bahlaka</td>
-                <td>61</td>
-                <td>ShalakaB</td>
-                <td>P@ssw0rd</td>
+                <td>Mobile Dev</td>
+                <td>A2</td>
+                <td>3</td>
+                <td>23€</td>
+                <td>2015-10-21</td>
                 <td>4</td>
-                <td><button type="button">Delete</button></td>
-                <td><button type="button">Upload</button></td>
-            </tr>
-              <tr>
-                <td>1</td>
-                <td>Sahlaka</td>
-                <td>Bahlaka</td>
-                <td>61</td>
-                <td>ShalakaB</td>
-                <td>P@ssw0rd</td>
-                <td>4</td>
+                <td>Best Company In The World</td>
+                <td>17</td>
                 <td><button type="button">Delete</button></td>
                 <td><button type="button">Upload</button></td>
             </tr>
             <tr>
                 <td>1</td>
-                <td>Sahlaka</td>
-                <td>Bahlaka</td>
-                <td>61</td>
-                <td>ShalakaB</td>
-                <td>P@ssw0rd</td>
+                <td>Mobile Dev</td>
+                <td>A2</td>
+                <td>3</td>
+                <td>23€</td>
+                <td>2015-10-21</td>
                 <td>4</td>
+                <td>Best Company In The World</td>
+                <td>17</td>
                 <td><button type="button">Delete</button></td>
                 <td><button type="button">Upload</button></td>
             </tr>
             <tr>
                 <td>1</td>
-                <td>Sahlaka</td>
-                <td>Bahlaka</td>
-                <td>61</td>
-                <td>ShalakaB</td>
-                <td>P@ssw0rd</td>
+                <td>Mobile Dev</td>
+                <td>A2</td>
+                <td>3</td>
+                <td>23€</td>
+                <td>2015-10-21</td>
                 <td>4</td>
+                <td>Best Company In The World</td>
+                <td>17</td>
                 <td><button type="button">Delete</button></td>
                 <td><button type="button">Upload</button></td>
             </tr>
             <tr>
                 <td>1</td>
-                <td>Sahlaka</td>
-                <td>Bahlaka</td>
-                <td>61</td>
-                <td>ShalakaB</td>
-                <td>P@ssw0rd</td>
+                <td>Mobile Dev</td>
+                <td>A2</td>
+                <td>3</td>
+                <td>23€</td>
+                <td>2015-10-21</td>
                 <td>4</td>
+                <td>Best Company In The World</td>
+                <td>17</td>
                 <td><button type="button">Delete</button></td>
                 <td><button type="button">Upload</button></td>
             </tr>
             <tr>
                 <td>1</td>
-                <td>Sahlaka</td>
-                <td>Bahlaka</td>
-                <td>61</td>
-                <td>ShalakaB</td>
-                <td>P@ssw0rd</td>
+                <td>Mobile Dev</td>
+                <td>A2</td>
+                <td>3</td>
+                <td>23€</td>
+                <td>2015-10-21</td>
                 <td>4</td>
+                <td>Best Company In The World</td>
+                <td>17</td>
                 <td><button type="button">Delete</button></td>
                 <td><button type="button">Upload</button></td>
             </tr>
             <tr>
                 <td>1</td>
-                <td>Sahlaka</td>
-                <td>Bahlaka</td>
-                <td>61</td>
-                <td>ShalakaB</td>
-                <td>P@ssw0rd</td>
+                <td>Mobile Dev</td>
+                <td>A2</td>
+                <td>3</td>
+                <td>23€</td>
+                <td>2015-10-21</td>
                 <td>4</td>
+                <td>Best Company In The World</td>
+                <td>17</td>
                 <td><button type="button">Delete</button></td>
                 <td><button type="button">Upload</button></td>
             </tr>
             <tr>
                 <td>1</td>
-                <td>Sahlaka</td>
-                <td>Bahlaka</td>
-                <td>61</td>
-                <td>ShalakaB</td>
-                <td>P@ssw0rd</td>
+                <td>Mobile Dev</td>
+                <td>A2</td>
+                <td>3</td>
+                <td>23€</td>
+                <td>2015-10-21</td>
                 <td>4</td>
+                <td>Best Company In The World</td>
+                <td>17</td>
                 <td><button type="button">Delete</button></td>
                 <td><button type="button">Upload</button></td>
             </tr>
+            <tr>
+                <td>1</td>
+                <td>Mobile Dev</td>
+                <td>A2</td>
+                <td>3</td>
+                <td>23€</td>
+                <td>2015-10-21</td>
+                <td>4</td>
+                <td>Best Company In The World</td>
+                <td>17</td>
+                <td><button type="button">Delete</button></td>
+                <td><button type="button">Upload</button></td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Mobile Dev</td>
+                <td>A2</td>
+                <td>3</td>
+                <td>23€</td>
+                <td>2015-10-21</td>
+                <td>4</td>
+                <td>Best Company In The World</td>
+                <td>17</td>
+                <td><button type="button">Delete</button></td>
+                <td><button type="button">Upload</button></td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Mobile Dev</td>
+                <td>A2</td>
+                <td>3</td>
+                <td>23€</td>
+                <td>2015-10-21</td>
+                <td>4</td>
+                <td>Best Company In The World</td>
+                <td>17</td>
+                <td><button type="button">Delete</button></td>
+                <td><button type="button">Upload</button></td>
+            </tr>
+            
         </tbody>
         <tfoot>
-            <tr>
+           <tr>
                 <th>ID</th>
-                <th>Last Name</th>
-                <th>FirstName</th>
-                <th>ID Promotion</th>
-                <th>Login</th>
-                <th>Password</th> 
-                <th>Id Center</th> 
+                <th>Name</th>
+                <th>Level</th>
+                <th>duration</th>
+                <th>Pay(Euro/h)</th> 
+                <th>Date Posted</th> 
+                <th>Places</th> 
+                <th>Description</th> 
+                <th>Id Company</th> 
                 <th></th>
                 <th></th>
             </tr>
