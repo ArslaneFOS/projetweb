@@ -19,14 +19,14 @@ const getCompaniesNames = () => {
     xhr.send(); //Envoi de la requête au serveur (asynchrone par défaut)
 };
 
-const getCompany = (id_com) => {
+const getCompanyAdmin = (id_com) => {
     var xhr = new XMLHttpRequest();
     xhr.open("GET", "/controllers/get-company.php?id_com=" + id_com, true);
     xhr.withCredentials = true;
     xhr.onload = function () {
         if (xhr.status == 200) {
             var company = JSON.parse(xhr.response);
-
+            document.getElementById('id_com').value = company.id_com;
             document.getElementById('name_com').value = company.name_com;
             document.getElementById('sector_com').value = company.sector_com;
             document.getElementById('nb_interns_com').value = company.nb_interns_com;
@@ -43,9 +43,22 @@ const getCompany = (id_com) => {
     xhr.send(); //Envoi de la requête au serveur (asynchrone par défaut)
 }
 
-const searchCompanies = (search, page) => {
+const deleteCompanyAdmin = (id_com) => {
     var xhr = new XMLHttpRequest();
-    xhr.open("GET", "http://localhost/controllers/search-companies.php?search=" + encodeURIComponent(search) + "&page=" + page, true);
+    xhr.open("GET", "/controllers/delete-company.php?id_com=" + id_com, true);
+    xhr.withCredentials = true;
+    xhr.onload = function () {
+        if (xhr.status == 200) {
+            window.location.reload(true);
+        }
+        else { }
+    };
+    xhr.send(); //Envoi de la requête au serveur (asynchrone par défaut)
+}
+
+const searchCompaniesAdmin = (search, page) => {
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "http://localhost/controllers/search-companies.php?limit=10000&search=" + encodeURIComponent(search) + "&page=" + page, true);
     xhr.withCredentials = true;
     xhr.onload = function () {
         var html = "";
@@ -57,9 +70,22 @@ const searchCompanies = (search, page) => {
 
                 logo.src = 'data:image;base64,' + company.logo_com;
                 logo.className = "company-logo";
-                logo.style = "width: 128px";
-                // generer les cards ici
-                //...
+                logo.style = "width: 40px";
+                const table = document.querySelector('tbody');
+
+
+                table.innerHTML += `<tr>
+                <td>${company.id_com}</td>
+                <td>${company.name_com}</td>
+                <td>${company.sector_com}</td>
+                <td>${company.nb_interns_com}</td>
+                <td>${company.description_com.substring(1, 50) + '...'}</td> 
+                <td>${company.email_com}</td> 
+                <td id='logo-${company.id_com}'></td> 
+                <td><button type="button" onclick="deleteCompanyAdmin(${company.id_com})" class="btn btn-danger">Delete</button></td>
+                <td><button type="button" onclick="getCompanyAdmin(${company.id_com})" class="btn btn-warning">Upload</button></td>
+                </tr>`;
+                document.getElementById("logo-" + company.id_com).replaceChildren(logo);
 
 
             });
@@ -194,6 +220,7 @@ const company = () => {
         xhr.open('POST', url);
         xhr.send(formData);
         form.reset();
+        window.location.reload(true);
     });
 
     const update = document.querySelector('#update');
@@ -232,6 +259,7 @@ const company = () => {
         xhr.open('POST', url);
         xhr.send(formData);
         form.reset();
+        window.location.reload(true);
     });
 
 }
@@ -291,8 +319,8 @@ const offer = () => {
             //console.log(input);
             name_input = input.name;
 
-                value = input.value;
-                formData.append(name_input, value);
+            value = input.value;
+            formData.append(name_input, value);
 
         });
 

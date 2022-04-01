@@ -1,16 +1,26 @@
+<?php
+require_once('/home/arslane/www-prj/projetweb-1/controllers/check-session.php');
+if (!(has_admin_access_level() || has_pilot_access_level() || (has_representative_access_level('sfx3') && has_representative_access_level('sfx4') && has_representative_access_level('sfx5') && has_representative_access_level('sfx6')))) {
+  echo "Access Denied.";
+  die();
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Companies</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css" rel="stylesheet">
-<link href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css" rel="stylesheet">
-<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
-<link href="/views/assets/img/apple-touch-icon.png" rel="apple-touch-icon"> 
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Companies</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
+  <link href="/views/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
   <link href="/views/assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="/views/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -27,9 +37,13 @@
   <script src="/views/assets/vendor/php-email-form/validate.js"></script>
   <script src="/views/assets/js/main.js"></script>
   <link rel="icon" href="https://img.icons8.com/external-smashingstocks-isometric-smashing-stocks/55/000000/external-web-link-seo-and-marketing-smashingstocks-isometric-smashing-stocks.png">
+
+  <script src="/views/assets/scripts/functions.js"></script>
+
 </head>
+
 <body>
-<header >
+  <header>
     <div class="container d-flex align-items-center justify-content-between">
 
       <div class="logo">
@@ -44,7 +58,7 @@
           <li><a class="nav-link scrollto" href="#offers">Offers</a></li>
           <li><a class="nav-link scrollto" href="#companies">Companies</a></li>
           <li><a class="nav-link scrollto" href="#portfolio">Interns</a></li>
-        
+
           <li><a class="getstarted scrollto" href="./login.html">Login</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
@@ -53,134 +67,68 @@
     </div>
   </header>
   <main>
-<table id="example" class="table table-striped" style="width:100%">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Field</th>
-                <th>NB Interns</th>
-                <th>Description</th> 
-                <th>Email</th> 
-                <th>Logo</th> 
-                <th></th>
-                <th></th>
-            </tr>
-            <tr>
-                <th> <input size="5" id="input" type="text" name="ID"></th>
-                <th><input size="15" id="Description" type="text" name="Name"></th>
-                <th><input size="15" id="Field" type="text" name="Field"></th>
-                <th> <input size="5" id="NB interns" type="text" name="Interns Number"></th>
-                <th><input size="25" id="Description" type="text" name="Description"></th>
-                <th><input size="25" id="email" type="text" name="email"></th>
-                <th><button type="button">Upload Logo</button></th>
-                <th><button type="button">Add</button></th>
-                <th><button type="button">Download</button></th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>82</td>
-                <td>Sahlaka Industries</td>
-                <td>Tssahlik</td>
-                <td>0</td>
-                <td>Best Company in the world</td> 
-                <td>sahlaka.bahlaka@sahlaka.com</td> 
-                <td>Logo png</td> 
-                <td><button type="button">Delete</button></td>
-                <td><button type="button">Upload</button></td>
-            </tr>
-            <tr>
-                <td>82</td>
-                <td>Sahlaka Industries</td>
-                <td>Tssahlik</td>
-                <td>0</td>
-                <td>Best Company in the world</td> 
-                <td>sahlaka.bahlaka@sahlaka.com</td> 
-                <td>Logo png</td> 
-                <td><button type="button">Delete</button></td>
-                <td><button type="button">Upload</button></td>
-            </tr>
-            <tr>
-                <td>82</td>
-                <td>Sahlaka Industries</td>
-                <td>Tssahlik</td>
-                <td>0</td>
-                <td>Best Company in the world</td> 
-                <td>sahlaka.bahlaka@sahlaka.com</td> 
-                <td>Logo png</td> 
-                <td><button type="button">Delete</button></td>
-                <td><button type="button">Upload</button></td>
-            </tr>
-            <tr>
-                <td>82</td>
-                <td>Sahlaka Industries</td>
-                <td>Tssahlik</td>
-                <td>0</td>
-                <td>Best Company in the world</td> 
-                <td>sahlaka.bahlaka@sahlaka.com</td> 
-                <td>Logo png</td> 
-                <td><button type="button">Delete</button></td>
-                <td><button type="button">Upload</button></td>
-            </tr>
-            <tr>
-                <td>82</td>
-                <td>Sahlaka Industries</td>
-                <td>Tssahlik</td>
-                <td>0</td>
-                <td>Best Company in the world</td> 
-                <td>sahlaka.bahlaka@sahlaka.com</td> 
-                <td>Logo png</td> 
-                <td><button type="button">Delete</button></td>
-                <td><button type="button">Upload</button></td>
-            </tr>
-            <tr>
-                <td>82</td>
-                <td>Sahlaka Industries</td>
-                <td>Tssahlik</td>
-                <td>0</td>
-                <td>Best Company in the world</td> 
-                <td>sahlaka.bahlaka@sahlaka.com</td> 
-                <td>Logo png</td> 
-                <td><button type="button">Delete</button></td>
-                <td><button type="button">Upload</button></td>
-            </tr>
-            <tr>
-                <td>82</td>
-                <td>Sahlaka Industries</td>
-                <td>Tssahlik</td>
-                <td>0</td>
-                <td>Best Company in the world</td> 
-                <td>sahlaka.bahlaka@sahlaka.com</td> 
-                <td>Logo png</td> 
-                <td><button type="button">Delete</button></td>
-                <td><button type="button">Upload</button></td>
-            </tr>
+    <table id="example" class="table table-striped" style="width:100%">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Field</th>
+          <th>NB Interns</th>
+          <th>Description</th>
+          <th>Email</th>
+          <th>Logo</th>
+          <th></th>
+          <th></th>
+        </tr>
+        <tr>
+          <form>
+            <th> <input size="5" id="id_com" type="text" name="id_com" disabled></th>
+            <th><input size="15" id="name_com" type="text" name="name_com" required></th>
+            <th><select name="sector_com" id="sector_com" required>
+                <option value="Assistance">Assistance</option>
+                <option value="Conseils, audit">Conseil, audit</option>
+                <option value="Developpement logiciel">Développement logiciel</option>
+                <option value="Developpement progiciel, gestion">Développement progiciel</option>
+                <option value="Fournisseur Internet">Fournisseur internet</option>
+                <option value="Hebergement de site web">Hébergement sites web</option>
+                <option value="Industriel">Industriel</option>
+                <option value="Installation, maintenance reseaux">Installation Réseaux</option>
+                <option value="Developpement et programmation">Dev et programmation</option>
+              </select></th>
+            <th> <input size="5" id="nb_interns_com" type="number" name="nb_interns_com" required></th>
+            <th><input size="25" id="description_com" type="text" name="description_com" required></th>
+            <th><input size="25" id="email_com" type="email" name="email_com" required></th>
+            <th><label for="logo_com" class="btn btn-primary">Upload Logo</label><input type="file" id="logo_com" name="logo_com" accept=".jpg, .jpeg, .png" style="display: none;" /></th>
+            <th><button type="button" id="create" class="btn btn-primary">Add</button></th>
+            <th><button type="button" id="update" class="btn btn-secondary">Download</button></th>
+          </form>
+        </tr>
+      </thead>
+      <tbody>
 
-
-        </tbody>
-        <tfoot>
-           <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Field</th>
-                <th>NB Interns</th>
-                <th>Description</th> 
-                <th>Email</th> 
-                <th>Logo</th> 
-                <th></th>
-                <th></th>
-            </tr>
-        </tfoot>
+      </tbody>
+      <tfoot>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Field</th>
+          <th>NB Interns</th>
+          <th>Description</th>
+          <th>Email</th>
+          <th>Logo</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </tfoot>
     </table>
-</main>
-<footer id="footer">
+  </main>
+  <footer id="footer">
 
     <div class="footer-newsletter">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-lg-6">
-            
+
           </div>
         </div>
       </div>
@@ -193,7 +141,7 @@
           <div class="col-lg-3 col-md-6 footer-contact">
             <h3>Telhaguhoum Inc</h3>
             <p>
-             Je m'en fou <br>
+              Je m'en fou <br>
               Birkhadem<br>
               United Tixeraines <br><br>
               <strong>Phone:</strong> +213 550 214 991<br>
@@ -241,13 +189,22 @@
 
     <div class="container py-4">
       <div class="copyright">
-      
+
       </div>
       <div class="credits">
-        
+
         Designed by <a href="#">Tonton</a>
       </div>
     </div>
   </footer>
+
+  <script>
+    document.body.onload = () => {
+      company();
+      searchCompaniesAdmin('', 1);
+      document.getElementById('id_com').oninput = () => getCompany(document.getElementById('id_com').value);
+    }
+  </script>
 </body>
+
 </html>
