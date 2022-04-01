@@ -15,46 +15,7 @@
        
     </head>
     <body>
-        <header id="header" class="fixed-top d-flex align-items-center">
-            <div class="container d-flex align-items-center justify-content-between">
         
-              <div class="logo">
-                <img src="/views/assets/img/neo-neo-logo_1.svg">
-              </div>
-        
-              <nav id="navbar" class="navbar">
-                <ul>
-                  <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-                  <li><a class="nav-link scrollto" href="#offers">Offers</a></li>
-                  <li><a class="nav-link scrollto" href="#companies">Companies</a></li>
-                  <li><a class="nav-link scrollto" href="#portfolio">Interns</a></li>
-                  <li><a class="nav-link scrollto" href="#portfolio">|</a></li>
-                  <!--<li><a class="nav-link scrollto" href="#team">Login</a></li>
-                  <li class="dropdown"><a href="#"><span>Random DropDown</span> <i class="bi bi-chevron-down"></i></a>
-                    <ul>
-                      <li><a href="#">Drop Down 1</a></li>
-                      <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
-                        <ul>
-                          <li><a href="#">Deep Drop Down 1</a></li>
-                          <li><a href="#">Deep Drop Down 2</a></li>
-                          <li><a href="#">Deep Drop Down 3</a></li>
-                          <li><a href="#">Deep Drop Down 4</a></li>
-                          <li><a href="#">Deep Drop Down 5</a></li>
-                        </ul>
-                      </li>
-                      <li><a href="#">Drop Down 2</a></li>
-                      <li><a href="#">Drop Down 3</a></li>
-                      <li><a href="#">Drop Down 4</a></li>
-                    </ul>
-                  </li>
-                  <li><a class="nav-link scrollto" href="#contact">Contact</a></li> -->
-                  <li><a class="nav-link scrollto" href="./login.html">Login</a></li>
-                </ul>
-                
-              </nav><!-- .navbar -->
-        
-            </div>
-          </header><!-- End Header -->
 <main>
     <div id="main-wrapper" class="container">
     <div class="row justify-content-center">
@@ -114,37 +75,8 @@
     <!-- Row -->
 </div>
 </main>
-<div class="card-company">
-    <div class="card mb-3">
-        <div class="card-img-company">
-        <img class="img-company" src="./assets/img/clients/client-1.png" class="card-img-top" alt="...">
-        </div>
-        <div class="card-body">
-          <h5 class="card-title">Myob INC</h5>
-          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-          <a class="card-text">Read more</a>
-        </div>
-      </div>
 
 
-</div>
-<div class="card-offer">
-    <div class="card mb-3" style="max-width: 540px;">
-        <div class="row g-0">
-          <div class="col-md-4">
-            <img src="" class="img-fluid rounded-start" alt="...">
-          </div>
-          <div class="col-md-8">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-            </div>
-          </div>
-        </div>
-      </div>
-</div>
 <footer>
     
     <div class="footer">
@@ -209,11 +141,6 @@
             </div>
     </div>
 </footer>
-<div class="input-group rounded">
-  <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
-  <span class="input-group-text border-0" id="search-addon">
-    <i class="fas fa-search"></i>
-  </span>
-</div>
+
     </body>
 </html>
