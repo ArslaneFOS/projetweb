@@ -36,7 +36,9 @@ const getCompanyAdmin = (id_com) => {
             logo.src = 'data:image;base64,' + company.logo_com;
             logo.className = 'company-logo';
             logo.style = 'width:100%;';
-            document.getElementById('logo').replaceChildren(logo);
+            //document.getElementById('logo').replaceChildren(logo);
+            document.querySelector('#update').disabled = false;
+            document.querySelector('#create').disabled = true;
         }
         else { }
     };
@@ -79,11 +81,11 @@ const searchCompaniesAdmin = (search, page) => {
                 <td>${company.name_com}</td>
                 <td>${company.sector_com}</td>
                 <td>${company.nb_interns_com}</td>
-                <td>${company.description_com.substring(1, 50) + '...'}</td> 
+                <td>${company.description_com.substring(0, 50) + '...'}</td> 
                 <td>${company.email_com}</td> 
                 <td id='logo-${company.id_com}'></td> 
-                <td><button type="button" onclick="deleteCompanyAdmin(${company.id_com})" class="btn btn-danger">Delete</button></td>
-                <td><button type="button" onclick="getCompanyAdmin(${company.id_com})" class="btn btn-warning">Upload</button></td>
+                <td><a type="button" onclick="deleteCompanyAdmin(${company.id_com})" class="btn btn-danger">Delete</a></td>
+                <td><a href="#" type="button" onclick="getCompanyAdmin(${company.id_com})" class="btn btn-warning">Upload</a></td>
                 </tr>`;
                 document.getElementById("logo-" + company.id_com).replaceChildren(logo);
 
@@ -220,7 +222,7 @@ const company = () => {
         xhr.open('POST', url);
         xhr.send(formData);
         form.reset();
-        window.location.reload(true);
+        //window.location.reload(true);
     });
 
     const update = document.querySelector('#update');
@@ -259,6 +261,8 @@ const company = () => {
         xhr.open('POST', url);
         xhr.send(formData);
         form.reset();
+        create.disabled = false;
+        update.disabled = true;
         window.location.reload(true);
     });
 
@@ -360,3 +364,47 @@ const getOffer = (id_offer) => {
     };
     xhr.send(); //Envoi de la requête au serveur (asynchrone par défaut)
 }
+
+const searchCompanies = (search, page) => {
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "http://localhost/controllers/search-companies.php?limit=10000&search=" + encodeURIComponent(search) + "&page=" + page, true);
+    xhr.withCredentials = true;
+    xhr.onload = function () {
+        var html = "";
+        if (xhr.status == 200) {
+            result = JSON.parse(xhr.response);
+            companies = result.data;
+            companies.forEach(company => {
+                var src = 'data:image;base64,' + company.logo_com;
+                var card_area = document.querySelector('#companies-cards');
+
+                card_area.innerHTML += `<div class="mini-card-4" id="card-${company.id_com}">
+                <div class="overlap-group1">
+                  <img class="image-3" src="${src}" id="logo-${company.id_com}"/>
+                </div>
+                <div class="flex-row-1">
+                  <div class="productivity">${company.sector_com}</div>
+                  <div class="x3-days-ago">${company.nb_interns_com} Interns</div>
+                </div>
+                <div class="heading-description">
+                  <div class="x7-skills-of-highly-e">${company.name_com}</div>
+                  <p class="our-team-was-inspire">
+                    ${company.description_com.substring(0,150) + '...'}
+                  </p>
+                </div>
+                <div class="read-more opensans-semi-bold-azure-radiance-11px">
+                  <a href="#" class="opensans-semi-bold-azure-radiance-11px">Read more </a>
+                </div>
+              </div>`;
+                //document.getElementById("logo-" + company.id_com).replaceChildren(logo);
+
+
+            });
+
+        }
+        else { }
+
+        //document.getElementById("companies-cards").innerHTML = html;
+    };
+    xhr.send(); //Envoi de la requête au serveur (asynchrone par défaut)
+};
