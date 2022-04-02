@@ -51,8 +51,8 @@ $user_type = @$_SESSION['user-type'];
               <nav id="navbar" class="navbar">
                 <ul>
                   <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-                  <li><a class="nav-link scrollto" href="#offers">Offers</a></li>
-                  <li><a class="nav-link scrollto" href="#companies">Companies</a></li>
+                  <li><a class="nav-link scrollto" href="#offerz">Offers</a></li>
+                  <li><a class="nav-link scrollto" href="#companiz">Companies</a></li>
                   <li><a class="nav-link scrollto" href="#portfolio">Interns</a></li>
                   <li><a class="nav-link scrollto" href="#portfolio">|</a></li>
                   <!--<li><a class="nav-link scrollto" href="#team">Login</a></li>
@@ -98,7 +98,7 @@ $user_type = @$_SESSION['user-type'];
           </div>
           <div class="container col-xxl-8 px-4 py-5">
     <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
-      <div class="col-10 col-sm-8 col-lg-6">
+      <div id="offerz" class="col-10 col-sm-8 col-lg-6">
         <img src="https://images.pexels.com/photos/4240580/pexels-photo-4240580.jpeg?cs=srgb&dl=pexels-ivan-samkov-4240580.jpg&fm=jpg" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
       </div>
       <div class="col-lg-6">
@@ -120,7 +120,7 @@ $user_type = @$_SESSION['user-type'];
         <h4 class="display-8 fw-bold lh-1 mb-3">MULTIPLE COMPAGNIES AVAILABLE IN A CLICK.</h4>
         <p class="lead">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
         <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-          <button type="button" class="btn btn-primary btn-lg px-4 me-md-2">Check Out Our Partners</button>
+          <button id="companiz" type="button" class="btn btn-primary btn-lg px-4 me-md-2">Check Out Our Partners</button>
           
         </div>
       </div>
