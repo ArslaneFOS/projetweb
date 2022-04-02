@@ -82,9 +82,9 @@ if (!(has_admin_access_level() || has_pilot_access_level() || (has_representativ
         <tr>
           <form>
             <th> <input size="5" id="id_com" type="text" name="id_com" disabled></th>
-            <th><input size="15" id="name_com" type="text" name="name_com" required></th>
+            <th><input size="15" id="name_com" type="text" name="name_com"></th>
             <th>
-              <select name="sector_com" id="sector_com" required>
+              <select name="sector_com" id="sector_com">
                 <option value="Assistance">Assistance</option>
                 <option value="Conseils, audit">Conseil, audit</option>
                 <option value="Developpement logiciel">Développement logiciel</option>
@@ -95,12 +95,13 @@ if (!(has_admin_access_level() || has_pilot_access_level() || (has_representativ
                 <option value="Installation, maintenance reseaux">Installation Réseaux</option>
                 <option value="Developpement et programmation">Dev et programmation</option>
               </select></th>
-            <th> <input size="5" id="nb_interns_com" type="number" name="nb_interns_com" required></th>
-            <th><textarea size="25" id="description_com" type="text" name="description_com" required></textarea></th>
-            <th><input size="25" id="email_com" type="email" name="email_com" required></th>
-            <th><label for="logo_com" class="btn btn-primary">Upload Logo</label><input type="file" id="logo_com" name="logo_com" accept=".jpg, .jpeg, .png" style="display: none;" /></th>
+            <th> <input size="5" id="nb_interns_com" type="number" name="nb_interns_com"></th>
+            <th><textarea rows="1" size="25" id="description_com" type="text" name="description_com"></textarea></th>
+            <th><input size="25" id="email_com" type="email" name="email_com"></th>
+            <th><label for="logo_com" class="btn btn-primary">Choose Logo</label><input type="file" id="logo_com" name="logo_com" accept=".jpg, .jpeg, .png" style="display: none;" /></th>
             <th><button type="button" id="create" class="btn btn-primary">Add</button></th>
             <th><button type="button" id="update" class="btn btn-info" disabled>Download</button></th>
+            <th><button class="btn btn-secondary" type="reset" onclick="document.getElementById('create').disabled = false; document.getElementById('update').disabled = true;">Reset</button></th>
           </form>
         </tr>
       </thead>

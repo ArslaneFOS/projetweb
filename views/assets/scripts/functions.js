@@ -424,8 +424,6 @@ const searchOfferAdmin = (search, page) => {
                 <td>${offer.available_places_offer}</td>
                 <td>${offer.description_offer.substring(0, 50) + '...'}</td>
                 <td>${offer.id_com}</td> 
-
-                <td id='logo-${offer.id_offer}'></td> 
                 <td><a type="button" onclick="deleteOfferAdmin(${offer.id_offer})" class="btn btn-danger">Delete</a></td>
                 <td><a href="#" type="button" onclick="getOfferAdmin(${offer.id_offer})" class="btn btn-warning">Upload</a></td>
                 </tr>`;
@@ -950,8 +948,8 @@ const searchPilotsAdmin = (search, page) => {
                 <td>${pilot.login}</td>
                 <td>${pilot.password.substring(0, 15)}...</td>
                 <td>${pilot.id_center}</td>
-                <td><button class="btn btn-danger" type="button" onclick="deleteUserAdmin('${rep.login}')">Delete</button></td>
-                <td><a href="#" class="btn btn-warning" type="button" onclick="getPilotAdmin(${rep.id_user})">Upload</a></td>
+                <td><button class="btn btn-danger" type="button" onclick="deleteUserAdmin('${pilot.login}')">Delete</button></td>
+                <td><a href="#" class="btn btn-warning" type="button" onclick="getPilotAdmin(${pilot.id_user})">Upload</a></td>
                 <td><button type="button">Modify</button></td>
             </tr>`;
                 //document.getElementById("logo-" + offer.id_offer).replaceChildren(logo);
