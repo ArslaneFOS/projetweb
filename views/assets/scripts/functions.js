@@ -1093,3 +1093,4 @@ const getOfferSkills = (id_offer) => {
     xhr.send(); //Envoi de la requête au serveur (asynchrone par défaut)
 }
 
+
