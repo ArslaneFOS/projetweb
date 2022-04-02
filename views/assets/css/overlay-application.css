@@ -15,7 +15,7 @@
 .frame {
   align-items: center;
   align-self: center;
-  background-color: var(--mist-gray);
+  background-color: var(--white);
   border-radius: 18.5px;
   display: flex;
   flex-direction: column;
@@ -33,6 +33,8 @@
   display: flex;
   margin-right: 6px;
   min-width: 172px;
+  align-items: center;
+  align-self: center;
 }
 
 .valign-text-middle {
