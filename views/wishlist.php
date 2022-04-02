@@ -56,7 +56,7 @@
           <div class="hero">
         <div class="search">
 
-            <input placeholder="Search for an Offer" class="component-2 search-for-an-offer valign-text-middle" id="search" type="text" oninput="searchCompanies(document.getElementById('search').value ,1)">
+            <input placeholder="Search for an Offer In Your Wishlist" class="component-2 search-for-an-offer valign-text-middle" id="search" type="text" oninput="searchCompanies(document.getElementById('search').value ,1)">
 
         </div>
     </div>
@@ -64,9 +64,6 @@
   <div id="wishlist-cards">
 
   </div>
-
-    <input id="search" type="text" oninput="searchWishlist(document.getElementById('search').value ,1)">
-
     <script src="/views/assets/scripts/functions.js"></script>
     <script>
     document.body.onload = () => {

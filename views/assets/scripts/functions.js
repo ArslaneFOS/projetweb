@@ -129,7 +129,9 @@ const searchOffers = (search, page) => {
                           <h5 class="card-title">${offer.name_offer}</h5>
                           <p class="card-text"><small class="text-muted">from ${offer.name_com}</small></p>
                           <p class="card-text">${offer.description_offer.substring(0, 200) + '...'}</p>
-                        </div>
+                          <div class="btn btn-secondary" onclick="addToWishlist(${offer.id_offer})">Add To Wishlist</div>
+                          <div class="btn btn-primary" >Apply</div>
+                          </div>
                       </div>
                       <div class="col-md-2 d-flex justify-content-center align-items-center flex-column">
                       <h6 class="card-title">${offer.internship_length_offer} Months</h5>
@@ -195,7 +197,7 @@ const searchUsers = (firstname, lastname, page) => {
 
 const searchWishlist = (search, page) => {
     var xhr = new XMLHttpRequest();
-    xhr.open("GET", "http://localhost/controllers/search-offers.php?search=" + encodeURIComponent(search) + "&page=" + page, true);
+    xhr.open("GET", "http://localhost/controllers/search-wishlist.php?search=" + encodeURIComponent(search) + "&page=" + page, true);
     xhr.withCredentials = true;
     xhr.onload = function () {
         var html = "";
@@ -212,29 +214,30 @@ const searchWishlist = (search, page) => {
 
 
                 document.getElementById('wishlist-cards').innerHTML += `
-                <div class="card-offer" style="width: 80%;">
+                <div class="card-offer" style="width: 80%;" id="offer-${offer.id_offer}">
                 <div class="card mb-3" >
-                    <div class="row g-0">
-                      <div class="col-md-4">
-                        <img src="${src}" class="img-fluid" alt="${offer.name_offer}" style="height: 160px; margin: 20px; border-radius: 10px;
-                        object-fit: contain;
-                        width: 145px;
-                        background-color: #efefef;">
-                      </div>
-                      <div class="col-md-6">
-                        <div class="card-body">
-                          <h5 class="card-title">${offer.name_offer}</h5>
-                          <p class="card-text"><small class="text-muted">from ${offer.name_com}</small></p>
-                          <p class="card-text">${offer.description_offer.substring(0, 200) + '...'}</p>
+                <div class="btn btn-danger" style="position: absolute;right:10px;top: 10px;" onclick="deleteFromWishlist(${offer.id_offer});">X</div>
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="${src}" class="img-fluid" alt="${offer.name_offer}" style="height: 160px; margin: 20px; border-radius: 10px;
+                                object-fit: contain;
+                                width: 145px;
+                                background-color: #efefef;">
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card-body">
+                                    <h5 class="card-title">${offer.name_offer}</h5>
+                                    <p class="card-text"><small class="text-muted">from ${offer.name_com}</small></p>
+                                    <p class="card-text">${offer.description_offer.substring(0, 200) + '...'}</p>
+                                </div>
+                            </div>
+                            <div class="col-md-2 d-flex justify-content-center align-items-center flex-column">
+                                <h6 class="card-title">${offer.internship_length_offer} Months</h5>
+                                <h6 class="card-title">${offer.level_offer} Level</h5>
+                            </div>
                         </div>
-                      </div>
-                      <div class="col-md-2 d-flex justify-content-center align-items-center flex-column">
-                      <h6 class="card-title">${offer.internship_length_offer} Months</h5>
-                      <h6 class="card-title">${offer.level_offer} Level</h5>
-                      </div>
                     </div>
-                  </div>
-            </div>`
+                </div>`
             });
         }
         else { }
@@ -244,6 +247,33 @@ const searchWishlist = (search, page) => {
     };
     xhr.send(); //Envoi de la requête au serveur (asynchrone par défaut)
 };
+
+const deleteFromWishlist = (id_offer) => {
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "/controllers/delete-from-wishlist.php?id_offer=" + id_offer, true);
+    xhr.withCredentials = true;
+    xhr.onload = function () {
+        if (xhr.status == 200) {
+            window.location.reload(true);
+        }
+        else { }
+    };
+    xhr.send(); //Envoi de la requête au serveur (asynchrone par défaut)
+}
+
+const addToWishlist = (id_offer) => {
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "/controllers/add-to-wishlist.php?id_offer=" + id_offer, true);
+    xhr.withCredentials = true;
+    xhr.onload = function () {
+        if (xhr.status == 200) {
+            alert(xhr.responseText);
+            //window.location.reload(true);
+        }
+        else { }
+    };
+    xhr.send(); //Envoi de la requête au serveur (asynchrone par défaut)
+}
 
 const company = () => {
     // define URL and for element
