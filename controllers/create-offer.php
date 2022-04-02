@@ -23,7 +23,7 @@ if (isset($_POST['name_offer'])) {
     $level_offer = $_POST['level_offer'];
     $internship_length_offer = $_POST['internship_length_offer'];
     $pay_offer = $_POST['pay_offer'];
-    $date_offer = $_POST['date_offer'];
+    //$date_offer = $_POST['date_offer'];
     $available_places_offer = $_POST['available_places_offer'];
     $description_offer = $_POST['description_offer'];
     $id_com = $_POST['id_com'];
@@ -34,7 +34,7 @@ if (isset($_POST['name_offer'])) {
         ':level_offer' => array($level_offer, PDO::PARAM_STR),
         ':internship_length_offer' => array($internship_length_offer, PDO::PARAM_INT),
         ':pay_offer' => array($pay_offer, PDO::PARAM_STR),
-        ':date_offer' => array($date_offer, PDO::PARAM_STR),
+        //':date_offer' => array($date_offer, PDO::PARAM_STR),
         ':available_places_offer' => array($available_places_offer, PDO::PARAM_INT),
         ':description_offer' => array($description_offer, PDO::PARAM_STR),
         ':id_com' => array($id_com, PDO::PARAM_INT)
@@ -49,8 +49,8 @@ if (isset($_POST['name_offer'])) {
     }
     
     // --------------------------------------------------
-    $success = $bdd->create("INSERT INTO `offer` (`id_offer`, `name_offer`, `level_offer`, `internship_length_offer`, `pay_offer`, `date_offer`, `available_places_offer`, `description_offer`, `id_com`) VALUES 
-                                                 (NULL, :name_offer, :level_offer, :internship_length_offer, :pay_offer, :date_offer, :available_places_offer, :description_offer, :id_com);", $binds);
+    $success = $bdd->create("INSERT INTO `offer` (`id_offer`, `name_offer`, `level_offer`, `internship_length_offer`, `pay_offer`, `available_places_offer`, `description_offer`, `id_com`) VALUES 
+                                                 (NULL, :name_offer, :level_offer, :internship_length_offer, :pay_offer, :available_places_offer, :description_offer, :id_com);", $binds);
 
     if ($success) {
         echo 'Creation Succesful.';

@@ -80,17 +80,21 @@ if (!(has_admin_access_level() || has_pilot_access_level() || (has_representativ
                 <th></th>
             </tr>
             <tr>
-                <th> <input size="5" id="id_offer" type="text" name="id_offer"></th>
+              <form>
+                <th> <input size="5" id="id_offer" type="text" name="id_offer" disabled> </th>
                 <th><input size="15" id="name_offer" type="text" name="name_offer"></th>
                 <th><input size="5" name="level_offer" id="level_offer" list="Level"><datalist id="Level"><option value="A1"><option value="A2"><option value="A3"><option value="A4"><option value="A5"></datalist></th> 
                 <th><input size="5" name="internship_length_offer" id="internship_length_offer" list="Duration"><datalist id="Duration"><option value="1"><option value="2"><option value="3"><option value="4"><option value="5"><option value="6"><option value="7"><option value="8"><option value="9"><option value="10"><option value="11"><option value="12"></datalist></th>
                 <th><input type="number" id="pay_offer" name="pay_offer" min="12" max="150"></th>
-                <th><input id="date_offer" name="date_offer" type="date"></th>
+                <th><input id="date_offer" name="date_offer" type="date" value="01/01/1970" disabled></th>
                 <th><input size="5" name="available_places_offer" id="available_places_offer" list="Places"><datalist id="Places"><option value="1"><option value="2"><option value="3"><option value="4"><option value="5"></datalist></th> 
                 <th><input size="25" id="description_offer" type="text" name="description_offer"></th>
-                <th><input size="5" id="id_com" name="id_com" list="id_com"><datalist id="Id Center"><option value="1"><option value="2"><option value="3"><option value="4"><option value="5"></datalist></th> 
-                <th><button type="button" id="create">Add</button></th>
-                <th><button type="button" id="update">Download</button></th>
+                <th><select name="id_com" id="id_com">
+
+                </select></th> 
+                <th><button type="button" id="create" class="btn btn-primary">Add</button></th>
+                <th><button type="button" id="update" class="btn btn-info" disabled>Download</button></th>
+              </form>
             </tr>
         </thead>
         <tbody>
@@ -191,6 +195,7 @@ if (!(has_admin_access_level() || has_pilot_access_level() || (has_representativ
   </footer>
   <script>
     document.body.onload = () => {
+      getCompaniesNames();
       offer();
       searchOfferAdmin('', 1);
       document.getElementById('id_offer').oninput = () => getOffer(document.getElementById('id_offer').value);

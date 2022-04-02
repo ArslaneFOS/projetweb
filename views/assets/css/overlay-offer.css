@@ -213,11 +213,14 @@
   margin-top: 13px;
   min-width: 669px;
 }
-
+.anchor{
+  width:20px ;
+}
 .applybut-container {
   height: 70px;
   margin-left: 49px;
   position: relative;
+  left: 10px;
   width: 310px;
 }
 

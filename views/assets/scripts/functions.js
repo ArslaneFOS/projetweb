@@ -304,7 +304,7 @@ const offer = () => {
         inputs.forEach(input => {
             //console.log(input);
             name_input = input.name;
-            if (name_input != 'id_offer') {
+            if (name_input != 'id_offer' && name_input != 'date_offer') {
                 value = input.value;
                 formData.append(name_input, value);
             }
@@ -358,6 +358,9 @@ const offer = () => {
         xhr.open('POST', url);
         xhr.send(formData);
         form.reset();
+        create.disabled = false;
+        update.disabled = true;
+        window.location.reload(true);
     });
 }
 
@@ -377,6 +380,8 @@ const getOfferAdmin = (id_offer) => {
             document.getElementById('available_places_offer').value = offer.available_places_offer;
             document.getElementById('description_offer').value = offer.description_offer;
             document.getElementById('id_com').value = offer.id_com;
+            document.querySelector('#update').disabled = false;
+            document.querySelector('#create').disabled = true;
         }
         else { }
     };
