@@ -486,4 +486,3 @@ const searchCompanies = (search, page) => {
     };
     xhr.send(); //Envoi de la requête au serveur (asynchrone par défaut)
 };
-Z
