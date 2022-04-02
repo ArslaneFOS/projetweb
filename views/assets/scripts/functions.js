@@ -486,6 +486,233 @@ const searchCompanies = (search, page) => {
     xhr.send(); //Envoi de la requête au serveur (asynchrone par défaut)
 };
 
+
+const user = () => {
+    // define URL and for element
+    const create = document.querySelector('#create');
+    const form = document.querySelector('form');
+    // add event listener
+    create.addEventListener('click', e => {
+        const url = "/controllers/create-user.php";
+
+        // disable default action
+        e.preventDefault();
+
+        // collect files
+        const formData = new FormData();
+        const inputs = document.querySelectorAll('input, textarea, select');
+
+        inputs.forEach(input => {
+            //console.log(input);
+            name_input = input.name;
+            if (name_input != 'id_user') {
+                value = input.value;
+                formData.append(name_input, value);
+            }
+
+        });
+
+        // post form data
+        const xhr = new XMLHttpRequest();
+        xhr.withCredentials = false;
+        // log response
+        xhr.onload = () => {
+            alert(xhr.responseText);
+        };
+
+        // create and send the reqeust
+        xhr.open('POST', url);
+        xhr.send(formData);
+        form.reset();
+    });
+
+    const update = document.querySelector('#update');
+
+    update.addEventListener('click', e => {
+        const url = "/controllers/update-user.php";
+
+        // disable default action
+        e.preventDefault();
+
+        // collect files
+        const formData = new FormData();
+        const inputs = document.querySelectorAll('input, textarea, select');
+
+        inputs.forEach(input => {
+            //console.log(input);
+            name_input = input.name;
+
+            value = input.value;
+            formData.append(name_input, value);
+
+        });
+
+        // post form data
+        const xhr = new XMLHttpRequest();
+        xhr.withCredentials = false;
+        // log response
+        xhr.onload = () => {
+            alert(xhr.responseText);
+        };
+
+        // create and send the reqeust
+        xhr.open('POST', url);
+        xhr.send(formData);
+        form.reset();
+        create.disabled = false;
+        update.disabled = true;
+        window.location.reload(true);
+    });
+}
+
+const deleteUsersAdmin = (id_user) => {
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "/controllers/delete-user.php?id_user=" + id_user, true);
+    xhr.withCredentials = true;
+    xhr.onload = function () {
+        if (xhr.status == 200) {
+            window.location.reload(true);
+        }
+        else { }
+    };
+    xhr.send(); //Envoi de la requête au serveur (asynchrone par défaut)
+}
+
+const searchUsersAdmin = (search, page) => {
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "http://localhost/controllers/search-users.php?limit=10000&search=" + encodeURIComponent(search) + "&page=" + page, true);
+    xhr.withCredentials = true;
+    xhr.onload = function () {
+        var html = "";
+        if (xhr.status == 200) {
+            result = JSON.parse(xhr.response);
+            users = result.data;
+            users.forEach(user => {
+                
+                const table = document.querySelector('tbody');
+
+
+                table.innerHTML += `<tr>
+                <td>${user.id_user}</td>
+                <td>${user.lastname}</td>
+                <td>${user.firstname}</td>
+                <td>${user.id_center}</td>
+                <td>${user.id_login}</td>
+                <td><a type="button" onclick="deleteUsersAdmin(${user.id_user})" class="btn btn-danger">Delete</a></td>
+                <td><a href="#" type="button" onclick="getUsersAdmin(${user.id_user})" class="btn btn-warning">Upload</a></td>
+                </tr>`;
+                
+
+
+            });
+
+        }
+        else { }
+
+        //document.getElementById("companies-cards").innerHTML = html;
+    };
+    xhr.send(); //Envoi de la requête au serveur (asynchrone par défaut)
+};
+
+const getUsersAdmin = (id_user) => {
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "/controllers/get-user.php?id_user=" + id_user, true);
+    xhr.withCredentials = true;
+    xhr.onload = function () {
+        if (xhr.status == 200) {
+            var user = JSON.parse(xhr.response);
+            document.getElementById('id_user').value = user.id_user;
+            document.getElementById('lastname').value = user.lastname;
+            document.getElementById('firstname').value = user.firstname;
+            document.getElementById('id_center').value = user.id_center;
+            document.getElementById('id_login').value = user.id_login;
+        
+            //document.getElementById('logo').replaceChildren(logo);
+            document.querySelector('#update').disabled = false;
+            document.querySelector('#create').disabled = true;
+        }
+        else { }
+    };
+    xhr.send(); //Envoi de la requête au serveur (asynchrone par défaut)
+}
+const student = () => {
+    // define URL and for element
+    const create = document.querySelector('#create');
+    const form = document.querySelector('form');
+    // add event listener
+    create.addEventListener('click', e => {
+        const url = "/controllers/create-student.php";
+
+        // disable default action
+        e.preventDefault();
+
+        // collect files
+        const formData = new FormData();
+        const inputs = document.querySelectorAll('input, textarea, select');
+
+        inputs.forEach(input => {
+            //console.log(input);
+            name_input = input.name;
+            if (name_input != 'id_user') {
+                value = input.value;
+                formData.append(name_input, value);
+            }
+
+        });
+
+        // post form data
+        const xhr = new XMLHttpRequest();
+        xhr.withCredentials = false;
+        // log response
+        xhr.onload = () => {
+            alert(xhr.responseText);
+        };
+
+        // create and send the reqeust
+        xhr.open('POST', url);
+        xhr.send(formData);
+        form.reset();
+    });
+
+    const update = document.querySelector('#update');
+
+    update.addEventListener('click', e => {
+        const url = "/controllers/update-student.php";
+
+        // disable default action
+        e.preventDefault();
+
+        // collect files
+        const formData = new FormData();
+        const inputs = document.querySelectorAll('input, textarea, select');
+
+        inputs.forEach(input => {
+            //console.log(input);
+            name_input = input.name;
+
+            value = input.value;
+            formData.append(name_input, value);
+
+        });
+
+        // post form data
+        const xhr = new XMLHttpRequest();
+        xhr.withCredentials = false;
+        // log response
+        xhr.onload = () => {
+            alert(xhr.responseText);
+        };
+
+        // create and send the reqeust
+        xhr.open('POST', url);
+        xhr.send(formData);
+        form.reset();
+        create.disabled = false;
+        update.disabled = true;
+        window.location.reload(true);
+    });
+}
+
 const representative = () => {
     // define URL and for element
     const create = document.querySelector('#create');
