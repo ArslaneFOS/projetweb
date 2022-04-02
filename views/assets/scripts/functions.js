@@ -31,11 +31,6 @@ const getCompanyAdmin = (id_com) => {
             document.getElementById('nb_interns_com').value = company.nb_interns_com;
             document.getElementById('email_com').value = company.email_com;
             document.getElementById('description_com').value = company.description_com;
-            var logo = new Image();
-            logo.src = 'data:image;base64,' + company.logo_com;
-            logo.className = 'company-logo';
-            logo.style = 'width:100%;';
-            //document.getElementById('logo').replaceChildren(logo);
             document.querySelector('#update').disabled = false;
             document.querySelector('#create').disabled = true;
         }
@@ -136,6 +131,7 @@ const searchOffers = (search, page) => {
                       <h6 class="card-title">${offer.internship_length_offer} Months</h5>
                       <h6 class="card-title">${offer.available_places_offer} Places</h5>
                       <h6 class="card-title">${offer.level_offer} Level</h5>
+                      <div class="btn btn-info" onclick="getOfferStats(${offer.id_offer})">Statistics</div>
                       </div>
                     </div>
                   </div>
@@ -1134,15 +1130,15 @@ const getCompanyStats = (id_com) => {
             //console.log(auths);
             document.getElementById('overlay').innerHTML = 
             `<div id="stat-card" >
-            <button type="button" class="close btn btn-danger" aria-label="Close" onclick="document.getElementById('overlay').style.display = 'none';">x</button>
-            <canvas id="companyChart"></canvas>
-            <table>
-                <tr>
-                    <th>Latest offers</th>
-                </tr>
-                <tbody></tbody>
-            </table>
-        </div>`
+                <button  type="button" class="close btn btn-danger" aria-label="Close" onclick="document.getElementById('overlay').style.display = 'none';">x</button>
+                <canvas height="max-content" id="companyChart"></canvas>
+                <table>
+                    <tr>
+                        <th>Latest offers</th>
+                    </tr>
+                    <tbody></tbody>
+                </table>
+            </div>`
             const ctx = document.getElementById('companyChart');
             const companyChart = new Chart(ctx, {
                 type: 'bar',
@@ -1199,19 +1195,26 @@ const getOfferStats = (id_offer) => {
     xhr.onload = function () {
         if (xhr.status == 200) {
             var stats = JSON.parse(xhr.response);
-            //console.log(auths);
-            const ctx = document.getElementById('myChart');
+            console.log(stats);
+            var overlay = document.getElementById('overlay');
+            overlay.style.display = 'block';
+            overlay.innerHTML = 
+            `<div id="stat-card">
+                <button  type="button" class="close btn btn-danger" aria-label="Close" onclick="document.getElementById('overlay').style.display = 'none';">x</button>
+                <canvas height="max-content" id="offerChart"></canvas>
+            </div>`
+            const ctx = document.getElementById('offerChart');
             const myChart = new Chart(ctx, {
                 type: 'bar',
                 data: {
-                    labels: ['Total Applications',
-                        'Total Active Applications',
+                    labels: ['Total App.',
+                        'Total Active App.',
                         'Total Skills',
-                        'Total Accepted Applications',
-                        'Total Refused Application'],
+                        'Total Accepted App.',
+                        'Total Refused App.'],
                     datasets: [{
                         label: '',
-                        data: stats,
+                        data: [stats.total_applications, stats.total_active_applications, stats.total_required_skills, stats.total_accepted_applications, stats.total_refused_applications],
                         backgroundColor: [
                             'rgba(255, 99, 132, 0.2)',
                             'rgba(54, 162, 235, 0.2)',

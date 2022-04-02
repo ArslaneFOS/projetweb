@@ -51,6 +51,22 @@
       -ms-transform: translate(-50%, -50%);
 
     }*/
+
+    #stat-card {
+      margin: 100px 25%;
+      width: 50%;
+      background-color: white;
+      border-radius: 18.5px;
+      padding: 20px;
+    }
+
+    @media screen and (max-width: 800px) {
+      #stat-card {
+        width: 90%;
+        margin: 0 5%;
+        height: max-content;
+      }
+    }
   </style>
 </head>
 
