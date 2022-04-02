@@ -361,14 +361,14 @@ const offer = () => {
     });
 }
 
-const getOffer = (id_offer) => {
+const getOfferAdmin = (id_offer) => {
     var xhr = new XMLHttpRequest();
     xhr.open("GET", "/controllers/get-offer.php?id_offer=" + id_offer, true);
     xhr.withCredentials = true;
     xhr.onload = function () {
         if (xhr.status == 200) {
             var offer = JSON.parse(xhr.response);
-
+            document.getElementById('id_offer').value = offer.id_offer;
             document.getElementById('name_offer').value = offer.name_offer;
             document.getElementById('level_offer').value = offer.level_offer;
             document.getElementById('internship_length_offer').value = offer.internship_length_offer;
@@ -404,7 +404,7 @@ const searchOfferAdmin = (search, page) => {
         var html = "";
         if (xhr.status == 200) {
             result = JSON.parse(xhr.response);
-            offers = result.data;
+            var offers = result.data;
             offers.forEach(offer => {
                 var src = 'data:image;base64,' + offer.logo_com;
                 const table = document.querySelector('tbody');
@@ -418,14 +418,14 @@ const searchOfferAdmin = (search, page) => {
                 <td>${offer.pay_offer}</td> 
                 <td>${offer.date_offer}</td>
                 <td>${offer.available_places_offer}</td>
-                <td>${offer.description_com.substring(0, 50) + '...'}</td>
+                <td>${offer.description_offer.substring(0, 50) + '...'}</td>
                 <td>${offer.id_com}</td> 
 
                 <td id='logo-${offer.id_offer}'></td> 
                 <td><a type="button" onclick="deleteOfferAdmin(${offer.id_offer})" class="btn btn-danger">Delete</a></td>
-                <td><a href="#" type="button" onclick="getOffe(${offer.id_offer})" class="btn btn-warning">Upload</a></td>
+                <td><a href="#" type="button" onclick="getOfferAdmin(${offer.id_offer})" class="btn btn-warning">Upload</a></td>
                 </tr>`;
-                document.getElementById("logo-" + offer.id_offer).replaceChildren(logo);
+                //document.getElementById("logo-" + offer.id_offer).replaceChildren(logo);
 
 
             });
