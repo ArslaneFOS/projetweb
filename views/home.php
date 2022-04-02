@@ -74,7 +74,7 @@ $user_type = @$_SESSION['user-type'];
                     </ul>
                   </li>
                   <li><a class="nav-link scrollto" href="#contact">Contact</a></li> -->
-                  <li><a class="nav-link scrollto" href="./login.html">Login</a></li>
+                  <li><a class="nav-link scrollto" href="/views/login.php">Login</a></li>
                 </ul>
                 
               </nav><!-- .navbar -->
