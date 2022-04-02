@@ -30,7 +30,7 @@ $binds = array(
 
 $bdd = new DB();
 
-$results = $bdd->select("SELECT applications.id_student, offer.id_offer, applications.status, applications.app_date, offer.name_offer, offer.description_offer, company.id_com, company.name_com, company.email_com, company.logo_com from (student INNER JOIN applications ON student.id_user = applications.id_student) INNER JOIN (offer INNER JOIN company on company.id_com = offer.id_com) ON offer.id_offer = applications.id_offer WHERE applications.id_student = :id_student ORDER BY app_date DESC LIMIT :offset, :limit;", $binds);
+$results = $bdd->select("SELECT applications.id_student, offer.id_offer, applications.status, applications.app_date, offer.name_offer, offer.description_offer, company.id_com, company.name_com, company.email_com from (student INNER JOIN applications ON student.id_user = applications.id_student) INNER JOIN (offer INNER JOIN company on company.id_com = offer.id_com) ON offer.id_offer = applications.id_offer WHERE applications.id_student = :id_student ORDER BY app_date DESC LIMIT :offset, :limit;", $binds);
 $total = $bdd->select("SELECT COUNT(*) as total from (student INNER JOIN applications ON student.id_user = applications.id_student) INNER JOIN (offer INNER JOIN company on company.id_com = offer.id_com) ON offer.id_offer = applications.id_offer WHERE applications.id_student = :id_student", array(':id_student' => array($id_student, PDO::PARAM_STR)));
 $total = (int)$total[0]['total'];
 

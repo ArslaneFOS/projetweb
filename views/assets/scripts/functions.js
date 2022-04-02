@@ -1,4 +1,3 @@
-
 const getCompaniesNames = () => {
     var xhr = new XMLHttpRequest();
     xhr.open("GET", "/controllers/get-company-names.php", true);
@@ -540,11 +539,12 @@ const searchCompanies = (search, page) => {
                   <div class="x7-skills-of-highly-e">${company.name_com}</div>
                   <p class="our-team-was-inspire">
                     ${company.description_com.substring(0, 150) + '...'}
-                  </p>
-                </div>
-                <div class="read-more opensans-semi-bold-azure-radiance-11px">
-                  <a href="#" class="opensans-semi-bold-azure-radiance-11px">Read more </a>
-                </div>
+                    </p>
+                    </div>
+                    <div class="btn btn-primary" onclick="getCompanyStats(${company.id_com})">Statistics</div>
+                    <div class="read-more opensans-semi-bold-azure-radiance-11px">
+                    <a href="#" class="opensans-semi-bold-azure-radiance-11px">Read more </a>
+                    </div>
               </div>`;
                 //document.getElementById("logo-" + company.id_com).replaceChildren(logo);
 
@@ -1132,8 +1132,19 @@ const getCompanyStats = (id_com) => {
         if (xhr.status == 200) {
             var stats = JSON.parse(xhr.response);
             //console.log(auths);
-            const ctx = document.getElementById('myChart');
-            const myChart = new Chart(ctx, {
+            document.getElementById('overlay').innerHTML = 
+            `<div id="stat-card" >
+            <button type="button" class="close btn btn-danger" aria-label="Close" onclick="document.getElementById('overlay').style.display = 'none';">x</button>
+            <canvas id="companyChart"></canvas>
+            <table>
+                <tr>
+                    <th>Latest offers</th>
+                </tr>
+                <tbody></tbody>
+            </table>
+        </div>`
+            const ctx = document.getElementById('companyChart');
+            const companyChart = new Chart(ctx, {
                 type: 'bar',
                 data: {
                     labels: ['Total Offers',
@@ -1174,7 +1185,7 @@ const getCompanyStats = (id_com) => {
             stats.last_ten_offers.forEach(offer => {
                 document.querySelector('tbody').innerHTML += `<tr><td>${offer}</td></tr>`
             });
-
+            document.getElementById('overlay').style.display = 'block';
         }
         else { }
     };
@@ -1325,9 +1336,20 @@ const getApplyOverlay = (id_offer) => {
             var offer = JSON.parse(xhr.response);
             var overlay = document.getElementById('overlay');
             overlay.innerHTML = 
-            `<div">
+            `<div style="color: black; background-color: white;">
             <span class="close btn btn-danger" style="position:absolute;right:0;" onclick="document.getElementById('overlay').style.display = 'none';">X</span>
             <h1>Apply to "${offer.name_offer}"</h1>
+            <form method="post" action="/controllers/apply-offer.php" enctype="multipart/form-data">
+                <input type="number" name="id_offer" id="id_offer" value="${offer.id_offer}" style="display: none;"/><br>
+                
+                <label for="resume">Resume</label><br>
+                <input type="file" id="resume" name="resume"/><br>
+
+                <label for="motivation">Motivation Letter</label><br>
+                <input type="file" id="motivation" name="motivation"/><br>
+
+                <button type="submit" name="submit" value="submit">Submit</button>
+            </form>
             </div>`
           overlay.style.display = 'block';
           document.getElementById('offer-card').style.height = '100%';

@@ -23,15 +23,14 @@ if (isset($_POST['submit'])) {
             $isrep = $bdd->select("SELECT 1 from representative WHERE id_login = :id_login;", array(':id_login' => array($id_login, PDO::PARAM_INT)));
             $ispilot = $bdd->select("SELECT 1 from pilot WHERE id_login = :id_login;", array(':id_login' => array($id_login, PDO::PARAM_INT)));
             $isadmin = $bdd->select("SELECT 1 from admin WHERE id_login = :id_login;", array(':id_login' => array($id_login, PDO::PARAM_INT)));
-
-            if ($isstudent) 
-                $_SESSION['user-type'] = 'student';
+            if ($isadmin)
+                $_SESSION['user-type'] = 'admin';
             elseif ($isrep)
                 $_SESSION['user-type'] = 'representative';
             elseif ($ispilot)
                 $_SESSION['user-type'] = 'pilot';
-            elseif ($isadmin)
-                $_SESSION['user-type'] = 'admin';
+            elseif ($isstudent) 
+            $_SESSION['user-type'] = 'student';
 
             $user = $bdd->select("SELECT * from user WHERE id_login = :id_login;", array(':id_login' => array($id_login, PDO::PARAM_INT)))[0];
 
