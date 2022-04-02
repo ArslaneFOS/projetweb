@@ -36,6 +36,7 @@ if (!(has_admin_access_level() || has_pilot_access_level() || (has_representativ
   <script src="/views/assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="/views/assets/vendor/php-email-form/validate.js"></script>
   <script src="/views/assets/js/main.js"></script>
+  <script src="/views/assets/scripts/functions.js"></script>
   <link rel="icon" href="https://img.icons8.com/external-smashingstocks-isometric-smashing-stocks/55/000000/external-web-link-seo-and-marketing-smashingstocks-isometric-smashing-stocks.png">
 </head>
 <body>
@@ -79,150 +80,21 @@ if (!(has_admin_access_level() || has_pilot_access_level() || (has_representativ
                 <th></th>
             </tr>
             <tr>
-                <th> <input size="5" id="input" type="text" name="ID"></th>
-                <th><input size="15" id="Description" type="text" name="Name"></th>
-                <th><input size="5" list="Level"><datalist id="Level"><option value="A1"><option value="A2"><option value="A3"><option value="A4"><option value="A5"></datalist></th> 
-                <th><input size="5" list="Duration"><datalist id="Duration"><option value="1"><option value="2"><option value="3"><option value="4"><option value="5"><option value="6"><option value="7"><option value="8"><option value="9"><option value="10"><option value="11"><option value="12"></datalist></th>
-                <th><input type="number" id="pay" name="pay" min="12" max="150"></th>
-                <th><input id="date posted" type="date" value="2022-04-01"></th>
-                <th><input size="5" list="Places"><datalist id="Places"><option value="1"><option value="2"><option value="3"><option value="4"><option value="5"></datalist></th> 
-                <th><input size="25" id="Description" type="text" name="Description"></th>
-                <th><input size="5" list="Id Center"><datalist id="Id Center"><option value="1"><option value="2"><option value="3"><option value="4"><option value="5"></datalist></th> 
-                <th><button type="button">Add</button></th>
-                <th><button type="button">Download</button></th>
+                <th> <input size="5" id="id_offer" type="text" name="id_offer"></th>
+                <th><input size="15" id="name_offer" type="text" name="name_offer"></th>
+                <th><input size="5" name="level_offer" id="level_offer" list="Level"><datalist id="Level"><option value="A1"><option value="A2"><option value="A3"><option value="A4"><option value="A5"></datalist></th> 
+                <th><input size="5" name="internship_length_offer" id="internship_length_offer" list="Duration"><datalist id="Duration"><option value="1"><option value="2"><option value="3"><option value="4"><option value="5"><option value="6"><option value="7"><option value="8"><option value="9"><option value="10"><option value="11"><option value="12"></datalist></th>
+                <th><input type="number" id="pay_offer" name="pay_offer" min="12" max="150"></th>
+                <th><input id="date_offer" name="date_offer" type="date"></th>
+                <th><input size="5" name="available_places_offer" id="available_places_offer" list="Places"><datalist id="Places"><option value="1"><option value="2"><option value="3"><option value="4"><option value="5"></datalist></th> 
+                <th><input size="25" id="description_offer" type="text" name="description_offer"></th>
+                <th><input size="5" id="id_com" name="id_com" list="id_com"><datalist id="Id Center"><option value="1"><option value="2"><option value="3"><option value="4"><option value="5"></datalist></th> 
+                <th><button type="button" id="create">Add</button></th>
+                <th><button type="button" id="update">Download</button></th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>1</td>
-                <td>Mobile Dev</td>
-                <td>A2</td>
-                <td>3</td>
-                <td>23€</td>
-                <td>2015-10-21</td>
-                <td>4</td>
-                <td>Best Company In The World</td>
-                <td>17</td>
-                <td><button type="button">Delete</button></td>
-                <td><button type="button">Upload</button></td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>Mobile Dev</td>
-                <td>A2</td>
-                <td>3</td>
-                <td>23€</td>
-                <td>2015-10-21</td>
-                <td>4</td>
-                <td>Best Company In The World</td>
-                <td>17</td>
-                <td><button type="button">Delete</button></td>
-                <td><button type="button">Upload</button></td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>Mobile Dev</td>
-                <td>A2</td>
-                <td>3</td>
-                <td>23€</td>
-                <td>2015-10-21</td>
-                <td>4</td>
-                <td>Best Company In The World</td>
-                <td>17</td>
-                <td><button type="button">Delete</button></td>
-                <td><button type="button">Upload</button></td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>Mobile Dev</td>
-                <td>A2</td>
-                <td>3</td>
-                <td>23€</td>
-                <td>2015-10-21</td>
-                <td>4</td>
-                <td>Best Company In The World</td>
-                <td>17</td>
-                <td><button type="button">Delete</button></td>
-                <td><button type="button">Upload</button></td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>Mobile Dev</td>
-                <td>A2</td>
-                <td>3</td>
-                <td>23€</td>
-                <td>2015-10-21</td>
-                <td>4</td>
-                <td>Best Company In The World</td>
-                <td>17</td>
-                <td><button type="button">Delete</button></td>
-                <td><button type="button">Upload</button></td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>Mobile Dev</td>
-                <td>A2</td>
-                <td>3</td>
-                <td>23€</td>
-                <td>2015-10-21</td>
-                <td>4</td>
-                <td>Best Company In The World</td>
-                <td>17</td>
-                <td><button type="button">Delete</button></td>
-                <td><button type="button">Upload</button></td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>Mobile Dev</td>
-                <td>A2</td>
-                <td>3</td>
-                <td>23€</td>
-                <td>2015-10-21</td>
-                <td>4</td>
-                <td>Best Company In The World</td>
-                <td>17</td>
-                <td><button type="button">Delete</button></td>
-                <td><button type="button">Upload</button></td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>Mobile Dev</td>
-                <td>A2</td>
-                <td>3</td>
-                <td>23€</td>
-                <td>2015-10-21</td>
-                <td>4</td>
-                <td>Best Company In The World</td>
-                <td>17</td>
-                <td><button type="button">Delete</button></td>
-                <td><button type="button">Upload</button></td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>Mobile Dev</td>
-                <td>A2</td>
-                <td>3</td>
-                <td>23€</td>
-                <td>2015-10-21</td>
-                <td>4</td>
-                <td>Best Company In The World</td>
-                <td>17</td>
-                <td><button type="button">Delete</button></td>
-                <td><button type="button">Upload</button></td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>Mobile Dev</td>
-                <td>A2</td>
-                <td>3</td>
-                <td>23€</td>
-                <td>2015-10-21</td>
-                <td>4</td>
-                <td>Best Company In The World</td>
-                <td>17</td>
-                <td><button type="button">Delete</button></td>
-                <td><button type="button">Upload</button></td>
-            </tr>
+            
 
         </tbody>
         <tfoot>
