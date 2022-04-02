@@ -596,10 +596,10 @@ const searchStudentsAdmin = (search, page) => {
                 <td>${user.id_user}</td>
                 <td>${user.lastname}</td>
                 <td>${user.firstname}</td>
-                <td>${user.id_center}</td>
+                <td>${user.id_prom}</td>
                 <td>${user.login}</td>
                 <td>${user.password.substring(0,15)}...</td>
-                <td>${user.id_prom}</td>
+                <td>${user.id_center}</td>
                 <td><a type="button" onclick="deleteUserAdmin('${user.login}')" class="btn btn-danger">Delete</a></td>
                 <td><a href="#" type="button" onclick="getStudentAdmin(${user.id_user})" class="btn btn-warning">Upload</a></td>
                 </tr>`;
@@ -626,9 +626,9 @@ const getStudentAdmin = (id_user) => {
             document.getElementById('id_user').value = user.id_user;
             document.getElementById('lastname').value = user.lastname;
             document.getElementById('firstname').value = user.firstname;
-            document.getElementById('id_center').value = user.id_center;
+            document.getElementById('id_prom').value = user.id_prom
             document.getElementById('login').value = user.login;
-            document.getElementById('id_center').value = user.id_center
+            document.getElementById('id_center').value = user.id_center;
         
             //document.getElementById('logo').replaceChildren(logo);
             document.querySelector('#update').disabled = false;
