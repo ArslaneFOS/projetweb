@@ -10,6 +10,10 @@ if (!(has_admin_access_level() || has_student_access_level())) {
 }
 if (isset($_GET['id_offer']) && isset($_SESSION['id_user'])) {
     $bdd = new DB();
+    if ($_SESSION['user-type'] != 'student') {
+        echo "You cannot do that, you are not a student.";
+        die();
+    }
     foreach ($_GET as $key => $value) {
         # code...
         if ($value == "") {
@@ -32,7 +36,7 @@ if (isset($_GET['id_offer']) && isset($_SESSION['id_user'])) {
     $isexist = $bdd->select("SELECT 1 from students_wishlists where id_offer = {$id_offer} AND id_student = {$id_student};");
 
     if ($isexist) {
-        echo "Add Failed: Offer already in wishlist.";
+        echo "Offer is already in your wishlist.";
         die();
     }
     
