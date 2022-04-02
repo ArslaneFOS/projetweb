@@ -1051,4 +1051,170 @@ const getOfferSkills = (id_offer) => {
     xhr.send(); //Envoi de la requête au serveur (asynchrone par défaut)
 }
 
+const getCompanyStats = (id_com) => {
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "/controllers/stats-company.php?id_com=" + id_com, true);
+    xhr.withCredentials = true;
+    xhr.onload = function () {
+        if (xhr.status == 200) {
+            var stats = JSON.parse(xhr.response);
+            //console.log(auths);
+            const ctx = document.getElementById('myChart');
+            const myChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Total Offers',
+                        'Total Locations',
+                        'Average Student Rating',
+                        'Average Pilot Rating'],
+                    datasets: [{
+                        label: '',
+                        data: [stats.total_offers, stats.total_locations, stats.average_student_rating, stats.average_pilot_rating],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 159, 64, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
 
+            stats.last_ten_offers.forEach(offer => {
+                document.querySelector('tbody').innerHTML += `<tr><td>${offer}</td></tr>`
+            });
+
+        }
+        else { }
+    };
+    xhr.send(); //Envoi de la requête au serveur (asynchrone par défaut)
+}
+
+const getOfferStats = (id_offer) => {
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "/controllers/stats-offer.php?id_offer=" + id_offer, true);
+    xhr.withCredentials = true;
+    xhr.onload = function () {
+        if (xhr.status == 200) {
+            var stats = JSON.parse(xhr.response);
+            //console.log(auths);
+            const ctx = document.getElementById('myChart');
+            const myChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Total Applications',
+                        'Total Active Applications',
+                        'Total Skills',
+                        'Total Accepted Applications',
+                        'Total Refused Application'],
+                    datasets: [{
+                        label: '',
+                        data: stats,
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 159, 64, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        }
+        else { }
+    };
+    xhr.send(); //Envoi de la requête au serveur (asynchrone par défaut)
+}
+
+const getStudentStats = (id_student) => {
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "/controllers/stats-student.php?id_student=" + id_student, true);
+    xhr.withCredentials = true;
+    xhr.onload = function () {
+        if (xhr.status == 200) {
+            var stats = JSON.parse(xhr.response);
+            //console.log(auths);
+            const ctx = document.getElementById('myChart');
+            const myChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Total App.',
+                        'Total Accepted App.',
+                        'Total Refused App.',
+                        'Total Evals',
+                    'Total Wishlist'],
+                    datasets: [{
+                        label: '',
+                        data: [stats.total_student_applications, stats.total_accepted_applications, stats.total_refused_applications, stats.total_student_evals, stats.total_student_wishlist],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 159, 64, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+
+            stats.last_ten_applications.forEach(offer => {
+                document.querySelector('tbody').innerHTML += `<tr><td>${offer}</td></tr>`
+            });
+
+        }
+        else { }
+    };
+    xhr.send(); //Envoi de la requête au serveur (asynchrone par défaut)
+}
