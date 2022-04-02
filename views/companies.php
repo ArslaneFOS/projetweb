@@ -59,7 +59,7 @@ if (!(has_student_access_level() || has_admin_access_level() || has_pilot_access
             #stat-card {
                 width: 90%;
                 margin: 0 5%;                
-                height: 500px;
+                height: max-content;
             }
         }
     </style>
@@ -69,7 +69,7 @@ if (!(has_student_access_level() || has_admin_access_level() || has_pilot_access
     <main>
 
 
-        <div class="hero">
+        <div class="hero" >
             <div class="search">
 
                 <input placeholder="Search for a compagny" class="component-2 search-for-an-offer valign-text-middle" id="search" type="text" oninput="searchCompanies(document.getElementById('search').value ,1)">
