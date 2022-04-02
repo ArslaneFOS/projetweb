@@ -67,15 +67,17 @@
                 <th></th>
             </tr>
             <tr>
-                <th> <input size="5" id="input" type="text" name="ID"></th>
-                <th><input size="15" id="example" type="text" name="last Name"></th>
-                <th><input size="15" id="example" type="text" name="First Name"></th>
-                <th><input size="10" id="example" type="text" name="Login"></th>
-                <th><input size="10" id="example" type="text" name="Password"></th>
-                <th><input size="5" list="Id Center"><datalist id="Id Center"><option value="1"><option value="2"><option value="3"><option value="4"><option value="5"></datalist></th> 
+              <form>
+                <th> <input size="5" id="input" type="text" name="id_user"></th>
+                <th><input size="15" id="example" type="text" name="lastname"></th>
+                <th><input size="15" id="example" type="text" name="firstname"></th>
+                <th><input size="10" id="example" type="text" name="login"></th>
+                <th><input size="10" id="example" type="text" name="password"></th>
+                <th><select name="id_center" id="id_center"></select></th> 
                 <th><button type="button">Add</button></th>
                 <th><button type="button">Download</button></th>
                 <th></th>
+              </form>
             </tr>
         </thead>
         <tbody>
