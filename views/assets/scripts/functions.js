@@ -853,3 +853,138 @@ const getRepresentativeAdmin = (id_rep) => {
     };
     xhr.send(); //Envoi de la requête au serveur (asynchrone par défaut)
 }
+const pilot = () => {
+    // define URL and for element
+    const create = document.querySelector('#create');
+    const form = document.querySelector('form');
+    // add event listener
+    create.addEventListener('click', e => {
+        const url = "/controllers/create-pilot.php";
+
+        // disable default action
+        e.preventDefault();
+
+        // collect files
+        const formData = new FormData();
+        const inputs = document.querySelectorAll('input, textarea, select');
+
+        inputs.forEach(input => {
+            //console.log(input);
+            name_input = input.name;
+            if (name_input != 'id_user') {
+                value = input.value;
+                formData.append(name_input, value);
+            }
+
+        });
+
+        // post form data
+        const xhr = new XMLHttpRequest();
+        xhr.withCredentials = false;
+        // log response
+        xhr.onload = () => {
+            alert(xhr.responseText);
+        };
+
+        // create and send the reqeust
+        xhr.open('POST', url);
+        xhr.send(formData);
+        form.reset();
+    });
+
+    const update = document.querySelector('#update');
+
+    update.addEventListener('click', e => {
+        const url = "/controllers/update-pilot.php";
+
+        // disable default action
+        e.preventDefault();
+
+        // collect files
+        const formData = new FormData();
+        const inputs = document.querySelectorAll('input, textarea, select');
+
+        inputs.forEach(input => {
+            //console.log(input);
+            name_input = input.name;
+
+            value = input.value;
+            formData.append(name_input, value);
+
+        });
+
+        // post form data
+        const xhr = new XMLHttpRequest();
+        xhr.withCredentials = false;
+        // log response
+        xhr.onload = () => {
+            alert(xhr.responseText);
+        };
+
+        // create and send the reqeust
+        xhr.open('POST', url);
+        xhr.send(formData);
+        form.reset();
+        create.disabled = false;
+        update.disabled = true;
+        //window.location.reload(true);
+    });
+}
+const searchPilotsAdmin = (search, page) => {
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "http://localhost/controllers/search-users.php?user_type=pilot&limit=10000&search=" + encodeURIComponent(search) + "&page=" + page, true);
+    xhr.withCredentials = true;
+    xhr.onload = function () {
+        var html = "";
+        if (xhr.status == 200) {
+            result = JSON.parse(xhr.response);
+            var pilots = result.data;
+            pilots.forEach(pilot => {
+                const table = document.querySelector('tbody');
+
+
+                table.innerHTML += `<tr>
+                <td>${pilot.id_user}</td>
+                <td>${pilot.lastname}</td>
+                <td>${pilot.firstname}</td>
+                <td>${pilot.login}</td>
+                <td>${pilot.password.substring(0, 15)}...</td>
+                <td>${pilot.id_center}</td>
+                <td><button class="btn btn-danger" type="button" onclick="deleteUserAdmin('${rep.login}')">Delete</button></td>
+                <td><a href="#" class="btn btn-warning" type="button" onclick="getPilotAdmin(${rep.id_user})">Upload</a></td>
+                <td><button type="button">Modify</button></td>
+            </tr>`;
+                //document.getElementById("logo-" + offer.id_offer).replaceChildren(logo);
+
+
+            });
+
+        }
+        else { }
+
+        //document.getElementById("companies-cards").innerHTML = html;
+    };
+    xhr.send(); //Envoi de la requête au serveur (asynchrone par défaut)
+};
+const getPilotAdmin = (id_pilot) => {
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "/controllers/get-user.php?user_type=pilot&id_user=" + id_pilot, true);
+    xhr.withCredentials = true;
+    xhr.onload = function () {
+        if (xhr.status == 200) {
+            var user = JSON.parse(xhr.response);
+            document.getElementById('id_user').value = user.id_user;
+            document.getElementById('lastname').value = user.lastname;
+            document.getElementById('firstname').value = user.firstname;
+            document.getElementById('id_center').value = user.id_center;
+            document.getElementById('login').value = user.login;
+            document.getElementById('id_center').value = user.id_center
+        
+            //document.getElementById('logo').replaceChildren(logo);
+            document.querySelector('#update').disabled = false;
+            document.querySelector('#create').disabled = true;
+        }
+        else { }
+    };
+    xhr.send(); //Envoi de la requête au serveur (asynchrone par défaut)
+}
