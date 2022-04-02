@@ -423,7 +423,7 @@ const searchOfferAdmin = (search, page) => {
 
                 <td id='logo-${offer.id_offer}'></td> 
                 <td><a type="button" onclick="deleteOfferAdmin(${offer.id_offer})" class="btn btn-danger">Delete</a></td>
-                <td><a href="#" type="button" onclick="getOffe(${offer.id_offer})" class="btn btn-warning">Upload</a></td>
+                <td><a href="#" type="button" onclick="getOffer(${offer.id_offer})" class="btn btn-warning">Upload</a></td>
                 </tr>`;
                 document.getElementById("logo-" + offer.id_offer).replaceChildren(logo);
 
