@@ -261,9 +261,9 @@ if (!(has_admin_access_level() || has_pilot_access_level() || (has_representativ
   </footer>
   <script>
     document.body.onload = () => {
-      user();
-      searchUsersAdmin('', 1);
-      document.getElementById('id_user').oninput = () => getUser(document.getElementById('id_user').value);
+      student();
+      searchPilotsAdmin('', 1);
+      document.getElementById('id_user').oninput = () => getPilotAdmin(document.getElementById('id_user').value);
     }
   </script>
 </body>
