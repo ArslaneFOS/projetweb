@@ -58,9 +58,9 @@
 
     <div class="hero">
         <div class="search">
-
-            <input placeholder="Search for a User" class="component-2 search-for-an-offer valign-text-middle" id="search" type="text" oninput="searchCompanies(document.getElementById('search').value ,1)">
-
+            <input placeholder="firstname" class="component-2 search-for-an-offer valign-text-middle" id="firstname" type="text" oninput="document.getElementById('users-cards').innerHTML = '';searchUsers(document.getElementById('firstname').value, document.getElementById('lastname').value ,1)">
+            <div>&nbsp;</div>
+            <input placeholder="lastname" class="component-2 search-for-an-offer valign-text-middle" id="lastname" type="text" oninput="document.getElementById('users-cards').innerHTML = '';searchUsers(document.getElementById('firstname').value, document.getElementById('lastname').value ,1)">
         </div>
     </div>
 
@@ -68,17 +68,12 @@
 
   </div>
     <h1>Users</h1>
-    <input id="firstname" type="text" oninput="searchUsers(document.getElementById('firstname').value, document.getElementById('lastname').value ,1)">
-    <input id="lastname" type="text" oninput="searchUsers(document.getElementById('firstname').value, document.getElementById('lastname').value ,1)">
 
     <script src="/views/assets/scripts/functions.js"></script>
     <script>
     document.body.onload = () => {
-      searchUsers('', 1);
-      document.getElementById('search').oninput = () => {
-        document.getElementById('users-cards').innerHTML = '';
-        searchUsers(document.getElementById('search').value, 1);
-      }
+      searchUsers('', '', 1);
+      
     }
     // testfgsdgfds
   </script>

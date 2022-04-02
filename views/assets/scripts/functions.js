@@ -1,4 +1,3 @@
-
 const getCompaniesNames = () => {
     var xhr = new XMLHttpRequest();
     xhr.open("GET", "/controllers/get-company-names.php", true);
@@ -119,7 +118,7 @@ const searchOffers = (search, page) => {
                 <div class="card mb-3" >
                     <div class="row g-0">
                       <div class="col-md-4">
-                        <img src="${src}" class="img-fluid" alt="${offer.name_offer}" style="height: 160px; margin: 20px; border-radius: 10px;
+                        <img src="${src}" class="img-fluid" alt="${offer.name_offer}" style="height: 145px; margin: 20px; border-radius: 10px;
                         object-fit: contain;
                         width: 145px;
                         background-color: #efefef;">
@@ -128,8 +127,10 @@ const searchOffers = (search, page) => {
                         <div class="card-body">
                           <h5 class="card-title">${offer.name_offer}</h5>
                           <p class="card-text"><small class="text-muted">from ${offer.name_com}</small></p>
-                          <p class="card-text">${offer.description_offer.substring(0, 200) + '...'}</p>
-                        </div>
+                          <p class="card-text">${offer.description_offer.substring(0, 200)}...&nbsp;<a href="#" onclick="getOfferOverlay(${offer.id_offer})">Read&nbsp;More</a></p>
+                          <div class="btn btn-secondary col-md-4 col-12" onclick="addToWishlist(${offer.id_offer})">Add&nbsp;To&nbsp;Wishlist</div>
+                          <div class="btn btn-primary col-md-7 col-12" onclick="getApplyOverlay(${offer.id_offer})">Apply</div>
+                          </div>
                       </div>
                       <div class="col-md-2 d-flex justify-content-center align-items-center flex-column">
                       <h6 class="card-title">${offer.internship_length_offer} Months</h5>
@@ -158,8 +159,9 @@ const searchUsers = (firstname, lastname, page) => {
         if (xhr.status == 200) {
             result = JSON.parse(xhr.response);
             users = result.data;
+            var src = '/views/assets/images/user-icon.png';
             users.forEach(user => {
-                document.getElementById('offers-cards').innerHTML += `
+                document.getElementById('users-cards').innerHTML += `
                 <div class="card-offer" style="width: 80%;">
                 <div class="card mb-3" >
                     <div class="row g-0">
@@ -171,16 +173,16 @@ const searchUsers = (firstname, lastname, page) => {
                       </div>
                       <div class="col-md-6">
                         <div class="card-body">
-                          <h5 class="card-title">${user.lastname.firstname}</h5>
-                          <p class="card-text"><small class="text-muted">from ${user.name_prom}</small></p>
-                          <p class="card-text"><small class="text-muted">from ${user.level_prom}</small></p>
-                          <p class="card-text"><small class="text-muted">from ${user.id_center}</small></p>
+                          <h5 class="card-title">${user.lastname} ${user.firstname}</h5>
+                          <p class="card-text"><small class="text-muted">from ${user.name_center}</small></p>
                           
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-            </div>`
+                          </div>
+                          </div>
+                          </div>
+                          </div>
+                          </div>`
+                //<p class="card-text"><small class="text-muted">from ${user.name_prom}</small></p>
+                //<p class="card-text"><small class="text-muted">from ${user.level_prom}</small></p>
 
             });
 
@@ -194,7 +196,7 @@ const searchUsers = (firstname, lastname, page) => {
 
 const searchWishlist = (search, page) => {
     var xhr = new XMLHttpRequest();
-    xhr.open("GET", "http://localhost/controllers/search-offers.php?search=" + encodeURIComponent(search) + "&page=" + page, true);
+    xhr.open("GET", "http://localhost/controllers/search-wishlist.php?search=" + encodeURIComponent(search) + "&page=" + page, true);
     xhr.withCredentials = true;
     xhr.onload = function () {
         var html = "";
@@ -211,29 +213,30 @@ const searchWishlist = (search, page) => {
 
 
                 document.getElementById('wishlist-cards').innerHTML += `
-                <div class="card-offer" style="width: 80%;">
+                <div class="card-offer" style="width: 80%;" id="offer-${offer.id_offer}">
                 <div class="card mb-3" >
-                    <div class="row g-0">
-                      <div class="col-md-4">
-                        <img src="${src}" class="img-fluid" alt="${offer.name_offer}" style="height: 160px; margin: 20px; border-radius: 10px;
-                        object-fit: contain;
-                        width: 145px;
-                        background-color: #efefef;">
-                      </div>
-                      <div class="col-md-6">
-                        <div class="card-body">
-                          <h5 class="card-title">${offer.name_offer}</h5>
-                          <p class="card-text"><small class="text-muted">from ${offer.name_com}</small></p>
-                          <p class="card-text">${offer.description_offer.substring(0, 200) + '...'}</p>
+                <div class="btn btn-danger" style="position: absolute;right:10px;top: 10px;" onclick="deleteFromWishlist(${offer.id_offer});">X</div>
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="${src}" class="img-fluid" alt="${offer.name_offer}" style="height: 160px; margin: 20px; border-radius: 10px;
+                                object-fit: contain;
+                                width: 145px;
+                                background-color: #efefef;">
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card-body">
+                                    <h5 class="card-title">${offer.name_offer}</h5>
+                                    <p class="card-text"><small class="text-muted">from ${offer.name_com}</small></p>
+                                    <p class="card-text">${offer.description_offer.substring(0, 200) + '...'}</p>
+                                </div>
+                            </div>
+                            <div class="col-md-2 d-flex justify-content-center align-items-center flex-column">
+                                <h6 class="card-title">${offer.internship_length_offer} Months</h5>
+                                <h6 class="card-title">${offer.level_offer} Level</h5>
+                            </div>
                         </div>
-                      </div>
-                      <div class="col-md-2 d-flex justify-content-center align-items-center flex-column">
-                      <h6 class="card-title">${offer.internship_length_offer} Months</h5>
-                      <h6 class="card-title">${offer.level_offer} Level</h5>
-                      </div>
                     </div>
-                  </div>
-            </div>`
+                </div>`
             });
         }
         else { }
@@ -243,6 +246,33 @@ const searchWishlist = (search, page) => {
     };
     xhr.send(); //Envoi de la requête au serveur (asynchrone par défaut)
 };
+
+const deleteFromWishlist = (id_offer) => {
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "/controllers/delete-from-wishlist.php?id_offer=" + id_offer, true);
+    xhr.withCredentials = true;
+    xhr.onload = function () {
+        if (xhr.status == 200) {
+            window.location.reload(true);
+        }
+        else { }
+    };
+    xhr.send(); //Envoi de la requête au serveur (asynchrone par défaut)
+}
+
+const addToWishlist = (id_offer) => {
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "/controllers/add-to-wishlist.php?id_offer=" + id_offer, true);
+    xhr.withCredentials = true;
+    xhr.onload = function () {
+        if (xhr.status == 200) {
+            alert(xhr.responseText);
+            //window.location.reload(true);
+        }
+        else { }
+    };
+    xhr.send(); //Envoi de la requête au serveur (asynchrone par défaut)
+}
 
 const company = () => {
     // define URL and for element
@@ -509,11 +539,12 @@ const searchCompanies = (search, page) => {
                   <div class="x7-skills-of-highly-e">${company.name_com}</div>
                   <p class="our-team-was-inspire">
                     ${company.description_com.substring(0, 150) + '...'}
-                  </p>
-                </div>
-                <div class="read-more opensans-semi-bold-azure-radiance-11px">
-                  <a href="#" class="opensans-semi-bold-azure-radiance-11px">Read more </a>
-                </div>
+                    </p>
+                    </div>
+                    <div class="btn btn-primary" onclick="getCompanyStats(${company.id_com})">Statistics</div>
+                    <div class="read-more opensans-semi-bold-azure-radiance-11px">
+                    <a href="#" class="opensans-semi-bold-azure-radiance-11px">Read more </a>
+                    </div>
               </div>`;
                 //document.getElementById("logo-" + company.id_com).replaceChildren(logo);
 
@@ -641,7 +672,7 @@ const searchStudentsAdmin = (search, page) => {
                 <td>${user.id_prom}</td>
                 <td>${user.login}</td>
                 <td>${user.password.substring(0, 15)}...</td>
-                <td>${user.id_center}</td>
+                <td>${user.id_center} - ${user.name_center}</td>
                 <td><a type="button" onclick="deleteUserAdmin('${user.login}')" class="btn btn-danger">Delete</a></td>
                 <td><a href="#" type="button" onclick="getStudentAdmin(${user.id_user})" class="btn btn-warning">Upload</a></td>
                 </tr>`;
@@ -855,7 +886,7 @@ const searchRepresentativesAdmin = (search, page) => {
                 <td>${rep.firstname}</td>
                 <td>${rep.login}</td>
                 <td>${rep.password.substring(0, 15)}...</td>
-                <td>${rep.id_center}</td>
+                <td>${rep.id_center} - ${rep.name_center}</td>
                 <td><button class="btn btn-danger" type="button" onclick="deleteUserAdmin('${rep.login}')">Delete</button></td>
                 <td><a href="#" class="btn btn-warning" type="button" onclick="getRepresentativeAdmin(${rep.id_user})">Upload</a></td>
                 <td><a href="/admin/repauth?id_rep=${rep.id_user}" type="button" class="btn btn-dark">Auths</a></td>
@@ -991,7 +1022,7 @@ const searchPilotsAdmin = (search, page) => {
                 <td>${pilot.firstname}</td>
                 <td>${pilot.login}</td>
                 <td>${pilot.password.substring(0, 15)}...</td>
-                <td>${pilot.id_center}</td>
+                <td>${pilot.id_center} - ${pilot.name_center}</td>
                 <td><button class="btn btn-danger" type="button" onclick="deleteUserAdmin('${pilot.login}')">Delete</button></td>
                 <td><a href="#" class="btn btn-warning" type="button" onclick="getPilotAdmin(${pilot.id_user})">Upload</a></td>
                 <td><button type="button">Modify</button></td>
@@ -1101,8 +1132,19 @@ const getCompanyStats = (id_com) => {
         if (xhr.status == 200) {
             var stats = JSON.parse(xhr.response);
             //console.log(auths);
-            const ctx = document.getElementById('myChart');
-            const myChart = new Chart(ctx, {
+            document.getElementById('overlay').innerHTML = 
+            `<div id="stat-card" >
+            <button type="button" class="close btn btn-danger" aria-label="Close" onclick="document.getElementById('overlay').style.display = 'none';">x</button>
+            <canvas id="companyChart"></canvas>
+            <table>
+                <tr>
+                    <th>Latest offers</th>
+                </tr>
+                <tbody></tbody>
+            </table>
+        </div>`
+            const ctx = document.getElementById('companyChart');
+            const companyChart = new Chart(ctx, {
                 type: 'bar',
                 data: {
                     labels: ['Total Offers',
@@ -1143,7 +1185,7 @@ const getCompanyStats = (id_com) => {
             stats.last_ten_offers.forEach(offer => {
                 document.querySelector('tbody').innerHTML += `<tr><td>${offer}</td></tr>`
             });
-
+            document.getElementById('overlay').style.display = 'block';
         }
         else { }
     };
@@ -1219,7 +1261,7 @@ const getStudentStats = (id_student) => {
                         'Total Accepted App.',
                         'Total Refused App.',
                         'Total Evals',
-                    'Total Wishlist'],
+                        'Total Wishlist'],
                     datasets: [{
                         label: '',
                         data: [stats.total_student_applications, stats.total_accepted_applications, stats.total_refused_applications, stats.total_student_evals, stats.total_student_wishlist],
@@ -1255,6 +1297,63 @@ const getStudentStats = (id_student) => {
                 document.querySelector('tbody').innerHTML += `<tr><td>${offer}</td></tr>`
             });
 
+        }
+        else { }
+    };
+    xhr.send(); //Envoi de la requête au serveur (asynchrone par défaut)
+}
+
+const getOfferOverlay = (id_offer) => {
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "/controllers/get-offer.php?id_offer=" + id_offer, true);
+    xhr.withCredentials = true;
+    xhr.onload = function () {
+        if (xhr.status == 200) {
+            var offer = JSON.parse(xhr.response);
+            var overlay = document.getElementById('overlay');
+            overlay.innerHTML = 
+            `<div">
+            <span class="close btn btn-danger" style="position:absolute;right:0;" onclick="document.getElementById('overlay').style.display = 'none';">X</span>
+            <h1>${offer.name_offer}</h1>
+            </div>`
+          overlay.style.display = 'block';
+          document.getElementById('offer-card').style.height = '100%';
+          console.log(window.innerHeight);
+        }
+        else { }
+    };
+    xhr.send(); //Envoi de la requête au serveur (asynchrone par défaut)
+
+}
+
+const getApplyOverlay = (id_offer) => {
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "/controllers/get-offer.php?id_offer=" + id_offer, true);
+    xhr.withCredentials = true;
+    xhr.onload = function () {
+        if (xhr.status == 200) {
+            var offer = JSON.parse(xhr.response);
+            var overlay = document.getElementById('overlay');
+            overlay.innerHTML = 
+            `<div style="color: black; background-color: white;">
+            <span class="close btn btn-danger" style="position:absolute;right:0;" onclick="document.getElementById('overlay').style.display = 'none';">X</span>
+            <h1>Apply to "${offer.name_offer}"</h1>
+            <form method="post" action="/controllers/apply-offer.php" enctype="multipart/form-data">
+                <input type="number" name="id_offer" id="id_offer" value="${offer.id_offer}" style="display: none;"/><br>
+                
+                <label for="resume">Resume</label><br>
+                <input type="file" id="resume" name="resume"/><br>
+
+                <label for="motivation">Motivation Letter</label><br>
+                <input type="file" id="motivation" name="motivation"/><br>
+
+                <button type="submit" name="submit" value="submit">Submit</button>
+            </form>
+            </div>`
+          overlay.style.display = 'block';
+          document.getElementById('offer-card').style.height = '100%';
+          console.log(window.innerHeight);
         }
         else { }
     };
