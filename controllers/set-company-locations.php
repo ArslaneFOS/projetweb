@@ -36,7 +36,7 @@ if (isset($_POST['id_com'])) {
         $success = $bdd->create("INSERT INTO companies_locations(id_com, id_local) VALUES (:id_com, (SELECT id_local from locality where city_local = :local));", $binds);
         if(!$success) {
             echo "Error";
-            
+            die();
         }
     }
 

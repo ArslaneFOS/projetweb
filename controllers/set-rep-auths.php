@@ -36,6 +36,7 @@ if (isset($_POST['id_user'])) {
         $success = $bdd->create("INSERT INTO rep_auth(id_rep, id_auth) VALUES (:id_rep, (SELECT id_auth from authorization where auth = :auth));", $binds);
         if(!$success) {
             echo "Error";
+            die();
         }
     }
 

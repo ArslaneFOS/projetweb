@@ -50,7 +50,11 @@ if (isset($_GET['page'])) {
         case 'admin/companylocations':
             include('views/admin-com-locations.php');
             break;
-            
+
+        case 'admin/offer-skills' :
+            include('views/admin-off-skills.php');
+            break;
+
         case 'test/login':
             include('views/tests/login.html');
             break;
