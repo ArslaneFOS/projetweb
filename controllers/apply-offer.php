@@ -41,6 +41,16 @@ $id_offer = $_POST['id_offer'];
 
 $offerexists = $bdd->select("SELECT 1 FROM offer where id_offer = :id_offer;", array(':id_offer' => array($id_offer, PDO::PARAM_INT)));
 
+
+
+
+$appexists = $bdd->select("SELECT 1 FROM applications where id_offer = :id_offer AND id_student = :id_student;", array(':id_offer' => array($id_offer, PDO::PARAM_INT), ':id_student' => array($id_user, PDO::PARAM_INT)));
+
+if ($appexists) {
+    echo "You already applied for this offer";
+    die();
+}
+
 if (!$isstudent || !$offerexists) {
     echo "Not a student or offer doesn't exist.";
     die();
