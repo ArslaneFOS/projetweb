@@ -411,7 +411,6 @@ const searchOfferAdmin = (search, page) => {
             result = JSON.parse(xhr.response);
             var offers = result.data;
             offers.forEach(offer => {
-                var src = 'data:image;base64,' + offer.logo_com;
                 const table = document.querySelector('tbody');
 
 
@@ -475,6 +474,121 @@ const searchCompanies = (search, page) => {
                 </div>
               </div>`;
                 //document.getElementById("logo-" + company.id_com).replaceChildren(logo);
+
+
+            });
+
+        }
+        else { }
+
+        //document.getElementById("companies-cards").innerHTML = html;
+    };
+    xhr.send(); //Envoi de la requête au serveur (asynchrone par défaut)
+};
+
+const representative = () => {
+    // define URL and for element
+    const create = document.querySelector('#create');
+    const form = document.querySelector('form');
+    // add event listener
+    create.addEventListener('click', e => {
+        const url = "/controllers/create-representative.php";
+
+        // disable default action
+        e.preventDefault();
+
+        // collect files
+        const formData = new FormData();
+        const inputs = document.querySelectorAll('input, textarea, select');
+
+        inputs.forEach(input => {
+            //console.log(input);
+            name_input = input.name;
+            if (name_input != 'id_user') {
+                value = input.value;
+                formData.append(name_input, value);
+            }
+
+        });
+
+        // post form data
+        const xhr = new XMLHttpRequest();
+        xhr.withCredentials = false;
+        // log response
+        xhr.onload = () => {
+            alert(xhr.responseText);
+        };
+
+        // create and send the reqeust
+        xhr.open('POST', url);
+        xhr.send(formData);
+        form.reset();
+    });
+
+    const update = document.querySelector('#update');
+
+    update.addEventListener('click', e => {
+        const url = "/controllers/update-representative.php";
+
+        // disable default action
+        e.preventDefault();
+
+        // collect files
+        const formData = new FormData();
+        const inputs = document.querySelectorAll('input, textarea, select');
+
+        inputs.forEach(input => {
+            //console.log(input);
+            name_input = input.name;
+
+            value = input.value;
+            formData.append(name_input, value);
+
+        });
+
+        // post form data
+        const xhr = new XMLHttpRequest();
+        xhr.withCredentials = false;
+        // log response
+        xhr.onload = () => {
+            alert(xhr.responseText);
+        };
+
+        // create and send the reqeust
+        xhr.open('POST', url);
+        xhr.send(formData);
+        form.reset();
+        create.disabled = false;
+        update.disabled = true;
+        window.location.reload(true);
+    });
+}
+
+const searchRepresentativesAdmin = (search, page) => {
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "http://localhost/controllers/search-users.php?user_type=representative&limit=10000&search=" + encodeURIComponent(search) + "&page=" + page, true);
+    xhr.withCredentials = true;
+    xhr.onload = function () {
+        var html = "";
+        if (xhr.status == 200) {
+            result = JSON.parse(xhr.response);
+            var reps = result.data;
+            reps.forEach(rep => {
+                const table = document.querySelector('tbody');
+
+
+                table.innerHTML += `<tr>
+                <td>${rep.id_user}</td>
+                <td>${rep.lastname}</td>
+                <td>${rep.firstname}</td>
+                <td>${rep.login}</td>
+                <td>${rep.password}</td>
+                <td>${rep.id_center}</td>
+                <td><button type="button">Delete</button></td>
+                <td><button type="button">Upload</button></td>
+                <td><button type="button">Modify</button></td>
+            </tr>`;
+                //document.getElementById("logo-" + offer.id_offer).replaceChildren(logo);
 
 
             });

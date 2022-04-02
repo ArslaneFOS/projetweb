@@ -26,6 +26,7 @@
   <script src="/views/assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="/views/assets/vendor/php-email-form/validate.js"></script>
   <script src="/views/assets/js/main.js"></script>
+  <script src="/views/assets/scripts/functions.js"></script>
   <link rel="icon" href="https://img.icons8.com/external-smashingstocks-isometric-smashing-stocks/55/000000/external-web-link-seo-and-marketing-smashingstocks-isometric-smashing-stocks.png">
 </head>
 <body>
@@ -68,113 +69,33 @@
             </tr>
             <tr>
               <form>
-                <th> <input size="5" id="input" type="text" name="id_user"></th>
-                <th><input size="15" id="example" type="text" name="lastname"></th>
-                <th><input size="15" id="example" type="text" name="firstname"></th>
-                <th><input size="10" id="example" type="text" name="login"></th>
-                <th><input size="10" id="example" type="text" name="password"></th>
-                <th><select name="id_center" id="id_center"></select></th> 
-                <th><button type="button">Add</button></th>
-                <th><button type="button">Download</button></th>
+                <th> <input size="5" id="id_user" type="text" name="id_user"></th>
+                <th><input size="15" id="lastname" type="text" name="lastname"></th>
+                <th><input size="15" id="firstname" type="text" name="firstname"></th>
+                <th><input size="10" id="login" type="text" name="login"></th>
+                <th><input size="10" id="password" type="text" name="password"></th>
+                <th><select name="id_center" id="id_center">
+                  <option value="1">Exia Alger</option>
+                  <option value="2">CESI EXIA Alger</option>
+                  <option value="3">CESI lyon</option>
+                  <option value="4">CESI Springfield</option>
+                  <option value="5">CESI South Park</option>
+                  <option value="6">CESI New York</option>
+                  <option value="7">CESI Gotham City</option>
+                  <option value="8">CESI Metropolis</option>
+                  <option value="9">CESI Tokyo</option>
+                  <option value="10">CESI Moscou</option>
+                  <option value="11">CESI Sin City</option>
+                </select></th> 
+                <th><button type="button" id="create">Add</button></th>
+                <th><button type="button" id="update">Download</button></th>
                 <th></th>
               </form>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>99</td>
-                <td>Rep1</td>
-                <td>Rep1</td>
-                <td>Rep1</td>
-                <td>Representative</td>
-                <td>4</td>
-                <td><button type="button">Delete</button></td>
-                <td><button type="button">Upload</button></td>
-                <td><button type="button">Modify</button></td>
-
-            </tr>
-              <tr>
-                <td>74</td>
-                <td>Rep2</td>
-                <td>Rep2</td>
-                <td>Rep2</td>
-                <td>Representative</td>
-                <td>4</td>
-                <td><button type="button">Delete</button></td>
-                <td><button type="button">Upload</button></td>
-                <td><button type="button">Modify</button></td>
-            </tr>
-            <tr>
-                <td>99</td>
-                <td>Rep1</td>
-                <td>Rep1</td>
-                <td>Rep1</td>
-                <td>Representative</td>
-                <td>4</td>
-                <td><button type="button">Delete</button></td>
-                <td><button type="button">Upload</button></td>
-                <td><button type="button">Modify</button></td>
-
-            </tr>
-              <tr>
-                <td>74</td>
-                <td>Rep2</td>
-                <td>Rep2</td>
-                <td>Rep2</td>
-                <td>Representative</td>
-                <td>4</td>
-                <td><button type="button">Delete</button></td>
-                <td><button type="button">Upload</button></td>
-                <td><button type="button">Modify</button></td>
-            </tr>
-            <tr>
-                <td>99</td>
-                <td>Rep1</td>
-                <td>Rep1</td>
-                <td>Rep1</td>
-                <td>Representative</td>
-                <td>4</td>
-                <td><button type="button">Delete</button></td>
-                <td><button type="button">Upload</button></td>
-                <td><button type="button">Modify</button></td>
-
-            </tr>
-              <tr>
-                <td>74</td>
-                <td>Rep2</td>
-                <td>Rep2</td>
-                <td>Rep2</td>
-                <td>Representative</td>
-                <td>4</td>
-                <td><button type="button">Delete</button></td>
-                <td><button type="button">Upload</button></td>
-                <td><button type="button">Modify</button></td>
-            </tr>
-            <tr>
-                <td>99</td>
-                <td>Rep1</td>
-                <td>Rep1</td>
-                <td>Rep1</td>
-                <td>Representative</td>
-                <td>4</td>
-                <td><button type="button">Delete</button></td>
-                <td><button type="button">Upload</button></td>
-                <td><button type="button">Modify</button></td>
-
-            </tr>
-              <tr>
-                <td>74</td>
-                <td>Rep2</td>
-                <td>Rep2</td>
-                <td>Rep2</td>
-                <td>Representative</td>
-                <td>4</td>
-                <td><button type="button">Delete</button></td>
-                <td><button type="button">Upload</button></td>
-                <td><button type="button">Modify</button></td>
-            </tr>
-           
-           
+        </tr>
+              
         </tbody>
         <tfoot>
         <th>ID</th>
@@ -264,5 +185,12 @@
       </div>
     </div>
   </footer>
+  <script>
+    document.body.onload = () => {
+      representative();
+      searchRepresentativesAdmin('', 1);
+      //document.getElementById('id_com').oninput = () => getCompany(document.getElementById('id_com').value);
+    }
+  </script>
 </body>
 </html>

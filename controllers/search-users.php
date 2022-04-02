@@ -27,7 +27,7 @@ $binds = array(
 
 $bdd = new DB();
 
-$results = $bdd->select("SELECT * from {$user_type} WHERE INSTR(firstname, :firstname) > 0 AND INSTR(lastname, :lastname) > 0 order by id_user LIMIT :offset, :limit;", $binds);
+$results = $bdd->select("SELECT {$user_type}.*, login.login, login.password from {$user_type} inner join login on {$user_type}.id_login = login.id_login WHERE INSTR(firstname, :firstname) > 0 AND INSTR(lastname, :lastname) > 0 order by id_user LIMIT :offset, :limit;", $binds);
 $total = $bdd->select("SELECT COUNT(*) as total from {$user_type} WHERE INSTR(firstname, :firstname) > 0 AND INSTR(lastname, :lastname) > 0;", array(':firstname' => array($firstname, PDO::PARAM_STR), ':lastname' => array($lastname, PDO::PARAM_STR)));
 $total = (int)$total[0]['total'];
 
