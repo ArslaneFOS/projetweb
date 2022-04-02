@@ -44,3 +44,6 @@ if (isset($_POST['id_offer'])) {
     echo "No ID provided";
     die();
 }
+
+
+header('location: /admin/offers');

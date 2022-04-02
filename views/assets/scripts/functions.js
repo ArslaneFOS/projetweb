@@ -427,6 +427,7 @@ const searchOfferAdmin = (search, page) => {
                 <td>${offer.id_com}</td> 
                 <td><a type="button" onclick="deleteOfferAdmin(${offer.id_offer})" class="btn btn-danger">Delete</a></td>
                 <td><a href="#" type="button" onclick="getOfferAdmin(${offer.id_offer})" class="btn btn-warning">Upload</a></td>
+                <td><a href="/admin/offer-skills?id_offer=${offer.id_offer}" type="button" class="btn btn-warning">Skills</a></td>
                 </tr>`;
                 //document.getElementById("logo-" + offer.id_offer).replaceChildren(logo);
 
@@ -1029,3 +1030,24 @@ const getCompanyLocs = (id_com) => {
     };
     xhr.send(); //Envoi de la requête au serveur (asynchrone par défaut)
 }
+
+const getOfferSkills = (id_offer) => {
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "/controllers/get-offer-skills.php?id_offer=" + id_offer, true);
+    xhr.withCredentials = true;
+    xhr.onload = function () {
+        if (xhr.status == 200) {
+            var skills = JSON.parse(xhr.response);
+            //console.log(auths);
+
+            Object.entries(skills).forEach(skill => {
+                document.getElementById('checkboxes').innerHTML += `<input type="checkbox" name="skill[]" id="${skill[0]}" value="${skill[0]}" ${skill[1] ? 'checked' : ''}/><label for="${skill[0]}">${skill[0].toUpperCase()}</label><br/>`;
+
+
+            });
+        }
+        else { }
+    };
+    xhr.send(); //Envoi de la requête au serveur (asynchrone par défaut)
+}
+
