@@ -43,6 +43,13 @@ if (isset($_GET['page'])) {
             include('views/admin-applications.php');
             break;
 
+        case 'admin/repauth':
+            include('views/admin-rep-auth.php');
+            break;
+            
+        case 'admin/companylocations':
+            include('views/admin-com-locations.php');
+            break;
             
         case 'test/login':
             include('views/tests/login.html');

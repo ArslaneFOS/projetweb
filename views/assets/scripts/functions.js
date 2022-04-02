@@ -86,6 +86,7 @@ const searchCompaniesAdmin = (search, page) => {
                 <td id='logo-${company.id_com}'></td> 
                 <td><a type="button" onclick="deleteCompanyAdmin(${company.id_com})" class="btn btn-danger">Delete</a></td>
                 <td><a href="#" type="button" onclick="getCompanyAdmin(${company.id_com})" class="btn btn-warning">Upload</a></td>
+                <td><a href="/admin/companylocations?id_com=${company.id_com}" type="button" class="btn btn-warning">Locations</a></td>
                 </tr>`;
                 document.getElementById("logo-" + company.id_com).replaceChildren(logo);
 
@@ -111,7 +112,7 @@ const searchOffers = (search, page) => {
             offers = result.data;
             offers.forEach(offer => {
                 var src = 'data:image;base64,' + offer.logo_com;
-                
+
 
                 document.getElementById('offers-cards').innerHTML += `
                 <div class="card-offer" style="width: 80%;">
@@ -586,7 +587,7 @@ const searchStudentsAdmin = (search, page) => {
             result = JSON.parse(xhr.response);
             users = result.data;
             users.forEach(user => {
-                
+
                 const table = document.querySelector('tbody');
 
 
@@ -596,12 +597,12 @@ const searchStudentsAdmin = (search, page) => {
                 <td>${user.firstname}</td>
                 <td>${user.id_prom}</td>
                 <td>${user.login}</td>
-                <td>${user.password.substring(0,15)}...</td>
+                <td>${user.password.substring(0, 15)}...</td>
                 <td>${user.id_center}</td>
                 <td><a type="button" onclick="deleteUserAdmin('${user.login}')" class="btn btn-danger">Delete</a></td>
                 <td><a href="#" type="button" onclick="getStudentAdmin(${user.id_user})" class="btn btn-warning">Upload</a></td>
                 </tr>`;
-                
+
 
 
             });
@@ -627,7 +628,7 @@ const getStudentAdmin = (id_user) => {
             document.getElementById('id_prom').value = user.id_prom
             document.getElementById('login').value = user.login;
             document.getElementById('id_center').value = user.id_center;
-        
+
             //document.getElementById('logo').replaceChildren(logo);
             document.querySelector('#update').disabled = false;
             document.querySelector('#create').disabled = true;
@@ -814,7 +815,7 @@ const searchRepresentativesAdmin = (search, page) => {
                 <td>${rep.id_center}</td>
                 <td><button class="btn btn-danger" type="button" onclick="deleteUserAdmin('${rep.login}')">Delete</button></td>
                 <td><a href="#" class="btn btn-warning" type="button" onclick="getRepresentativeAdmin(${rep.id_user})">Upload</a></td>
-                <td><button type="button">Modify</button></td>
+                <td><a href="/admin/repauth?id_rep=${rep.id_user}" type="button" class="btn btn-dark">Auths</a></td>
             </tr>`;
                 //document.getElementById("logo-" + offer.id_offer).replaceChildren(logo);
 
@@ -842,7 +843,7 @@ const getRepresentativeAdmin = (id_rep) => {
             document.getElementById('id_center').value = user.id_center;
             document.getElementById('login').value = user.login;
             document.getElementById('id_center').value = user.id_center
-        
+
             //document.getElementById('logo').replaceChildren(logo);
             document.querySelector('#update').disabled = false;
             document.querySelector('#create').disabled = true;
@@ -977,10 +978,52 @@ const getPilotAdmin = (id_pilot) => {
             document.getElementById('id_center').value = user.id_center;
             document.getElementById('login').value = user.login;
             document.getElementById('id_center').value = user.id_center
-        
+
             //document.getElementById('logo').replaceChildren(logo);
             document.querySelector('#update').disabled = false;
             document.querySelector('#create').disabled = true;
+        }
+        else { }
+    };
+    xhr.send(); //Envoi de la requête au serveur (asynchrone par défaut)
+}
+
+const getRepAuths = (id_rep) => {
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "/controllers/get-rep-auths.php?id_user=" + id_rep, true);
+    xhr.withCredentials = true;
+    xhr.onload = function () {
+        if (xhr.status == 200) {
+            var auths = JSON.parse(xhr.response);
+            //console.log(auths);
+
+            Object.entries(auths).forEach(auth => {
+                document.getElementById('checkboxes').innerHTML += `<input type="checkbox" name="auth[]" id="${auth[0]}" value="${auth[0]}" ${auth[1] ? 'checked' : ''}/><label for="${auth[0]}">${auth[0].toUpperCase()}</label><br/>
+                    `;
+                //document.getElementById(auth[0]).checked = auth[1];
+
+
+            });
+        }
+        else { }
+    };
+    xhr.send(); //Envoi de la requête au serveur (asynchrone par défaut)
+}
+
+const getCompanyLocs = (id_com) => {
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "/controllers/get-company-locations.php?id_com=" + id_com, true);
+    xhr.withCredentials = true;
+    xhr.onload = function () {
+        if (xhr.status == 200) {
+            var locations = JSON.parse(xhr.response);
+            //console.log(auths);
+
+            Object.entries(locations).forEach(location => {
+                document.getElementById('checkboxes').innerHTML += `<input type="checkbox" name="local[]" id="${location[0]}" value="${location[0]}" ${location[1] ? 'checked' : ''}/><label for="${location[0]}">${location[0]}</label><br/>`;
+
+
+            });
         }
         else { }
     };
