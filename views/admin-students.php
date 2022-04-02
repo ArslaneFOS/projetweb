@@ -35,6 +35,45 @@ if (!(has_admin_access_level() || has_pilot_access_level() || (has_representativ
   <script src="/views/assets/js/main.js"></script>
   <script src="/views/assets/scripts/functions.js"></script>
   <link rel="icon" href="https://img.icons8.com/external-smashingstocks-isometric-smashing-stocks/55/000000/external-web-link-seo-and-marketing-smashingstocks-isometric-smashing-stocks.png">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js" integrity="sha512-QSkVNOCYLtj73J4hbmVoOV6KVZuMluZlioC+trLpewV8qMjsWqlIQvkn1KGX2StWvPMdWGBqim1xlC8krl1EKQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <style>
+        #overlay {
+            position: fixed;
+            /* Sit on top of the page content */
+            display: none;
+            /* Hidden by default */
+            width: 100%;
+            /* Full width (cover the whole page) */
+            height: 100%;
+            /* Full height (cover the whole page) */
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            /* Black background with opacity */
+            z-index: 1000;
+            /* Specify a stack order in case you're using a different order for other elements */
+            cursor: pointer;
+            /* Add a pointer on hover */
+        }
+
+        #stat-card {
+            margin: 100px 25%;
+            width: 50%;
+            background-color: white;
+            border-radius: 18.5px;
+            padding: 20px;
+        }
+
+        @media screen and (max-width: 800px) {
+            #stat-card {
+                width: 90%;
+                margin: 0 5%;                
+                height: max-content;
+            }
+        }
+    </style>
 </head>
 <body>
 <header >
@@ -196,6 +235,10 @@ if (!(has_admin_access_level() || has_pilot_access_level() || (has_representativ
       </div>
     </div>
   </footer>
+  <div id="overlay">
+
+
+  </div>
   <script>
     document.body.onload = () => {
       student();

@@ -669,12 +669,10 @@ const searchStudentsAdmin = (search, page) => {
                 <td>${user.login}</td>
                 <td>${user.password.substring(0, 15)}...</td>
                 <td>${user.id_center} - ${user.name_center}</td>
-                <td><a type="button" onclick="deleteUserAdmin('${user.login}')" class="btn btn-danger">Delete</a></td>
-                <td><a href="#" type="button" onclick="getStudentAdmin(${user.id_user})" class="btn btn-warning">Upload</a></td>
+                <td><button type="button" onclick="deleteUserAdmin('${user.login}')" class="btn btn-danger">Delete</button></td>
+                <td><button type="button" onclick="getStudentAdmin(${user.id_user})" class="btn btn-warning">Upload</button></td>
+                <td><button type="button" onclick="getStudentStats(${user.id_user})" class="btn btn-secondary">Statistics</button></td>
                 </tr>`;
-
-
-
             });
 
         }
@@ -1128,7 +1126,8 @@ const getCompanyStats = (id_com) => {
         if (xhr.status == 200) {
             var stats = JSON.parse(xhr.response);
             //console.log(auths);
-            document.getElementById('overlay').innerHTML = 
+            var overlay = document.getElementById('overlay');
+            overlay.innerHTML = 
             `<div id="stat-card" >
                 <button  type="button" class="close btn btn-danger" aria-label="Close" onclick="document.getElementById('overlay').style.display = 'none';">x</button>
                 <canvas height="max-content" id="companyChart"></canvas>
@@ -1181,7 +1180,7 @@ const getCompanyStats = (id_com) => {
             stats.last_ten_offers.forEach(offer => {
                 document.querySelector('tbody').innerHTML += `<tr><td>${offer}</td></tr>`
             });
-            document.getElementById('overlay').style.display = 'block';
+            overlay.style.display = 'block';
         }
         else { }
     };
@@ -1255,8 +1254,20 @@ const getStudentStats = (id_student) => {
     xhr.onload = function () {
         if (xhr.status == 200) {
             var stats = JSON.parse(xhr.response);
-            //console.log(auths);
-            const ctx = document.getElementById('myChart');
+
+            var overlay = document.getElementById('overlay');
+            overlay.innerHTML = 
+            `<div id="stat-card" >
+                <button  type="button" class="close btn btn-danger" aria-label="Close" onclick="document.getElementById('overlay').style.display = 'none';">x</button>
+                <canvas height="max-content" id="studentChart"></canvas>
+                <table>
+                    <tr>
+                        <th>Latest Applications</th>
+                    </tr>
+                    <tbody id="stat"></tbody>
+                </table>
+            </div>`
+            const ctx = document.getElementById('studentChart');
             const myChart = new Chart(ctx, {
                 type: 'bar',
                 data: {
@@ -1297,9 +1308,9 @@ const getStudentStats = (id_student) => {
             });
 
             stats.last_ten_applications.forEach(offer => {
-                document.querySelector('tbody').innerHTML += `<tr><td>${offer}</td></tr>`
+                document.querySelector('#stat').innerHTML += `<tr><td>${offer}</td></tr>`
             });
-
+            overlay.style.display = 'block';
         }
         else { }
     };
