@@ -1,0 +1,377 @@
+@import url("https://fonts.googleapis.com/css?family=Quicksand:400,700,600|Open+Sans:400,700,600|DM+Serif+Display:400|Roboto:400,700|Nunito+Sans:400");
+
+.frame-2 {
+  align-items: flex-start;
+  background-color: var(--white);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  min-height: 100px;
+  padding: 105px 53px;
+  width: 250px;
+}
+
+.frame {
+  align-items: center;
+  align-self: center;
+  background-color: var(--white);
+  border-radius: 18.5px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 3px;
+  margin-top: 22px;
+  min-height: 164px;
+  padding: 19px 143px;
+  width: 652px;
+}
+
+.upload {
+  align-items: flex-start;
+  background-color: var(--cerulean);
+  border-radius: 15px;
+  display: flex;
+  margin-right: 6px;
+  min-width: 172px;
+  align-items: center;
+  align-self: center;
+}
+
+.valign-text-middle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.companybutontext {
+  height: 47px;
+  letter-spacing: 0;
+  text-align: center;
+  width: 172px;
+}
+
+.vector {
+  height: 40px;
+  margin-right: 5.12px;
+  width: 33px;
+}
+
+.drag-and-drop {
+  align-self: flex-start;
+  height: 39px;
+  letter-spacing: 0;
+  text-align: center;
+  width: 361px;
+}
+
+.motivation-letter {
+  letter-spacing: 0;
+  margin-top: 80px;
+  min-height: 30px;
+}
+
+.title {
+  color: var(--raven);
+  font-family: var(--font-family-quicksand);
+  font-size: var(--font-size-xxxxl);
+  font-weight: 700;
+  height: 45px;
+  letter-spacing: 0;
+  margin-left: 5px;
+  min-width: 390px;
+  text-align: center;
+}
+
+.submit {
+  align-items: flex-start;
+  align-self: center;
+  background-color: var(--cerulean);
+  border-radius: 15px;
+  display: flex;
+  margin-left: 1px;
+  margin-top: 71px;
+  min-width: 172px;
+}
+
+.resume {
+  letter-spacing: 0;
+  margin-top: 21px;
+  min-height: 30px;
+}
+:root {
+    --black-2: 
+  rgba(0, 0, 0, 0.8);
+    --black: 
+  rgba(0, 0, 0, 1);
+    --azure-radiance: 
+  rgba(0, 122, 233, 1);
+    --cerulean: 
+  rgba(0, 154, 221, 1);
+    --daintree: 
+  rgba(8, 31, 50, 1);
+    --steel-gray: 
+  rgba(36, 38, 53, 1);
+    --outer-space: 
+  rgba(45, 55, 72, 1);
+    --mine-shaft: 
+  rgba(51, 51, 51, 1);
+    --oxford-blue: 
+  rgba(55, 74, 89, 1);
+    --masala: 
+  rgba(61, 61, 61, 1);
+    --tundora: 
+  rgba(68, 68, 68, 1);
+    --gravel: 
+  rgba(74, 74, 74, 1);
+    --fiord: 
+  rgba(74, 85, 104, 1);
+    --chicago: 
+  rgba(89, 89, 89, 1);
+    --granite-gray: 
+  rgba(102, 102, 102, 1);
+    --raven: 
+  rgba(110, 121, 140, 1);
+    --star-dust: 
+  rgba(160, 160, 160, 1);
+    --mist-gray: 
+  rgba(196, 196, 196, 1);
+    --cloud: 
+  rgba(198, 198, 198, 1);
+    --bon-jour: 
+  rgba(226, 226, 226, 1);
+    --mercury: 
+  rgba(231, 231, 231, 1);
+    --wild-sand: 
+  rgba(243, 244, 245, 1);
+    --soapstone: 
+  rgba(255, 251, 251, 1);
+    --ivory: 
+  rgba(255, 255, 240, 1);
+    --white: 
+  rgba(255, 255, 255, 1);
+  
+    --font-size-s: 11px;
+    --font-size-m: 13px;
+    --font-size-l: 14px;
+    --font-size-xl: 20px;
+    --font-size-xxl: 22px;
+    --font-size-xxxl: 24px;
+    --font-size-xxxxl: 36px;
+  
+    --font-family-dm_serif_display: "DM Serif Display";
+    --font-family-nunito_sans: "Nunito Sans";
+    --font-family-open_sans: "Open Sans";
+    --font-family-quicksand: "Quicksand";
+    --font-family-roboto: "Roboto";
+  }
+  
+  
+  
+  .quicksand-normal-oxford-blue-13px {
+    color: var(--oxford-blue);
+    font-family: var(--font-family-quicksand);
+    font-size: var(--font-size-m);
+    font-weight: 400;
+    font-style: normal;
+  }
+  .opensans-semi-bold-azure-radiance-11px {
+    color: var(--azure-radiance);
+    font-family: var(--font-family-open_sans);
+    font-size: var(--font-size-s);
+    font-weight: 600;
+    font-style: normal;
+  }
+  .quicksand-bold-white-24px {
+    color: var(--white);
+    font-family: var(--font-family-quicksand);
+    font-size: var(--font-size-xxxl);
+    font-weight: 700;
+    font-style: normal;
+  }
+  .quicksand-bold-daintree-20px {
+    color: var(--daintree);
+    font-family: var(--font-family-quicksand);
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    font-style: normal;
+  }
+  .border-1px-white {
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--white);
+  }
+  .dmserifdisplay-normal-daintree-20px {
+    color: var(--daintree);
+    font-family: var(--font-family-dm_serif_display);
+    font-size: var(--font-size-xl);
+    font-weight: 400;
+    font-style: normal;
+  }
+  .quicksand-bold-raven-36px {
+    color: var(--raven);
+    font-family: var(--font-family-quicksand);
+    font-size: var(--font-size-xxxxl);
+    font-weight: 700;
+    font-style: normal;
+  }
+  .quicksand-bold-raven-24px {
+    color: var(--raven);
+    font-family: var(--font-family-quicksand);
+    font-size: var(--font-size-xxxl);
+    font-weight: 700;
+    font-style: normal;
+  }
+  .border-2px-star-dust {
+    border-width: 2px;
+    border-style: solid;
+    border-color: var(--star-dust);
+  }
+  .quicksand-semi-bold-white-16px {
+    font-family: var(--font-family-quicksand);
+    font-size: 16px;
+    font-weight: 600;
+    font-style: normal;
+  }
+  .quicksand-semi-bold-daintree-16px {
+    color: var(--daintree);
+    font-family: var(--font-family-quicksand);
+    font-size: 16px;
+    font-weight: 600;
+    font-style: normal;
+  }
+  .opensans-normal-azure-radiance-11px {
+    color: var(--azure-radiance);
+    font-family: var(--font-family-open_sans);
+    font-size: var(--font-size-s);
+    font-weight: 400;
+    font-style: normal;
+  }
+  .quicksand-semi-bold-white-24px {
+    color: var(--white);
+    font-family: var(--font-family-quicksand);
+    font-size: var(--font-size-xxxl);
+    font-weight: 600;
+    font-style: normal;
+  }
+  .opensans-normal-oxford-blue-13px {
+    color: var(--oxford-blue);
+    font-family: var(--font-family-open_sans);
+    font-size: var(--font-size-m);
+    font-weight: 400;
+    font-style: normal;
+  }
+  .quicksand-normal-gravel-14px {
+    color: var(--gravel);
+    font-family: var(--font-family-quicksand);
+    font-size: var(--font-size-l);
+    font-weight: 400;
+    font-style: normal;
+  }
+  .quicksand-semi-bold-raven-11px {
+    color: var(--raven);
+    font-family: var(--font-family-quicksand);
+    font-size: var(--font-size-s);
+    font-weight: 600;
+    font-style: normal;
+  }
+  .roboto-normal-outer-space-14px {
+    color: var(--outer-space);
+    font-family: var(--font-family-roboto);
+    font-size: var(--font-size-l);
+    font-weight: 400;
+    font-style: normal;
+  }
+  .quicksand-normal-raven-16px {
+    color: var(--raven);
+    font-family: var(--font-family-quicksand);
+    font-size: 16px;
+    font-weight: 400;
+    font-style: normal;
+  }
+  .opensans-normal-raven-18px {
+    color: var(--raven);
+    font-family: var(--font-family-open_sans);
+    font-size: 18px;
+    font-weight: 400;
+    font-style: normal;
+  }
+  .roboto-normal-fiord-16px {
+    color: var(--fiord);
+    font-family: var(--font-family-roboto);
+    font-size: 16px;
+    font-weight: 400;
+    font-style: normal;
+  }
+  .border-1px-mercury {
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--mercury);
+  }
+  .quicksand-normal-granite-gray-14px {
+    color: var(--granite-gray);
+    font-family: var(--font-family-quicksand);
+    font-size: var(--font-size-l);
+    font-weight: 400;
+    font-style: normal;
+  }
+  .border-2-5px-bon-jour {
+    border-width: 2.5px;
+    border-style: solid;
+    border-color: var(--bon-jour);
+  }
+  .quicksand-semi-bold-tundora-22px {
+    color: var(--tundora);
+    font-family: var(--font-family-quicksand);
+    font-size: var(--font-size-xxl);
+    font-weight: 600;
+    font-style: normal;
+  }
+  .opensans-semi-bold-oxford-blue-13px {
+    color: var(--oxford-blue);
+    font-family: var(--font-family-open_sans);
+    font-size: var(--font-size-m);
+    font-weight: 600;
+    font-style: normal;
+  }
+  .quicksand-semi-bold-white-22px {
+    color: var(--white);
+    font-family: var(--font-family-quicksand);
+    font-size: var(--font-size-xxl);
+    font-weight: 600;
+    font-style: normal;
+  }
+  .quicksand-normal-black-36px {
+    color: var(--black);
+    font-family: var(--font-family-quicksand);
+    font-size: var(--font-size-xxxxl);
+    font-weight: 400;
+    font-style: normal;
+  }
+  .quicksand-normal-black-14px {
+    color: var(--black);
+    font-family: var(--font-family-quicksand);
+    font-size: var(--font-size-l);
+    font-weight: 400;
+    font-style: normal;
+  }
+  .quicksand-bold-black-36px {
+    color: var(--black);
+    font-family: var(--font-family-quicksand);
+    font-size: var(--font-size-xxxxl);
+    font-weight: 700;
+    font-style: normal;
+  }
+  .quicksand-normal-mine-shaft-16px {
+    color: var(--mine-shaft);
+    font-family: var(--font-family-quicksand);
+    font-size: 16px;
+    font-weight: 400;
+    font-style: normal;
+  }
+  .quicksand-normal-raven-11px {
+    color: var(--raven);
+    font-family: var(--font-family-quicksand);
+    font-size: var(--font-size-s);
+    font-weight: 400;
+    font-style: normal;
+  }
