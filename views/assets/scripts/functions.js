@@ -486,7 +486,6 @@ const searchCompanies = (search, page) => {
     };
     xhr.send(); //Envoi de la requête au serveur (asynchrone par défaut)
 };
-<<<<<<< HEAD
 
 
 const user = () => {
@@ -713,5 +712,3 @@ const student = () => {
         window.location.reload(true);
     });
 }
-=======
->>>>>>> c47f6e2b945791a1833266dd0d47d851784b635f
