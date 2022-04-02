@@ -33,6 +33,7 @@ if (!(has_admin_access_level() || has_pilot_access_level() || (has_representativ
   <script src="/views/assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="/views/assets/vendor/php-email-form/validate.js"></script>
   <script src="/views/assets/js/main.js"></script>
+  <script src="/views/assets/scripts/functions.js"></script>
   <link rel="icon" href="https://img.icons8.com/external-smashingstocks-isometric-smashing-stocks/55/000000/external-web-link-seo-and-marketing-smashingstocks-isometric-smashing-stocks.png">
 </head>
 <body>
@@ -74,106 +75,36 @@ if (!(has_admin_access_level() || has_pilot_access_level() || (has_representativ
                 <th></th>
             </tr>
             <tr>
-                <th> <input size="5" id="input" type="text" name="ID"></th>
-                <th><input size="15" id="example" type="text" name="last Name"></th>
-                <th><input size="15" id="example" type="text" name="First Name"></th>
-                <th><input size="5" list="Id Promotion"><datalist id="Id Promotion"><option value="1"><option value="2"><option value="3"><option value="4"><option value="5"></datalist></th> 
-                <th><input size="10" id="example" type="text" name="Login"></th>
-                <th><input size="10" id="example" type="text" name="Password"></th>
-                <th><input size="5" list="Id Center"><datalist id="Id Center"><option value="1"><option value="2"><option value="3"><option value="4"><option value="5"></datalist></th> 
-                <th><button type="button">Add</button></th>
-                <th><button type="button">Download</button></th>
+              <form>
+                <th> <input size="5" id="id_user" type="text" name="id_user"></th>
+                <th><input size="15" id="lastname" type="text" name="lastname"></th>
+                <th><input size="15" id="firstname" type="text" name="firstname"></th>
+                <th><select name="id_prom" id="id_prom">
+                  <option value="1">A2 2022</option>
+                </select></th> 
+                <th><input size="10" id="login" type="text" name="login"></th>
+                <th><input size="10" id="password" type="text" name="password"></th>
+                <th><select name="id_center" id="id_center">
+                  <option value="1">Exia Alger</option>
+                  <option value="2">CESI EXIA Alger</option>
+                  <option value="3">CESI lyon</option>
+                  <option value="4">CESI Springfield</option>
+                  <option value="5">CESI South Park</option>
+                  <option value="6">CESI New York</option>
+                  <option value="7">CESI Gotham City</option>
+                  <option value="8">CESI Metropolis</option>
+                  <option value="9">CESI Tokyo</option>
+                  <option value="10">CESI Moscou</option>
+                  <option value="11">CESI Sin City</option>
+                </select></th> 
+                <th><button class="btn btn-primary" type="button" id="create">Add</button></th>
+                <th><button class="btn btn-info" type="button" id="update">Download</button></th>
+              </form>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>1</td>
-                <td>Sahlaka</td>
-                <td>Bahlaka</td>
-                <td>61</td>
-                <td>ShalakaB</td>
-                <td>P@ssw0rd</td>
-                <td>4</td>
-                <td><button type="button">Delete</button></td>
-                <td><button type="button">Upload</button></td>
-            </tr>
-              <tr>
-                <td>1</td>
-                <td>Sahlaka</td>
-                <td>Bahlaka</td>
-                <td>61</td>
-                <td>ShalakaB</td>
-                <td>P@ssw0rd</td>
-                <td>4</td>
-                <td><button type="button">Delete</button></td>
-                <td><button type="button">Upload</button></td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>Sahlaka</td>
-                <td>Bahlaka</td>
-                <td>61</td>
-                <td>ShalakaB</td>
-                <td>P@ssw0rd</td>
-                <td>4</td>
-                <td><button type="button">Delete</button></td>
-                <td><button type="button">Upload</button></td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>Sahlaka</td>
-                <td>Bahlaka</td>
-                <td>61</td>
-                <td>ShalakaB</td>
-                <td>P@ssw0rd</td>
-                <td>4</td>
-                <td><button type="button">Delete</button></td>
-                <td><button type="button">Upload</button></td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>Sahlaka</td>
-                <td>Bahlaka</td>
-                <td>61</td>
-                <td>ShalakaB</td>
-                <td>P@ssw0rd</td>
-                <td>4</td>
-                <td><button type="button">Delete</button></td>
-                <td><button type="button">Upload</button></td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>Sahlaka</td>
-                <td>Bahlaka</td>
-                <td>61</td>
-                <td>ShalakaB</td>
-                <td>P@ssw0rd</td>
-                <td>4</td>
-                <td><button type="button">Delete</button></td>
-                <td><button type="button">Upload</button></td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>Sahlaka</td>
-                <td>Bahlaka</td>
-                <td>61</td>
-                <td>ShalakaB</td>
-                <td>P@ssw0rd</td>
-                <td>4</td>
-                <td><button type="button">Delete</button></td>
-                <td><button type="button">Upload</button></td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>Sahlaka</td>
-                <td>Bahlaka</td>
-                <td>61</td>
-                <td>ShalakaB</td>
-                <td>P@ssw0rd</td>
-                <td>4</td>
-                <td><button type="button">Delete</button></td>
-                <td><button type="button">Upload</button></td>
-            </tr>
+          
+             
         </tbody>
         <tfoot>
             <tr>
@@ -268,8 +199,8 @@ if (!(has_admin_access_level() || has_pilot_access_level() || (has_representativ
   <script>
     document.body.onload = () => {
       student();
-      searchUsersAdmin('', 1);
-      document.getElementById('id_user').oninput = () => getUser(document.getElementById('id_user').value);
+      searchStudentsAdmin('', 1);
+      document.getElementById('id_user').oninput = () => getStudentAdmin(document.getElementById('id_user').value);
     }
   </script>
 </body>

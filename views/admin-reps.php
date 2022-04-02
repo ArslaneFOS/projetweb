@@ -87,8 +87,8 @@
                   <option value="10">CESI Moscou</option>
                   <option value="11">CESI Sin City</option>
                 </select></th> 
-                <th><button type="button" id="create">Add</button></th>
-                <th><button type="button" id="update">Download</button></th>
+                <th><button class="btn btn-primary" type="button" id="create">Add</button></th>
+                <th><button class="btn btn-info" type="button" id="update" disabled>Download</button></th>
                 <th></th>
               </form>
             </tr>

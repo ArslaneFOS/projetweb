@@ -13,7 +13,7 @@ $binds = array(
 
 $bdd = new DB();
 
-$results = $bdd->select("SELECT * from {$user_type} WHERE id_user = :id_user", $binds);
+$results = $bdd->select("SELECT {$user_type}.*, login.login from {$user_type} inner join login on {$user_type}.id_login = login.id_login WHERE id_user = :id_user", $binds);
 
 if ($results) {
     $echo = $results[0];
