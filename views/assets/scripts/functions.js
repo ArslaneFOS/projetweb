@@ -158,8 +158,9 @@ const searchUsers = (firstname, lastname, page) => {
         if (xhr.status == 200) {
             result = JSON.parse(xhr.response);
             users = result.data;
+            var src = '/views/assets/images/user-icon.png';
             users.forEach(user => {
-                document.getElementById('offers-cards').innerHTML += `
+                document.getElementById('users-cards').innerHTML += `
                 <div class="card-offer" style="width: 80%;">
                 <div class="card mb-3" >
                     <div class="row g-0">
@@ -171,17 +172,17 @@ const searchUsers = (firstname, lastname, page) => {
                       </div>
                       <div class="col-md-6">
                         <div class="card-body">
-                          <h5 class="card-title">${user.lastname.firstname}</h5>
-                          <p class="card-text"><small class="text-muted">from ${user.name_prom}</small></p>
-                          <p class="card-text"><small class="text-muted">from ${user.level_prom}</small></p>
-                          <p class="card-text"><small class="text-muted">from ${user.id_center}</small></p>
+                          <h5 class="card-title">${user.lastname} ${user.firstname}</h5>
+                          <p class="card-text"><small class="text-muted">from ${user.name_center}</small></p>
                           
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-            </div>`
-
+                          </div>
+                          </div>
+                          </div>
+                          </div>
+                          </div>`
+                          //<p class="card-text"><small class="text-muted">from ${user.name_prom}</small></p>
+                          //<p class="card-text"><small class="text-muted">from ${user.level_prom}</small></p>
+                          
             });
 
         }
@@ -641,7 +642,7 @@ const searchStudentsAdmin = (search, page) => {
                 <td>${user.id_prom}</td>
                 <td>${user.login}</td>
                 <td>${user.password.substring(0, 15)}...</td>
-                <td>${user.id_center}</td>
+                <td>${user.id_center} - ${user.name_center}</td>
                 <td><a type="button" onclick="deleteUserAdmin('${user.login}')" class="btn btn-danger">Delete</a></td>
                 <td><a href="#" type="button" onclick="getStudentAdmin(${user.id_user})" class="btn btn-warning">Upload</a></td>
                 </tr>`;
@@ -855,7 +856,7 @@ const searchRepresentativesAdmin = (search, page) => {
                 <td>${rep.firstname}</td>
                 <td>${rep.login}</td>
                 <td>${rep.password.substring(0, 15)}...</td>
-                <td>${rep.id_center}</td>
+                <td>${rep.id_center} - ${rep.name_center}</td>
                 <td><button class="btn btn-danger" type="button" onclick="deleteUserAdmin('${rep.login}')">Delete</button></td>
                 <td><a href="#" class="btn btn-warning" type="button" onclick="getRepresentativeAdmin(${rep.id_user})">Upload</a></td>
                 <td><a href="/admin/repauth?id_rep=${rep.id_user}" type="button" class="btn btn-dark">Auths</a></td>
@@ -991,7 +992,7 @@ const searchPilotsAdmin = (search, page) => {
                 <td>${pilot.firstname}</td>
                 <td>${pilot.login}</td>
                 <td>${pilot.password.substring(0, 15)}...</td>
-                <td>${pilot.id_center}</td>
+                <td>${pilot.id_center} - ${pilot.name_center}</td>
                 <td><button class="btn btn-danger" type="button" onclick="deleteUserAdmin('${pilot.login}')">Delete</button></td>
                 <td><a href="#" class="btn btn-warning" type="button" onclick="getPilotAdmin(${pilot.id_user})">Upload</a></td>
                 <td><button type="button">Modify</button></td>
