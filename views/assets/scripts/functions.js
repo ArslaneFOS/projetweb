@@ -428,7 +428,11 @@ const searchOfferAdmin = (search, page) => {
 
                 <td id='logo-${offer.id_offer}'></td> 
                 <td><a type="button" onclick="deleteOfferAdmin(${offer.id_offer})" class="btn btn-danger">Delete</a></td>
+<<<<<<< HEAD
+                <td><a href="#" type="button" onclick="getOffer(${offer.id_offer})" class="btn btn-warning">Upload</a></td>
+=======
                 <td><a href="#" type="button" onclick="getOfferAdmin(${offer.id_offer})" class="btn btn-warning">Upload</a></td>
+>>>>>>> 77aade622c87587bcee1bd91fdda59430ab9803d
                 </tr>`;
                 //document.getElementById("logo-" + offer.id_offer).replaceChildren(logo);
 
