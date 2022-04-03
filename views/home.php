@@ -43,18 +43,44 @@ $user_type = @$_SESSION['user-type'];
 <body>
 <header id="header" class="d-flex align-items-center">
             <div class="container d-flex align-items-center justify-content-between">
-        
-              <div class="logo">
-                <img class="logo" src="/views/assets/img/neo-neo-logo_1.svg">
+              <div class="col-md-1">
+                <div class="logo">
+                  <img class="logo" src="/views/assets/img/neo-neo-logo_1.svg">
+                </div>
               </div>
         
               <nav id="navbar" class="navbar">
                 <ul>
+<<<<<<< HEAD
+                <div class="col-md-2">
+                    <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+                </div>
+                <div class="col-md-2">
+                    <li><a class="nav-link scrollto" href="#offers">Offers</a></li>
+                </div>
+                <div class="col-md-3">
+                    <li><a class="nav-link scrollto" href="#companies">Companies</a></li>
+                </div>
+                <div class="col-md-2">
+                  <li><a class="nav-link scrollto" href="#users">Interns</a></li>
+                </div>
+                <div class="col-md-1">
+=======
                   <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
                   <li><a class="nav-link scrollto" href="#offerz">Offers</a></li>
                   <li><a class="nav-link scrollto" href="#companiz">Companies</a></li>
+<<<<<<< HEAD
                   <li><a class="nav-link scrollto" href="#internz">Interns</a></li>
+=======
+                  <li><a class="nav-link scrollto" href="#portfolio">Interns</a></li>
+>>>>>>> 468de21cffcc3b512f97ee348fb51974c6091680
+>>>>>>> 661e3a58bcb93bce5826b5ac8a53d873f4754432
                   <li><a class="nav-link scrollto" href="#portfolio">|</a></li>
+                </div>
+                <div class="col-md-1">
+                  <li><a class="nav-link scrollto" href="./login.php">Login</a></li>
+                </div>
+                
                   <!--<li><a class="nav-link scrollto" href="#team">Login</a></li>
                   <li class="dropdown"><a href="#"><span>Random DropDown</span> <i class="bi bi-chevron-down"></i></a>
                     <ul>
@@ -74,7 +100,10 @@ $user_type = @$_SESSION['user-type'];
                     </ul>
                   </li>
                   <li><a class="nav-link scrollto" href="#contact">Contact</a></li> -->
+<<<<<<< HEAD
+=======
                   <li><a class="nav-link scrollto" href="/views/login.php">Login</a></li>
+>>>>>>> 468de21cffcc3b512f97ee348fb51974c6091680
                 </ul>
                 
               </nav><!-- .navbar -->

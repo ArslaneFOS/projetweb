@@ -1,8 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Quicksand:400,700,600|Open+Sans:400,700,600|DM+Serif+Display:400|Roboto:400,700|Nunito+Sans:400");
 
-        * {
-            box-sizing: border-box;
-        }
+      
 
         body {
             background-color: ivory;
