@@ -9,7 +9,7 @@ $user_type = @$_SESSION['user-type'];
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>ProjectX-Home</title>
+  <title>Home page</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
   <!--<link href="/views/assets/img/favicon.png" rel="icon">-->
@@ -53,7 +53,7 @@ $user_type = @$_SESSION['user-type'];
                   <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
                   <li><a class="nav-link scrollto" href="#offerz">Offers</a></li>
                   <li><a class="nav-link scrollto" href="#companiz">Companies</a></li>
-                  <li><a class="nav-link scrollto" href="#portfolio">Interns</a></li>
+                  <li><a class="nav-link scrollto" href="#internz">Interns</a></li>
                   <li><a class="nav-link scrollto" href="#portfolio">|</a></li>
                   <!--<li><a class="nav-link scrollto" href="#team">Login</a></li>
                   <li class="dropdown"><a href="#"><span>Random DropDown</span> <i class="bi bi-chevron-down"></i></a>
@@ -91,7 +91,7 @@ $user_type = @$_SESSION['user-type'];
                 <div class="col-lg-6 mx-auto">
                 <p class="lead mb-4">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
                 <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-                <button type="button" class="btn btn-primary btn-lg px-4 gap-3">Find Out More</button>
+                <a name="Check out our partners" href="www.google.ru"><button type="button" class="btn btn-primary btn-lg px-4 gap-3">Find Out More</button></a>
                 </div>
                 </div>
           </div>
@@ -106,7 +106,7 @@ $user_type = @$_SESSION['user-type'];
         <h4 class="display-8 fw-bold lh-1 mb-3">They do be just for you.</h4>
         <p class="lead">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
         <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-        <button type="button" class="btn btn-outline-secondary btn-lg px-4">Browse our offers</button>
+        <a name="Browse our offers" href="/views/offers.php"><button type="button" class="btn btn-outline-secondary btn-lg px-4">Browse our offers</button></a>
         </div>
       </div>
     </div>
@@ -114,13 +114,13 @@ $user_type = @$_SESSION['user-type'];
 
 
   <div class="container col-xxl-8 px-4 py-5 background-color-black">
-    <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+    <div id="companiz"  class="row flex-lg-row-reverse align-items-center g-5 py-5">
       <div class="col-lg-6">
       <h1 class="display-4 fw-bold lh-1 mb-3">Trustworty Hirers</h1>
         <h4 class="display-8 fw-bold lh-1 mb-3">MULTIPLE COMPAGNIES AVAILABLE IN A CLICK.</h4>
         <p class="lead">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
         <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-          <button id="companiz" type="button" class="btn btn-primary btn-lg px-4 me-md-2">Check Out Our Partners</button>
+        <a name="Check out our partners" href="/views/companies.php"><button  type="button" class="btn btn-primary btn-lg px-4 me-md-2">Check Out Our Partners</button></a>
           
         </div>
       </div>
@@ -133,7 +133,7 @@ $user_type = @$_SESSION['user-type'];
 
 
   <div class="container col-xxl-8 px-4 py-5">
-    <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+    <div id="internz" class="row flex-lg-row-reverse align-items-center g-5 py-5">
       <div class="col-10 col-sm-8 col-lg-6">
         <img src="https://images.pexels.com/photos/6615092/pexels-photo-6615092.jpeg?cs=srgb&dl=pexels-tima-miroshnichenko-6615092.jpg&fm=jpg" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
       </div>
@@ -142,7 +142,7 @@ $user_type = @$_SESSION['user-type'];
         <h4 class="display-8 fw-bold lh-1 mb-3">Hire some of the best students out here.</h4>
         <p class="lead">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
         <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-          <button type="button" class="btn btn-outline-secondary btn-lg px-4">Find a Student</button>
+         <a name="Find a student button" href="/views/users.php"> <button type="button" class="btn btn-outline-secondary btn-lg px-4">Find a Student</button></a>
         </div>
       </div>
     </div>
@@ -160,9 +160,9 @@ $user_type = @$_SESSION['user-type'];
                         <h4> Navigate</h4>
                         <ul>
                             <li><a href="#">Home</a></li>
-                            <li><a href="#">Offers</a></li>
-                            <li><a href="#">Compagnies</a></li>
-                            <li><a href="#">Interns</a></li>
+                            <li><a href="#offerz">Offers</a></li>
+                            <li><a href="#companiz">Companies</a></li>
+                            <li><a href="#internz">Interns</a></li>
                         </ul>
                     </div>
                 </div>
@@ -179,7 +179,7 @@ $user_type = @$_SESSION['user-type'];
                             <li><i class="far fa-envelope"></i> email@yahoo.com</li>
 
 
-                          <li><i class="fas fa-map-marker-alt"></i> Algier, Algeria </li>
+                          <li><i class="fas fa-map-marker-alt"></i> Algiers, Algeria </li>
                         </ul>
                     </div>
                 </div>
