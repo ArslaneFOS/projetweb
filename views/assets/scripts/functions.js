@@ -1462,7 +1462,7 @@ const getApplications = () => {
                             <a download="motivation.pdf" href="data:application/pdf;base64,${application.motivation_letter}">Motivation Letter</a>
                             <a download="validation.pdf" href="data:application/pdf;base64,${application.validation_form}">Validation Form</a>
         
-                            <input type="range" min="1" max="6" class="form-range" id="disabledRange" disabled value="4">
+                            <input type="range" min="1" max="6" class="form-range" id="disabledRange" disabled value="">
                         </div>
                     </div>
                         `
