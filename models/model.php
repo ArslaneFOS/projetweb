@@ -97,6 +97,7 @@ class DB {
       return $result;
     } catch (Exception $ex) { 
       $this->error = $ex->getMessage(); 
+      echo $this->error.'<br>';
       return false;
     }
   }

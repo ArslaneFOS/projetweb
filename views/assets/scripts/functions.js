@@ -1127,8 +1127,8 @@ const getCompanyStats = (id_com) => {
             var stats = JSON.parse(xhr.response);
             //console.log(auths);
             var overlay = document.getElementById('overlay');
-            overlay.innerHTML = 
-            `<div id="stat-card" >
+            overlay.innerHTML =
+                `<div id="stat-card" >
                 <button  type="button" class="close btn btn-danger" aria-label="Close" onclick="document.getElementById('overlay').style.display = 'none';">x</button>
                 <canvas height="max-content" id="companyChart"></canvas>
                 <table>
@@ -1197,8 +1197,8 @@ const getOfferStats = (id_offer) => {
             console.log(stats);
             var overlay = document.getElementById('overlay');
             overlay.style.display = 'block';
-            overlay.innerHTML = 
-            `<div id="stat-card">
+            overlay.innerHTML =
+                `<div id="stat-card">
                 <button  type="button" class="close btn btn-danger" aria-label="Close" onclick="document.getElementById('overlay').style.display = 'none';">x</button>
                 <canvas height="max-content" id="offerChart"></canvas>
             </div>`
@@ -1256,8 +1256,8 @@ const getStudentStats = (id_student) => {
             var stats = JSON.parse(xhr.response);
 
             var overlay = document.getElementById('overlay');
-            overlay.innerHTML = 
-            `<div id="stat-card" >
+            overlay.innerHTML =
+                `<div id="stat-card" >
                 <button  type="button" class="close btn btn-danger" aria-label="Close" onclick="document.getElementById('overlay').style.display = 'none';">x</button>
                 <canvas height="max-content" id="studentChart"></canvas>
                 <table>
@@ -1326,14 +1326,14 @@ const getOfferOverlay = (id_offer) => {
         if (xhr.status == 200) {
             var offer = JSON.parse(xhr.response);
             var overlay = document.getElementById('overlay');
-            overlay.innerHTML = 
-            `<div">
+            overlay.innerHTML =
+                `<div">
             <span class="close btn btn-danger" style="position:absolute;right:0;" onclick="document.getElementById('overlay').style.display = 'none';">X</span>
             <h1>${offer.name_offer}</h1>
             </div>`
-          overlay.style.display = 'block';
-          document.getElementById('offer-card').style.height = '100%';
-          console.log(window.innerHeight);
+            overlay.style.display = 'block';
+            document.getElementById('offer-card').style.height = '100%';
+            console.log(window.innerHeight);
         }
         else { }
     };
@@ -1349,8 +1349,8 @@ const getApplyOverlay = (id_offer) => {
         if (xhr.status == 200) {
             var offer = JSON.parse(xhr.response);
             var overlay = document.getElementById('overlay');
-            overlay.innerHTML = 
-            `<div style="color: black; background-color: white;">
+            overlay.innerHTML =
+                `<div style="color: black; background-color: white;">
             <span class="close btn btn-danger" style="position:absolute;right:0;" onclick="document.getElementById('overlay').style.display = 'none';">X</span>
             <h1>Apply to "${offer.name_offer}"</h1>
             <form method="post" action="/controllers/apply-offer.php" enctype="multipart/form-data">
@@ -1365,9 +1365,83 @@ const getApplyOverlay = (id_offer) => {
                 <button type="submit" name="submit" value="submit">Submit</button>
             </form>
             </div>`
-          overlay.style.display = 'block';
-          document.getElementById('offer-card').style.height = '100%';
-          console.log(window.innerHeight);
+            overlay.style.display = 'block';
+            document.getElementById('offer-card').style.height = '100%';
+            console.log(window.innerHeight);
+        }
+        else { }
+    };
+    xhr.send(); //Envoi de la requête au serveur (asynchrone par défaut)
+}
+
+const getApplications = () => {
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "/controllers/get-applications.php?limit=10000", true);
+    xhr.withCredentials = true;
+    xhr.onload = function () {
+        if (xhr.status == 200) {
+            var result = JSON.parse(xhr.response);
+            var cards = document.getElementById('applications-cards');
+            var applications = result.data;
+            applications.forEach(application => {
+                switch (application.status) {
+                    case 'step 1':
+                        cards.innerHTML += `
+                        <div class="card">
+                            <h5 class="card-header">${application.name_offer}</h5>
+                            <div class="card-body">
+                                <h5 class="card-title">Applied: ${application.app_date}</h5>
+                                <p class="card-text ">${application.description_offer.substring(0, 100)}... </p>
+                                <form method="post" action="/controllers/update-application.php" enctype="multipart/form-data">
+                                    <input type="number" name="id_offer" id="id_offer" value="${application.id_offer}" style="display: none;">
+                                    <button type="submit" name="submit" value="step 2-response" class="btn btn-primary">Company Responded</button>
+                                    <button type="submit" name="submit" value="step 2-no-response" class="btn btn-primary">Company Didn't Respond</button>
+                                </form>
+                                <input type="range" min="1" max="6" class="form-range" id="disabledRange" disabled value="1">
+                            </div>
+                        </div>
+                        `
+                        break;
+                    case 'step 2-no-response':
+                        cards.innerHTML += `<div class="card">
+                    <h5 class="card-header" style="color: #dc3545; background-color: lightpink;">${application.name_offer} - <em>No Response</em></h5>
+                    <div class="card-body">
+                        <h5 class="card-title">Applied: ${application.app_date}</h5>
+                        <p class="card-text">${application.description_offer.substring(0, 100)}... </p>
+                        <input type="range" min="1" max="6" class="form-range" id="disabledRange" disabled value="2">
+                        </div>
+                </div>`;
+                        break;
+                    case 'step 2-response':
+                        cards.innerHTML += `
+                        <div class="card">
+                <h5 class="card-header" style="color: #0d6efd; background-color: lightcyan;">${application.name_offer} - <em>Response Received</em></h5>
+                <div class="card-body">
+                    <h5 class="card-title">Applied: ${application.app_date}</h5>
+                    <p class="card-text">${application.description_offer.substring(0, 100)}... </p>
+                    <p>A Validation Form will be sent as soon as possible</p>
+                    <input type="range" min="1" max="6" class="form-range" id="disabledRange" disabled value="2">
+                    </div>
+            </div>
+                        `
+                        break;
+                    case 'step 3':
+
+                        break;
+                    case 'step 4':
+
+                        break;
+                    case 'step 5':
+
+                        break;
+                    case 'step 6':
+
+                        break;
+                    default:
+                        break;
+                }
+                
+            });
         }
         else { }
     };

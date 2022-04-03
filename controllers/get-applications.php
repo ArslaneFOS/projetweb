@@ -34,18 +34,12 @@ $results = $bdd->select("SELECT applications.id_student, offer.id_offer, applica
 $total = $bdd->select("SELECT COUNT(*) as total from (student INNER JOIN applications ON student.id_user = applications.id_student) INNER JOIN (offer INNER JOIN company on company.id_com = offer.id_com) ON offer.id_offer = applications.id_offer WHERE applications.id_student = :id_student", array(':id_student' => array($id_student, PDO::PARAM_STR)));
 $total = (int)$total[0]['total'];
 
-$resultEncode = array();
-foreach ($results as $key => $value) {
-    # code...
-    $resultEncode[$key] = $results[$key];
-    $resultEncode[$key]['logo_com'] = base64_encode($results[$key]['logo_com']);
-}
 
 $echo = array(
     'page' => $page,
     'limit' => $limit,
     'total' => $total,
-    'data' => $resultEncode
+    'data' => $results
 );
 
 header('Content-type: application/json');
