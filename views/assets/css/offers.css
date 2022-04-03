@@ -1,10 +1,5 @@
-<<<<<<< HEAD
 body{
     background: ivory;
-=======
-body {
-  background: #f6f9fc;
->>>>>>> 468de21cffcc3b512f97ee348fb51974c6091680
 }
 
 #header {
@@ -16,8 +11,7 @@ body {
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
 }
 
-#header .logo h1 a,
-#header .logo h1 a:hover {
+#header .logo h1 a, #header .logo h1 a:hover {
   color: white;
   text-decoration: none;
 }
@@ -44,8 +38,7 @@ body {
   position: relative;
 }
 
-.navbar a,
-.navbar a:focus {
+.navbar a,.navbar a:focus {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -56,22 +49,17 @@ body {
   transition: 0.3s;
 }
 
-.navbar a i,
-.navbar a:focus i {
+.navbar a i,.navbar a:focus i {
   font-size: 12px;
   line-height: 0;
   margin-left: 5px;
 }
 
-.navbar a:hover,
-.navbar .active,
-.navbar .active:focus,
-.navbar li:hover>a {
+.navbar a:hover,.navbar .active,.navbar .active:focus,.navbar li:hover>a {
   color: rgb(19, 107, 248);
 }
 
-.navbar .getstarted,
-.navbar .getstarted:focus {
+.navbar .getstarted,.navbar .getstarted:focus {
   background: rgb(19, 107, 248);
   color: #fff;
   padding: 10px 25px;
@@ -79,8 +67,7 @@ body {
   border-radius: 50px;
 }
 
-.navbar .getstarted:hover,
-.navbar .getstarted:focus:hover {
+.navbar .getstarted:hover,.navbar .getstarted:focus:hover {
   color: #fff;
   background: blueviolet;
 }
@@ -114,9 +101,7 @@ body {
   font-size: 12px;
 }
 
-.navbar .dropdown ul a:hover,
-.navbar .dropdown ul .active:hover,
-.navbar .dropdown ul li:hover>a {
+.navbar .dropdown ul a:hover,.navbar .dropdown ul .active:hover,.navbar .dropdown ul li:hover>a {
   color: rgb(19, 107, 248);
 }
 

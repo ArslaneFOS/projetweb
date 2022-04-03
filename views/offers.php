@@ -7,8 +7,8 @@
   <title></title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="/views/assets/css/home.css" rel="stylesheet">
-  <link href="/views/assets/css/offers.css" rel="stylesheet">
+  <!--<link href="/views/assets/css/home.css" rel="stylesheet">-->
+  <link href="/views/assets/css/offers.css" rel="stylesheet"><!--debrouille toi whoever-->
   <link href="/views/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="/views/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="/views/assets/vendor/fontawesome/css/fontawesome.min.css" rel="stylesheet">
@@ -174,67 +174,7 @@
   <div id="overlay">
 
   </div>
-  <footer>
-    
-    <div class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4 col-xs-12">
-                    <div class="first">
-                        <h4>My Skills</h4>
-                        <p> Analytical Skills</p>
-                        <p> Problem-solving skills</p>
-                        <p> Critical-thinking skills</p>
-                        <p> Detail-oriented</p>
-                        <p> Multitasking</p>
-                        <p> Self-motivated</p>
-                    </div>
-                </div>
-
-                <div class="col-md-4 col-xs-12">
-                    <div class="second">
-                        <h4> Navigate</h4>
-                        <ul>
-                            <li><a href="/views/home.php">Home</a></li>
-                            <li><a href="/views/offers.php">Offers</a></li>
-                            <li><a href="/views/companies.php">Companies</a></li>
-                            <li><a href="/views/users.php">Interns</a></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="col-md-4 col-xs-12">
-                    <div class="third">
-                        <h4> Contact</h4>
-                        <ul>
-                            <li>Steve Cook </li>
-                            <li></li>
-
-
-                          <li><i class="far fa-envelope"></i> steve.cook@stoffers.com</li>
-                            <li><i class="far fa-envelope"></i> contact@stoffers.com</li>
-
-
-                          <li><i class="fas fa-map-marker-alt"></i> Tixeraine </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="line"></div>
-                    <div class="second2">
-                     
-
-                    </div>
-
-                </div>
-            </div>
-            </div>
-    </div>
-</footer>
+  
   <script>
     document.body.onload = () => {
       searchOffers('', 1);
