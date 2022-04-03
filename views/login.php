@@ -15,7 +15,11 @@
        
     </head>
     <body>
-        
+        <header>
+            <div class="logo">
+                <img  class="logo" src="/views/assets/img/neo-neo-logo_1.svg" alt="">
+            </div>
+        </header>
 <main>
     <div id="main-wrapper" class="container">
     <div class="row justify-content-center">
@@ -42,8 +46,8 @@
                                         <input type="password" class="form-control" id="exampleInputPassword1">
                                     </div>
                                     <button type="submit" class="btn btn-primary">Login</button>
-                                    <span>|</span>
-                                    <a href="#l" class="forgot-link float-right text-primary">Forgot password?</a>
+                                    
+                                   
                                 </form>
                             </div>
                         </div>
@@ -65,7 +69,7 @@
             </div>
             <!-- end card -->
 
-            <p class="text-muted text-center mt-3 mb-0">Don't have an account? <a href="register.html" class="text-primary ml-1">register</a></p>
+            <p class="text-muted text-center mt-3 mb-0"> <a href="/views/home.php" class="text-primary ml-1">Home</a></p>
 
             <!-- end row -->
 
@@ -76,51 +80,45 @@
 </div>
 </main>
 
-
 <footer>
     
     <div class="footer">
         <div class="container">
             <div class="row">
-                <div class="col-md-4 col-xs-12">
-                    <div class="first">
-                        <h4>My Skills</h4>
-                        <p> Analytical Skills</p>
-                        <p> Problem-solving skills</p>
-                        <p> Critical-thinking skills</p>
-                        <p> Detail-oriented</p>
-                        <p> Multitasking</p>
-                        <p> Self-motivated</p>
-                    </div>
-                </div>
+                
 
-                <div class="col-md-4 col-xs-12">
+                <div class="col-md-6 col-xs-12">
                     <div class="second">
                         <h4> Navigate</h4>
                         <ul>
                             <li><a href="#">Home</a></li>
-                            <li><a href="#">Projects</a></li>
-                            <li><a href="#">About</a></li>
-                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">Offers</a></li>
+                            <li><a href="#">Compagnies</a></li>
+                            <li><a href="#">Interns</a></li>
                         </ul>
                     </div>
                 </div>
 
-                <div class="col-md-4 col-xs-12">
+                <div class="col-md-6 col-xs-12">
                     <div class="third">
                         <h4> Contact</h4>
                         <ul>
-                            <li>Andreea Mihaela Bunget </li>
+                            <li>CESI Exia </li>
                             <li></li>
 
 
-                          <li><i class="far fa-envelope"></i> andreea@andreeabunget.co.uk</li>
+                          <li><i class="far fa-envelope"></i> Random Adress</li>
                             <li><i class="far fa-envelope"></i> email@yahoo.com</li>
 
 
-                          <li><i class="fas fa-map-marker-alt"></i> London, UK </li>
+                          <li><i class="fas fa-map-marker-alt"></i> Algier, Algeria </li>
                         </ul>
                     </div>
+                </div>
+                <div class="col-md-6 col-lg-8">
+                        <p class="copyright">
+                          Copyright © 2022 All rights reserved |Cesi EXIA </a>
+                        </p>
                 </div>
             </div>
         </div>
@@ -140,7 +138,9 @@
             </div>
             </div>
     </div>
+
 </footer>
+
 
     </body>
 </html>

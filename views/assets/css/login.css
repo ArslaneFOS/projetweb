@@ -1,6 +1,5 @@
 body{
-    margin-top:20px;
-    background: #f6f9fc;
+    background: ivory;
 }
 main{
     margin-top: 10rem;
@@ -57,10 +56,7 @@ main{
     color: white;
     text-decoration: none;
   }
-  .logo{
-      width: 2.5rem;
-      height: 2.5rem;
-  }
+  
   .navbar {
     padding: 0;
     
@@ -160,29 +156,11 @@ main{
 
 
   
-  .card-company{
-      width: 15rem;
-      height: 40rem;
-  }
-  .card-img-company{
-    display: flex;
-    align-items: center;
-  }
-  .img-company{
-      
-      
-      width: 75%;
-      height: 5rem;
-  }
-  /**/
-  * {
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
+  
+
 
 .footer {
+    margin-top: 20rem;
     background: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url("http://andreeabunget.co.uk/Img/footer.jpg");
     background-size: cover;
     

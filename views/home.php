@@ -43,18 +43,33 @@ $user_type = @$_SESSION['user-type'];
 <body>
 <header id="header" class="d-flex align-items-center">
             <div class="container d-flex align-items-center justify-content-between">
-        
-              <div class="logo">
-                <img class="logo" src="/views/assets/img/neo-neo-logo_1.svg">
+              <div class="col-md-1">
+                <div class="logo">
+                  <img class="logo" src="/views/assets/img/neo-neo-logo_1.svg">
+                </div>
               </div>
         
               <nav id="navbar" class="navbar">
                 <ul>
-                  <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-                  <li><a class="nav-link scrollto" href="#offers">Offers</a></li>
-                  <li><a class="nav-link scrollto" href="#companies">Companies</a></li>
-                  <li><a class="nav-link scrollto" href="#portfolio">Interns</a></li>
+                <div class="col-md-2">
+                    <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+                </div>
+                <div class="col-md-2">
+                    <li><a class="nav-link scrollto" href="#offers">Offers</a></li>
+                </div>
+                <div class="col-md-3">
+                    <li><a class="nav-link scrollto" href="#companies">Companies</a></li>
+                </div>
+                <div class="col-md-2">
+                  <li><a class="nav-link scrollto" href="#users">Interns</a></li>
+                </div>
+                <div class="col-md-1">
                   <li><a class="nav-link scrollto" href="#portfolio">|</a></li>
+                </div>
+                <div class="col-md-1">
+                  <li><a class="nav-link scrollto" href="./login.php">Login</a></li>
+                </div>
+                
                   <!--<li><a class="nav-link scrollto" href="#team">Login</a></li>
                   <li class="dropdown"><a href="#"><span>Random DropDown</span> <i class="bi bi-chevron-down"></i></a>
                     <ul>
@@ -74,7 +89,6 @@ $user_type = @$_SESSION['user-type'];
                     </ul>
                   </li>
                   <li><a class="nav-link scrollto" href="#contact">Contact</a></li> -->
-                  <li><a class="nav-link scrollto" href="./login.html">Login</a></li>
                 </ul>
                 
               </nav><!-- .navbar -->
