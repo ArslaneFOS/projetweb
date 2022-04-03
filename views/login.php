@@ -1,6 +1,17 @@
 
 <!DOCTYPE html>
-
+#header {
+    height: 72px;
+    transition: all 0.5s;
+    z-index: 997;
+    transition: all 0.5s;
+    background:#595959;
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  }
+  #header .logo h1 a, #header .logo h1 a:hover {
+    color: white;
+    text-decoration: none;
+  }
 <html>
     <head>
         <meta charset="utf-8">
