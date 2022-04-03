@@ -48,6 +48,9 @@ $id_com = $_GET['id_com'];
     <script src="/views/assets/scripts/functions.js"></script>
 </head>
 <body>
+<?php
+  include('header.php');
+  ?>
     <!--Header Here-->
 
     <main>
@@ -59,6 +62,9 @@ $id_com = $_GET['id_com'];
         <button class="btn btn-primary" type="submit" name="submit">Submit</button>
     </form>
     </main>
+    <?php
+  include('footer.php');
+  ?>
 <script>
     document.body.onload = () => {
         getCompanyLocs(<?=$id_com;?>);

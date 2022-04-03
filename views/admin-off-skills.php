@@ -48,6 +48,9 @@ $id_offer = $_GET['id_offer'];
     <script src="/views/assets/scripts/functions.js"></script>
 </head>
 <body>
+<?php
+  include('header.php');
+  ?>
     <!--Header Here-->
 
     <main>
@@ -59,6 +62,9 @@ $id_offer = $_GET['id_offer'];
         <button class="btn btn-primary" type="submit" name="submit">Submit</button>
     </form>
     </main>
+    <?php
+  include('footer.php');
+  ?>
 <script>
     document.body.onload = () => {
         getOfferSkills(<?=$id_offer;?>);

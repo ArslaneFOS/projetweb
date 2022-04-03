@@ -27,6 +27,9 @@ if (!(has_student_access_level())) {
 </head>
 
 <body>
+<?php
+  include('header.php');
+  ?>
     <main>
 
 
@@ -45,6 +48,9 @@ if (!(has_student_access_level())) {
             
         </div>
     </main>
+    <?php
+  include('footer.php');
+  ?>
     <script>
         document.body.onload = () => {
             getApplications();
