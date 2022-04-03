@@ -30,7 +30,7 @@ $echo = array(
     'total_active_applications' => $total_active_applications,
     'total_required_skills' => $total_required_skills,
     'total_accepted_applications' => $total_accepted_applications,
-    'total_refused_applications' => $total_refused_applications,
+    'total_refused_applications' => $total_refused_applications
 );
 
 header('Content-type: application/json');

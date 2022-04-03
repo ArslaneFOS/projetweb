@@ -105,7 +105,7 @@ class DB {
 
 // (D) DATABASE SETTINGS - CHANGE TO YOUR OWN!
 define("DB_HOST", "localhost");
-define("DB_NAME", "db_projet");
+define("DB_NAME", "db_projet_2");
 define("DB_CHARSET", "utf8");
 define("DB_USER", "root");
 define("DB_PASSWORD", "");
