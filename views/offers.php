@@ -7,8 +7,10 @@
   <title></title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <!--<link href="/views/assets/css/home.css" rel="stylesheet">-->
   <link href="/views/assets/css/offers.css" rel="stylesheet"><!--debrouille toi whoever-->
+
   <link href="/views/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="/views/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="/views/assets/vendor/fontawesome/css/fontawesome.min.css" rel="stylesheet">
@@ -174,7 +176,7 @@
   <div id="overlay">
 
   </div>
-  
+
   <script>
     document.body.onload = () => {
       searchOffers('', 1);

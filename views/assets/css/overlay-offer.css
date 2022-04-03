@@ -6,15 +6,6 @@
   border-radius: 16px;
   display: flex;
   flex-direction: column;
-<<<<<<< HEAD
   overflow: hidden;
 
-=======
-  /*margin: 0 20px 20px 20px;*/
-
-  overflow: hidden;
-
-  margin: 0 20px 20px 20px;
-
->>>>>>> f1e39221f4a95e2d0a12173966b2009aa44984c4
 }
