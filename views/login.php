@@ -149,15 +149,15 @@
                     <div class="third">
                         <h4> Contact</h4>
                         <ul>
-                            <li>Andreea Mihaela Bunget </li>
+                            <li>Steve Cook </li>
                             <li></li>
 
 
-                          <li><i class="far fa-envelope"></i> andreea@andreeabunget.co.uk</li>
-                            <li><i class="far fa-envelope"></i> email@yahoo.com</li>
+                          <li><i class="far fa-envelope"></i> steve.cook@stoffers.com</li>
+                            <li><i class="far fa-envelope"></i> contact@stoffers.com</li>
 
 
-                          <li><i class="fas fa-map-marker-alt"></i> London, UK </li>
+                          <li><i class="fas fa-map-marker-alt"></i> Tixeraine </li>
                         </ul>
                     </div>
                 </div>
