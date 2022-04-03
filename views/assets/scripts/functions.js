@@ -78,9 +78,9 @@ const searchCompaniesAdmin = (search, page) => {
                 <td>${company.description_com.substring(0, 50) + '...'}</td> 
                 <td>${company.email_com}</td> 
                 <td id='logo-${company.id_com}'></td> 
-                <td><a type="button" onclick="deleteCompanyAdmin(${company.id_com})" class="btn btn-danger">Delete</a></td>
-                <td><a href="#" type="button" onclick="getCompanyAdmin(${company.id_com})" class="btn btn-warning">Upload</a></td>
-                <td><a href="/admin/companylocations?id_com=${company.id_com}" type="button" class="btn btn-warning">Locations</a></td>
+                <td><a type="button" onclick="deleteCompanyAdmin(${company.id_com})" class="btn btn-secondary">Delete</a></td>
+                <td><a href="#" type="button" onclick="getCompanyAdmin(${company.id_com})" class="btn btn-light">Upload</a></td>
+                <td><a href="/admin/companylocations?id_com=${company.id_com}" type="button" class="btn btn-light">Locations</a></td>
                 </tr>`;
                 document.getElementById("logo-" + company.id_com).replaceChildren(logo);
 
@@ -493,9 +493,9 @@ const searchOfferAdmin = (search, page) => {
                 <td>${offer.available_places_offer}</td>
                 <td>${offer.description_offer.substring(0, 50) + '...'}</td>
                 <td>${offer.id_com}</td> 
-                <td><a type="button" onclick="deleteOfferAdmin(${offer.id_offer})" class="btn btn-danger">Delete</a></td>
-                <td><a href="#" type="button" onclick="getOfferAdmin(${offer.id_offer})" class="btn btn-warning">Upload</a></td>
-                <td><a href="/admin/offer-skills?id_offer=${offer.id_offer}" type="button" class="btn btn-warning">Skills</a></td>
+                <td><a type="button" onclick="deleteOfferAdmin(${offer.id_offer})" class="btn btn-secondary">Delete</a></td>
+                <td><a href="#" type="button" onclick="getOfferAdmin(${offer.id_offer})" class="btn btn-light">Upload</a></td>
+                <td><a href="/admin/offer-skills?id_offer=${offer.id_offer}" type="button" class="btn btn-light">Skills</a></td>
                 </tr>`;
                 //document.getElementById("logo-" + offer.id_offer).replaceChildren(logo);
 
@@ -669,8 +669,8 @@ const searchStudentsAdmin = (search, page) => {
                 <td>${user.login}</td>
                 <td>${user.password.substring(0, 15)}...</td>
                 <td>${user.id_center} - ${user.name_center}</td>
-                <td><button type="button" onclick="deleteUserAdmin('${user.login}')" class="btn btn-danger">Delete</button></td>
-                <td><button type="button" onclick="getStudentAdmin(${user.id_user})" class="btn btn-warning">Upload</button></td>
+                <td><button type="button" onclick="deleteUserAdmin('${user.login}')" class="btn btn-secondary">Delete</button></td>
+                <td><button type="button" onclick="getStudentAdmin(${user.id_user})" class="btn btn-light">Upload</button></td>
                 <td><button type="button" onclick="getStudentStats(${user.id_user})" class="btn btn-secondary">Statistics</button></td>
                 </tr>`;
             });
@@ -881,8 +881,8 @@ const searchRepresentativesAdmin = (search, page) => {
                 <td>${rep.login}</td>
                 <td>${rep.password.substring(0, 15)}...</td>
                 <td>${rep.id_center} - ${rep.name_center}</td>
-                <td><button class="btn btn-danger" type="button" onclick="deleteUserAdmin('${rep.login}')">Delete</button></td>
-                <td><a href="#" class="btn btn-warning" type="button" onclick="getRepresentativeAdmin(${rep.id_user})">Upload</a></td>
+                <td><button class="btn btn-secondary" type="button" onclick="deleteUserAdmin('${rep.login}')">Delete</button></td>
+                <td><a href="#" class="btn btn-light" type="button" onclick="getRepresentativeAdmin(${rep.id_user})">Upload</a></td>
                 <td><a href="/admin/repauth?id_rep=${rep.id_user}" type="button" class="btn btn-dark">Auths</a></td>
             </tr>`;
                 //document.getElementById("logo-" + offer.id_offer).replaceChildren(logo);
@@ -1017,8 +1017,8 @@ const searchPilotsAdmin = (search, page) => {
                 <td>${pilot.login}</td>
                 <td>${pilot.password.substring(0, 15)}...</td>
                 <td>${pilot.id_center} - ${pilot.name_center}</td>
-                <td><button class="btn btn-danger" type="button" onclick="deleteUserAdmin('${pilot.login}')">Delete</button></td>
-                <td><a href="#" class="btn btn-warning" type="button" onclick="getPilotAdmin(${pilot.id_user})">Upload</a></td>
+                <td><button class="btn btn-secondary" type="button" onclick="deleteUserAdmin('${pilot.login}')">Delete</button></td>
+                <td><a href="#" class="btn btn-light" type="button" onclick="getPilotAdmin(${pilot.id_user})">Upload</a></td>
                 <td><button type="button">Modify</button></td>
             </tr>`;
                 //document.getElementById("logo-" + offer.id_offer).replaceChildren(logo);

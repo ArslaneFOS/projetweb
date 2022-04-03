@@ -43,9 +43,10 @@ session_start();
         <h1 class="display-5 fw-bold">JOB INTERN</h1>
         <h6 class="display-5">The best web site for your internships</h6>
         <div class="col-lg-6 mx-auto">
-          <p class="lead mb-4">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+        <h5>"We provide exceptional experiences and memories that last a lifetime."</h5>
+          <p class="lead">Your journey is unique, just like you. Whether it is to discover a job you would never have thought of, or to find the company where you can flourish, we support you. Our objective ? That your professional choices are in accordance with your values.</p>
           <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-            <a name="Check out our partners" href="www.google.ru"><button type="button" class="btn btn-primary btn-lg px-4 gap-3">Find Out More</button></a>
+            <a name="Check out our partners" href="login"><button type="button" class="btn btn-primary btn-lg px-4 gap-3">Find Out More</button></a>
           </div>
         </div>
       </div>
@@ -58,9 +59,9 @@ session_start();
         <div class="col-lg-6">
           <h1 class="display-4 fw-bold lh-1 mb-3">Internships, just for you.</h1>
           <h4 class="display-8 fw-bold lh-1 mb-3">They do be just for you.</h4>
-          <p class="lead">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+          <p class="lead">"Entering the labor market is sometimes a leap into the unknown. So nothing better than talking with professionals during our physical and virtual events to broaden your horizons and remove doubts. Add our practical advice specially designed for you, and you're ready to go."</p>
           <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-            <a name="Browse our offers" href="/views/offers.php"><button type="button" class="btn btn-outline-secondary btn-lg px-4">Browse our offers</button></a>
+            <a name="Browse our offers" href="offers"><button type="button" class="btn btn-outline-secondary btn-lg px-4">Browse our offers</button></a>
           </div>
         </div>
       </div>
@@ -72,9 +73,9 @@ session_start();
         <div class="col-lg-6">
           <h1 class="display-4 fw-bold lh-1 mb-3">Trustworty Hirers</h1>
           <h4 class="display-8 fw-bold lh-1 mb-3">MULTIPLE COMPAGNIES AVAILABLE IN A CLICK.</h4>
-          <p class="lead">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+          <p class="lead">"One small step, then a second, then you are on a path, yours. Here, all internship and job offers are adapted to student and recent graduate profiles. And since there is not only one way to find your way, recruiters can also contact you directly to offer you relevant offers. You have talent: trust yourself."</p>
           <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-            <a name="Check out our partners" href="/views/companies.php"><button type="button" class="btn btn-primary btn-lg px-4 me-md-2">Check Out Our Partners</button></a>
+            <a name="Check out our partners" href="companies"><button type="button" class="btn btn-primary btn-lg px-4 me-md-2">Check Out Our Partners</button></a>
 
           </div>
         </div>
@@ -94,9 +95,9 @@ session_start();
         <div class="col-lg-6">
           <h1 class="display-4 fw-bold lh-1 mb-3">Are You looking for new interns?</h1>
           <h4 class="display-8 fw-bold lh-1 mb-3">Hire some of the best students out here.</h4>
-          <p class="lead">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+          <p class="lead">"We have focused on bringing the perfect candidates to you quickly and efficiently. We work with you every step of the way to ensure the process of hiring students is simple, easy and effective."</p>
           <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-            <a name="Find a student button" href="/views/users.php"> <button type="button" class="btn btn-outline-secondary btn-lg px-4">Find a Student</button></a>
+            <a name="Find a student button" href="users"> <button type="button" class="btn btn-outline-secondary btn-lg px-4">Find a Student</button></a>
           </div>
         </div>
       </div>
