@@ -7,7 +7,7 @@
 
       <nav id="navbar" class="navbar navbar-light">
         <ul>
-          <li><a class="nav-link scrollto active" href="home">Home</a></li>
+          <li><a class="nav-link scrollto" href="home">Home</a></li>
           <li><a class="nav-link scrollto" href="offers">Offers</a></li>
           <li><a class="nav-link scrollto" href="companies">Companies</a></li>
           <li><a class="nav-link scrollto" href="users">Interns</a></li>
