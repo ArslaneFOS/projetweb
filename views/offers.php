@@ -17,12 +17,14 @@ session_start();
   <link href="/views/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="/views/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="/views/assets/vendor/fontawesome/css/fontawesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/views/assets/css/overlay-application.css">
+  <link rel="stylesheet" href="/views/assets/css/overlay-offer.css">
+
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="/views/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js" integrity="sha512-QSkVNOCYLtj73J4hbmVoOV6KVZuMluZlioC+trLpewV8qMjsWqlIQvkn1KGX2StWvPMdWGBqim1xlC8krl1EKQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
   <script src="/views/assets/scripts/functions.js"></script>
-  <link rel="stylesheet" href="/views/assets/css/overlay-offer.css">
 
 
   <style>
