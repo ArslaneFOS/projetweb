@@ -30,16 +30,25 @@ $binds = array(
 
 $bdd = new DB();
 
-$results = $bdd->select("SELECT applications.id_student, offer.id_offer, applications.status, applications.app_date, offer.name_offer, offer.description_offer, company.id_com, company.name_com, company.email_com from (student INNER JOIN applications ON student.id_user = applications.id_student) INNER JOIN (offer INNER JOIN company on company.id_com = offer.id_com) ON offer.id_offer = applications.id_offer WHERE applications.id_student = :id_student ORDER BY app_date DESC LIMIT :offset, :limit;", $binds);
+$results = $bdd->select("SELECT applications.*, offer.name_offer, offer.description_offer, company.id_com, company.name_com, company.email_com, student.id_user, student.firstname, student.lastname from (student INNER JOIN applications ON student.id_user = applications.id_student) INNER JOIN (offer INNER JOIN company on company.id_com = offer.id_com) ON offer.id_offer = applications.id_offer WHERE applications.id_student = :id_student ORDER BY app_date DESC LIMIT :offset, :limit;", $binds);
 $total = $bdd->select("SELECT COUNT(*) as total from (student INNER JOIN applications ON student.id_user = applications.id_student) INNER JOIN (offer INNER JOIN company on company.id_com = offer.id_com) ON offer.id_offer = applications.id_offer WHERE applications.id_student = :id_student", array(':id_student' => array($id_student, PDO::PARAM_STR)));
 $total = (int)$total[0]['total'];
 
+$resultEncode = array();
+foreach ($results as $key => $value) {
+    # code...
+    $resultEncode[$key] = $results[$key];
+    $resultEncode[$key]['resume'] = base64_encode($results[$key]['resume']);
+    $resultEncode[$key]['motivation_letter'] = base64_encode($results[$key]['motivation_letter']);
+    $resultEncode[$key]['validation_form'] = $results[$key]['validation_form'] ? base64_encode($results[$key]['validation_form']) : null;
+    $resultEncode[$key]['internship_agreement'] = $results[$key]['internship_agreement'] ? base64_encode($results[$key]['internship_agreement']) : null;
+}
 
 $echo = array(
     'page' => $page,
     'limit' => $limit,
     'total' => $total,
-    'data' => $results
+    'data' => $resultEncode
 );
 
 header('Content-type: application/json');
