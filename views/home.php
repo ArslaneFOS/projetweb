@@ -51,7 +51,6 @@ $user_type = @$_SESSION['user-type'];
         
               <nav id="navbar" class="navbar">
                 <ul>
-<<<<<<< HEAD
                 <div class="col-md-2">
                     <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
                 </div>
@@ -65,12 +64,6 @@ $user_type = @$_SESSION['user-type'];
                   <li><a class="nav-link scrollto" href="#users">Interns</a></li>
                 </div>
                 <div class="col-md-1">
-=======
-                  <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-                  <li><a class="nav-link scrollto" href="#offerz">Offers</a></li>
-                  <li><a class="nav-link scrollto" href="#companiz">Companies</a></li>
-                  <li><a class="nav-link scrollto" href="#portfolio">Interns</a></li>
->>>>>>> 468de21cffcc3b512f97ee348fb51974c6091680
                   <li><a class="nav-link scrollto" href="#portfolio">|</a></li>
                 </div>
                 <div class="col-md-1">
@@ -96,10 +89,6 @@ $user_type = @$_SESSION['user-type'];
                     </ul>
                   </li>
                   <li><a class="nav-link scrollto" href="#contact">Contact</a></li> -->
-<<<<<<< HEAD
-=======
-                  <li><a class="nav-link scrollto" href="/views/login.php">Login</a></li>
->>>>>>> 468de21cffcc3b512f97ee348fb51974c6091680
                 </ul>
                 
               </nav><!-- .navbar -->

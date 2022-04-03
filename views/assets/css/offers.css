@@ -1,10 +1,5 @@
-<<<<<<< HEAD
 body{
     background: ivory;
-=======
-body {
-  background: #f6f9fc;
->>>>>>> 468de21cffcc3b512f97ee348fb51974c6091680
 }
 
 #header {
@@ -16,8 +11,7 @@ body {
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
 }
 
-#header .logo h1 a,
-#header .logo h1 a:hover {
+#header .logo h1 a,#header .logo h1 a:hover {
   color: white;
   text-decoration: none;
 }

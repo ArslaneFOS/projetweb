@@ -15,11 +15,7 @@
        
     </head>
     <body>
-        <header>
-            <div class="logo">
-                <img  class="logo" src="/views/assets/img/neo-neo-logo_1.svg" alt="">
-            </div>
-        </header>
+       
 <main>
     <div id="main-wrapper" class="container">
     <div class="row justify-content-center">
