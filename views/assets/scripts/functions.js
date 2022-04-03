@@ -1327,8 +1327,8 @@ const getOfferOverlay = (id_offer) => {
             var offer = JSON.parse(xhr.response);
             var overlay = document.getElementById('overlay');
             overlay.innerHTML =
-                `<div class="card" style="background-color: white; width:90%;margin:0 5%">
-                <button  type="button" class="close btn btn-danger" aria-label="Close" onclick="document.getElementById('overlay').style.display = 'none';">x</button>
+                `<div class="card" id="offer-card" style="background-color: white; width:90%;margin:0 5%">
+                <button type="button" class="close btn btn-danger" aria-label="Close" onclick="document.getElementById('overlay').style.display = 'none';">x</button>
                 <div class="card-body">
                   <h3 class="card-title">${offer.name_offer}</h3>
                   <br>
@@ -1387,7 +1387,6 @@ const getOfferOverlay = (id_offer) => {
               </div>`
             overlay.style.display = 'block';
             document.getElementById('offer-card').style.height = '100%';
-            console.log(window.innerHeight);
         }
         else { }
     };
@@ -1404,7 +1403,52 @@ const getApplyOverlay = (id_offer) => {
             var offer = JSON.parse(xhr.response);
             var overlay = document.getElementById('overlay');
             overlay.innerHTML =
-            ``
+            `<div class="card" id="apply-card" style="background-color: white; width:90%;margin:0 5%">
+            <button  type="button" class="close btn btn-danger" aria-label="Close" onclick="document.getElementById('overlay').style.display = 'none';">x</button>
+        
+            <div class="card-body d-flex align-items-center flex-column">
+              <h2 class="card-title">Apply to ${offer.name_offer}</h3>
+                <br>
+                <h4 class="text-muted">Resume :</h3>
+                  <br>
+                  <div class="container d-flex align-items-center flex-column">
+                  <form method="post" action="/controllers/apply-offer.php" enctype="multipart/form-data">
+                  <input type="number" name="id_offer" id="id_offer" style="display: none;" value="${offer.id_offer}"/><br>
+                        <div class="row d-flex align-items-center flex-column">
+                        <div class="col-mb-8 bg-light d-flex align-items-center flex-column">
+                        <i class="bi bi-upload"></i>
+                        <h4>Drag and drop resume here or</h4>
+                        <br>
+                        <br>
+                        <label for="resume" class="btn btn-primary">Resume</label>
+                        <input type="file" id="resume" name="resume" style="display: none;"/>
+                      </div>
+                    </div>
+                    <br>
+                    <h4 class="text-muted">Motivation letter :</h3>
+                      <br>
+                      <div class="row">
+                        <div class="col-mb-8 bg-light d-flex align-items-center flex-column">
+                          <i class="bi bi-upload"></i>
+                          <h4>Drag and drop letter here or</h4>
+                          <br>
+                          <br>
+                          <label for="motivation"  class="btn btn-primary">Motivation Letter</label>
+                          <input type="file" id="motivation" name="motivation" style="display: none;"/>
+                        </div>
+                      </div>
+                      <br>
+                      <button type="submit" name="submit" value="submit" class="btn btn-primary">Submit</button>
+        
+                    </form>
+        
+                  </div>
+            </div>
+        
+        
+        
+        
+          </div>`
             overlay.style.display = 'block';
             document.getElementById('apply-card').style.height = '100%';
             console.log(window.innerHeight);
