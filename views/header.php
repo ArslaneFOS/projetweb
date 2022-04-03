@@ -21,10 +21,26 @@
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><span class="dropdown-item"><?=$_SESSION['name']?></span></li>
+            <?php
+            if ($_SESSION['user-type'] == 'admin' || $_SESSION['user-type'] == 'pilot' || $_SESSION['user-type'] == 'pilot') {
+            ?>
+            <li><span class="dropdown-item"><a style="color: black;" href="admin/companies">Companies</a></span></li>
+            <li><span class="dropdown-item"><a style="color: black;" href="admin/offers">Offers</a></span></li>
+            <li><span class="dropdown-item"><a style="color: black;" href="admin/students">Students</a></span></li>
+            <li><span class="dropdown-item"><a style="color: black;" href="admin/pilots">Pilots</a></span></li>
+            <li><span class="dropdown-item"><a style="color: black;" href="admin/representatives">Representatives</a></span></li>
+            <li><span class="dropdown-item"><a style="color: black;" href="admin/applications">Applications</a></span></li>
+
+            <?php
+            } else {
+              ?>
             <li><span class="dropdown-item"><a style="color: black;" href="applications">Application</a></span></li>
             <li><span class="dropdown-item" href="#"><a style="color: black;" href="wishlist">Wishlist</a></span></li>
             <li><hr class="dropdown-divider"></li>
             <li><span class="dropdown-item" href="#"><a style="color: black;" href="logout">Log Out</a></span></li>
+            <?php
+            }
+            ?>
           </ul>
         </li>
             <?php
