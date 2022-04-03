@@ -21,7 +21,7 @@
             <div class="third">
               <h4> Contact</h4>
               <ul>
-                <li><a href="companies">CESI Exia </a></li>
+                <li><a href="https://www.bgreco.net/garfield/">CESI Exia </a></li>
                 <li></li>
 
 
@@ -35,6 +35,7 @@
           </div>
           <div class="col-md-6 col-lg-8">
             <p class="copyright">
+            <a href="/views/test.html">
               Copyright © 2022 All rights reserved |Cesi EXIA </a>
             </p>
           </div>
