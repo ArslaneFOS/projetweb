@@ -42,15 +42,7 @@ if (!(has_student_access_level())) {
             
             </div>-->
         <div id="applications-cards">
-        <div class="card">
-                <h5 class="card-header" style="color:  #198754 ; background-color: lightgreen;">${application.name_offer} - <em>Validation Form Received</em></h5>
-                <div class="card-body">
-                    <h5 class="card-title">Applied: ${application.app_date}</h5>
-                    <p class="card-text">${application.description_offer.substring(0, 100)}... </p>
-                    <p>A Validation Form was received by you pilot and will be signed as soon as possible</p>
-                    <input type="range" min="1" max="6" class="form-range" id="disabledRange" disabled value="3">
-                    </div>
-            </div>
+            
         </div>
     </main>
     <script>

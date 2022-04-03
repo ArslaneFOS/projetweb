@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Applications</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css" rel="stylesheet">
-<link href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css" rel="stylesheet">
-<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
-<link href="/views/assets/img/apple-touch-icon.png" rel="apple-touch-icon"> 
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Applications</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
+  <link href="/views/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
   <link href="/views/assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="/views/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -26,14 +27,17 @@
   <script src="/views/assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="/views/assets/vendor/php-email-form/validate.js"></script>
   <script src="/views/assets/js/main.js"></script>
+  <script src="/views/assets/scripts/functions.js"></script>
+
   <link rel="icon" href="https://img.icons8.com/external-smashingstocks-isometric-smashing-stocks/55/000000/external-web-link-seo-and-marketing-smashingstocks-isometric-smashing-stocks.png">
 </head>
+
 <body>
-<header >
+  <header>
     <div class="container d-flex align-items-center justify-content-between">
 
       <div class="logo">
-        <h1 class="text-light"><a href="home.php"><span>Apllications</span></a></h1>
+        <h1 class="text-light"><a href="home.php"><span>Applications</span></a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html"><img src="/views/assets/img/logo.png" alt="" class="img-fluid"></a>-->
       </div>
@@ -44,7 +48,7 @@
           <li><a class="nav-link scrollto" href="#offers">Offers</a></li>
           <li><a class="nav-link scrollto" href="#companies">Companies</a></li>
           <li><a class="nav-link scrollto" href="#portfolio">Interns</a></li>
-        
+
           <li><a class="getstarted scrollto" href="./login.html">Login</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
@@ -53,133 +57,19 @@
     </div>
   </header>
   <main>
-<table id="example" class="table table-striped" style="width:100%">
-        <thead>
-            <tr>
-                <th>ID Student</th>
-                <th>ID Offer</th>
-                <th>Resume</th>
-                <th>Motivation Letter</th>
-                <th>Validation form</th>
-                <th>Agreement</th> 
-                <th>Status</th> 
-                <th></th>
-                <th></th>
-            </tr>
-            <tr>
-                <th> <input size="5" id="input" type="text" name="ID Student"></th>
-                <th> <input size="5" id="input" type="text" name="ID Offer"></th>
-                <th><input size="10" type="file" id="myfile" name="Resume">></th>
-                <th><input type="file" id="myfile" name="Motiv Letter">></th>
-                <th><input type="file" id="myfile" name="Valid Form">></th>
-                <th><input type="file" id="myfile" name="Agreement">></th>
-                <th><input type="file" id="myfile" name="Status">></th>
-                <th><button type="button">Add</button></th>
-                <th><button type="button">Download</button></th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>1</td>
-                <td>1</td>
-                <td><a href="#">resume.pdf</a></td>
-                <td><a href="#">motiv_letter.pdf</a></td>
-                <td><a href="#">validation_form.pdf</a></td>
-                <td><a href="#">agreement.pdf</a></td>
-                <td><a href="#">status.pdf</a></td>
-                <td><button type="button">Delete</button></td>
-                <td><button type="button">Upload</button></td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>1</td>
-                <td><a href="#">resume.pdf</a></td>
-                <td><a href="#">motiv_letter.pdf</a></td>
-                <td><a href="#">validation_form.pdf</a></td>
-                <td><a href="#">agreement.pdf</a></td>
-                <td><a href="#">status.pdf</a></td>
-                <td><button type="button">Delete</button></td>
-                <td><button type="button">Upload</button></td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>1</td>
-                <td><a href="#">resume.pdf</a></td>
-                <td><a href="#">motiv_letter.pdf</a></td>
-                <td><a href="#">validation_form.pdf</a></td>
-                <td><a href="#">agreement.pdf</a></td>
-                <td><a href="#">status.pdf</a></td>
-                <td><button type="button">Delete</button></td>
-                <td><button type="button">Upload</button></td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>1</td>
-                <td><a href="#">resume.pdf</a></td>
-                <td><a href="#">motiv_letter.pdf</a></td>
-                <td><a href="#">validation_form.pdf</a></td>
-                <td><a href="#">agreement.pdf</a></td>
-                <td><a href="#">status.pdf</a></td>
-                <td><button type="button">Delete</button></td>
-                <td><button type="button">Upload</button></td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>1</td>
-                <td><a href="#">resume.pdf</a></td>
-                <td><a href="#">motiv_letter.pdf</a></td>
-                <td><a href="#">validation_form.pdf</a></td>
-                <td><a href="#">agreement.pdf</a></td>
-                <td><a href="#">status.pdf</a></td>
-                <td><button type="button">Delete</button></td>
-                <td><button type="button">Upload</button></td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>1</td>
-                <td><a href="#">resume.pdf</a></td>
-                <td><a href="#">motiv_letter.pdf</a></td>
-                <td><a href="#">validation_form.pdf</a></td>
-                <td><a href="#">agreement.pdf</a></td>
-                <td><a href="#">status.pdf</a></td>
-                <td><button type="button">Delete</button></td>
-                <td><button type="button">Upload</button></td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>1</td>
-                <td><a href="#">resume.pdf</a></td>
-                <td><a href="#">motiv_letter.pdf</a></td>
-                <td><a href="#">validation_form.pdf</a></td>
-                <td><a href="#">agreement.pdf</a></td>
-                <td><a href="#">status.pdf</a></td>
-                <td><button type="button">Delete</button></td>
-                <td><button type="button">Upload</button></td>
-            </tr>
+    <div id="applications-cards">
+    
+    
 
-        </tbody>
-        <tfoot>
-             <tr>
-                <th>ID Student</th>
-                <th>ID Offer</th>
-                <th>Resume</th>
-                <th>Motivation Letter</th>
-                <th>Validation form</th>
-                <th>Agreement</th> 
-                <th>Status</th> 
-                <th></th>
-                <th></th>
-            </tr>
-        </tfoot>
-    </table>
-</main>
-<footer id="footer">
+    </div>
+  </main>
+  <footer id="footer">
 
     <div class="footer-newsletter">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-lg-6">
-            
+
           </div>
         </div>
       </div>
@@ -192,7 +82,7 @@
           <div class="col-lg-3 col-md-6 footer-contact">
             <h3>Telhaguhoum Inc</h3>
             <p>
-             Je m'en fou <br>
+              Je m'en fou <br>
               Birkhadem<br>
               United Tixeraines <br><br>
               <strong>Phone:</strong> +213 550 214 991<br>
@@ -240,13 +130,19 @@
 
     <div class="container py-4">
       <div class="copyright">
-      
+
       </div>
       <div class="credits">
-        
+
         Designed by <a href="#">Tonton</a>
       </div>
     </div>
   </footer>
+  <script>
+    document.body.onload = () => {
+      getApplicationsAdmin();
+    }
+  </script>
 </body>
+
 </html>
