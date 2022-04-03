@@ -1327,10 +1327,64 @@ const getOfferOverlay = (id_offer) => {
             var offer = JSON.parse(xhr.response);
             var overlay = document.getElementById('overlay');
             overlay.innerHTML =
-                `<div">
-            <span class="close btn btn-danger" style="position:absolute;right:0;" onclick="document.getElementById('overlay').style.display = 'none';">X</span>
-            <h1>${offer.name_offer}</h1>
-            </div>`
+                `<div class="card" style="background-color: white; width:90%;margin:0 5%">
+                <button  type="button" class="close btn btn-danger" aria-label="Close" onclick="document.getElementById('overlay').style.display = 'none';">x</button>
+                <div class="card-body">
+                  <h3 class="card-title">${offer.name_offer}</h3>
+                  <br>
+                    <div class="container ">
+                      <div class="row">
+                        <div class="col-md-4">
+                          <h5 class="card-subtitle mb-2 text-muted">Offer Name by ${offer.name_com}</h5>
+                          <br>
+                          <ul>
+                            <li><p>Available from: ${offer.level_offer}</p></li>
+                            <li><p>Lenght: ${offer.internship_length_offer} Months</p></li>
+                            <li><p>Pay: ${offer.pay_offer} Euro/h.</p></li>
+                            <li><p>Available Places: ${offer.available_places_offer}</p></li>
+                          </ul>
+                        </div>
+                        
+                      </div>
+                    </div>
+                  <h3>Description :</h3>
+                  <div class="col-md-12 d-flex align-items-center flex-column">
+                    <br>
+                    <p>${offer.description_offer}</p>
+                    
+                  </div>
+                  <br>
+                  <br>
+                  <div class="row d-flex justify-content-center">
+                    <div class="col-md-2">
+                      <i class="bi bi-calendar-check"></i>
+                      <h5 class="card-subtitle mb-1 text-muted">${offer.internship_length_offer} Months</h5>
+                    </div>
+                    <div class="col-md-2">
+                      <i class="bi bi-briefcase-fill"></i>
+                      <h5 class="card-subtitle mb-1 text-muted">${offer.available_places_offer} Places</h5>
+                    </div>
+                    <div class="col-md-2">
+                      <i class="bi bi-person"></i>
+                      <h5 class="card-subtitle mb-1 text-muted">Level: ${offer.level_offer}</h5>
+                    </div>
+            
+                  </div>
+                  
+                </div>
+                <div class="row">
+                  <div class="col-mb-6 bg-light d-flex justify-content-between flex-column">
+                    <h3>Contact company:</h3>
+                    <br>
+                    <br>
+                    <p class="text-muted">${offer.email_com}</p>
+              
+                  </div>
+              
+                </div>
+                
+              </div>
+              </div>`
             overlay.style.display = 'block';
             document.getElementById('offer-card').style.height = '100%';
             console.log(window.innerHeight);
@@ -1350,23 +1404,9 @@ const getApplyOverlay = (id_offer) => {
             var offer = JSON.parse(xhr.response);
             var overlay = document.getElementById('overlay');
             overlay.innerHTML =
-                `<div style="color: black; background-color: white;">
-            <span class="close btn btn-danger" style="position:absolute;right:0;" onclick="document.getElementById('overlay').style.display = 'none';">X</span>
-            <h1>Apply to "${offer.name_offer}"</h1>
-            <form method="post" action="/controllers/apply-offer.php" enctype="multipart/form-data">
-                <input type="number" name="id_offer" id="id_offer" value="${offer.id_offer}" style="display: none;"/><br>
-                
-                <label for="resume">Resume</label><br>
-                <input type="file" id="resume" name="resume"/><br>
-
-                <label for="motivation">Motivation Letter</label><br>
-                <input type="file" id="motivation" name="motivation"/><br>
-
-                <button type="submit" name="submit" value="submit">Submit</button>
-            </form>
-            </div>`
+            ``
             overlay.style.display = 'block';
-            document.getElementById('offer-card').style.height = '100%';
+            document.getElementById('apply-card').style.height = '100%';
             console.log(window.innerHeight);
         }
         else { }

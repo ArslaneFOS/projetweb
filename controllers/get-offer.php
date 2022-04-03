@@ -11,7 +11,7 @@ $binds = array(
 
 $bdd = new DB();
 
-$results = $bdd->select("SELECT * from offer WHERE id_offer = :id_offer", $binds);
+$results = $bdd->select("SELECT offer.*, company.name_com, company.email_com from offer inner join company on offer.id_com = company.id_com WHERE id_offer = :id_offer", $binds);
 
 if ($results) {
     $echo = $results[0];
