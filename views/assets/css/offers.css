@@ -50,8 +50,7 @@ body{
   transition: 0.3s;
 }
 
-.navbar a i,
-.navbar a:focus i {
+.navbar a i,.navbar a:focus i {
   font-size: 12px;
   line-height: 0;
   margin-left: 5px;
@@ -61,8 +60,7 @@ body{
   color: rgb(19, 107, 248);
 }
 
-.navbar .getstarted,
-.navbar .getstarted:focus {
+.navbar .getstarted,.navbar .getstarted:focus {
   background: rgb(19, 107, 248);
   color: #fff;
   padding: 10px 25px;
@@ -70,8 +68,7 @@ body{
   border-radius: 50px;
 }
 
-.navbar .getstarted:hover,
-.navbar .getstarted:focus:hover {
+.navbar .getstarted:hover,.navbar .getstarted:focus:hover {
   color: #fff;
   background: blueviolet;
 }
@@ -105,9 +102,7 @@ body{
   font-size: 12px;
 }
 
-.navbar .dropdown ul a:hover,
-.navbar .dropdown ul .active:hover,
-.navbar .dropdown ul li:hover>a {
+.navbar .dropdown ul a:hover,.navbar .dropdown ul .active:hover,.navbar .dropdown ul li:hover>a {
   color: rgb(19, 107, 248);
 }
 
