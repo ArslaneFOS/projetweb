@@ -32,10 +32,17 @@ body{
   .navbar li {
     position: relative;
   }
+  .footer {
+    background: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url("http://andreeabunget.co.uk/Img/footer.jpg");
+    background-size: cover;
+    
+  }
+    
+}
   .navbar a, .navbar a:focus {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-contsent: space-between;
     padding: 10px 0 10px 30px;
     font-size: 15px;
     color: white;

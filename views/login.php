@@ -1,6 +1,17 @@
 
 <!DOCTYPE html>
-
+#header {
+    height: 72px;
+    transition: all 0.5s;
+    z-index: 997;
+    transition: all 0.5s;
+    background:#595959;
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  }
+  #header .logo h1 a, #header .logo h1 a:hover {
+    color: white;
+    text-decoration: none;
+  }
 <html>
     <head>
         <meta charset="utf-8">
@@ -15,7 +26,58 @@
        
     </head>
     <body>
+<<<<<<< HEAD
        
+=======
+<<<<<<< HEAD
+    <header id="header" class="d-flex align-items-center">
+            <div class="container d-flex align-items-center justify-content-between">
+        
+              <div class="logo">
+                <img class="logo" src="/views/assets/img/neo-neo-logo_1.svg">
+              </div>
+        
+              <nav id="navbar" class="navbar">
+                <ul>
+                  <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+                  <li><a class="nav-link scrollto" href="/views/offers.php">Offers</a></li>
+                  <li><a class="nav-link scrollto" href="/views/companies.php">Companies</a></li>
+                  <li><a class="nav-link scrollto" href="/views/users.php">Interns</a></li>
+                  <li><a class="nav-link scrollto" href="#portfolio">|</a></li>
+                  <!--<li><a class="nav-link scrollto" href="#team">Login</a></li>
+                  <li class="dropdown"><a href="#"><span>Random DropDown</span> <i class="bi bi-chevron-down"></i></a>
+                    <ul>
+                      <li><a href="#">Drop Down 1</a></li>
+                      <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
+                        <ul>
+                          <li><a href="#">Deep Drop Down 1</a></li>
+                          <li><a href="#">Deep Drop Down 2</a></li>
+                          <li><a href="#">Deep Drop Down 3</a></li>
+                          <li><a href="#">Deep Drop Down 4</a></li>
+                          <li><a href="#">Deep Drop Down 5</a></li>
+                        </ul>
+                      </li>
+                      <li><a href="#">Drop Down 2</a></li>
+                      <li><a href="#">Drop Down 3</a></li>
+                      <li><a href="#">Drop Down 4</a></li>
+                    </ul>
+                  </li>
+                  <li><a class="nav-link scrollto" href="#contact">Contact</a></li> -->
+                  <li><a class="nav-link scrollto" href="/views/login.php">Login</a></li>
+                </ul>
+                
+              </nav><!-- .navbar -->
+        
+            </div>
+          </header><!-- End Header -->
+=======
+        <header>
+            <div class="logo">
+                <img  class="logo" src="/views/assets/img/neo-neo-logo_1.svg" alt="">
+            </div>
+        </header>
+>>>>>>> 661e3a58bcb93bce5826b5ac8a53d873f4754432
+>>>>>>> 83f64f9c6cd407611401ef740be6f316d185cf02
 <main>
     <div id="main-wrapper" class="container">
     <div class="row justify-content-center">
@@ -87,10 +149,17 @@
                     <div class="second">
                         <h4> Navigate</h4>
                         <ul>
+<<<<<<< HEAD
+                            <li><a href="/views/home.php">Home</a></li>
+                            <li><a href="/views/offers.php">Offers</a></li>
+                            <li><a href="/views/companies.php">Companies</a></li>
+                            <li><a href="/views/users.php">Interns</a></li>
+=======
                             <li><a href="#">Home</a></li>
                             <li><a href="#">Offers</a></li>
                             <li><a href="#">Compagnies</a></li>
                             <li><a href="#">Interns</a></li>
+>>>>>>> 661e3a58bcb93bce5826b5ac8a53d873f4754432
                         </ul>
                     </div>
                 </div>
@@ -99,6 +168,17 @@
                     <div class="third">
                         <h4> Contact</h4>
                         <ul>
+<<<<<<< HEAD
+                            <li>Steve Cook </li>
+                            <li></li>
+
+
+                          <li><i class="far fa-envelope"></i> steve.cook@stoffers.com</li>
+                            <li><i class="far fa-envelope"></i> contact@stoffers.com</li>
+
+
+                          <li><i class="fas fa-map-marker-alt"></i> Tixeraine </li>
+=======
                             <li>CESI Exia </li>
                             <li></li>
 
@@ -108,6 +188,7 @@
 
 
                           <li><i class="fas fa-map-marker-alt"></i> Algier, Algeria </li>
+>>>>>>> 661e3a58bcb93bce5826b5ac8a53d873f4754432
                         </ul>
                     </div>
                 </div>
@@ -123,10 +204,7 @@
                 <div class="col-12">
                     <div class="line"></div>
                     <div class="second2">
-                        <a href="https://codepen.io/AndreeaBunget" target="_blank"> <i class="fab fa-codepen fa-2x margin"></i></a>
-                        <a href="https://github.com/WebDeveloperCodeRep" target="_blank"> <i class="fab fa-github fa-2x margin"></i></a>
-                        <a href="https://www.linkedin.com/in/andreea-mihaela-bunget-a4248812b/" target="_blank"> <i class="fab fa-linkedin fa-2x margin"></i></a>
-                        <a href="https://www.youtube.com/channel/UCX674BUbomzBCakbb75lhfA?view_as=subscriber" target="_blank"><i class="fab fa-youtube fa-2x margin" ></i></a>
+                     
 
                     </div>
 
