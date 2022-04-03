@@ -38,7 +38,7 @@ if (isset($_POST['submit'])) {
             $_SESSION['login'] = $login;
             $_SESSION['id_user'] = $user['id_user'];
             $_SESSION['name'] = $user['firstname'].' '.$user['lastname'];
-            header("Location: ../views/home.php");
+            header("Location: /");
             die();
         } else {
             //$_SESSION['status'] = 'wrong-pass';
