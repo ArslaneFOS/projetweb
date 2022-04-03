@@ -130,10 +130,7 @@
                 <div class="col-12">
                     <div class="line"></div>
                     <div class="second2">
-                        <a href="#" target="_blank"> <i class="fab fa-codepen fa-2x margin"></i></a>
-                        <a href="#" target="_blank"> <i class="fab fa-github fa-2x margin"></i></a>
-                        <a href="#" target="_blank"> <i class="fab fa-linkedin fa-2x margin"></i></a>
-                        <a href="#" target="_blank"><i class="fab fa-youtube fa-2x margin" ></i></a>
+                   
 
                     </div>
 
