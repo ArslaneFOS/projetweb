@@ -1,3 +1,29 @@
+<html>
+<head>
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+<script>
+    window.addEventListener('load', () => {
+      registerSW();
+    });
+ 
+    // Register the Service Worker
+    async function registerSW() {
+      if ('serviceWorker' in navigator) {
+        try {
+          await navigator
+                .serviceWorker
+                .register('serviceworker.js');
+        }
+        catch (e) {
+          console.log('SW registration failed');
+        }
+      }
+    }
+ </script>
+</body>
+</html>
 <?php
 
 if (isset($_GET['page'])) {
@@ -46,12 +72,12 @@ if (isset($_GET['page'])) {
         case 'admin/repauth':
             include('views/admin-rep-auth.php');
             break;
-            
+
         case 'admin/companylocations':
             include('views/admin-com-locations.php');
             break;
 
-        case 'admin/offer-skills' :
+        case 'admin/offer-skills':
             include('views/admin-off-skills.php');
             break;
 
@@ -68,3 +94,5 @@ if (isset($_GET['page'])) {
 } else {
     include('views/home.php');
 }
+?>
+

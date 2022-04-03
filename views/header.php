@@ -36,11 +36,11 @@
               ?>
             <li><span class="dropdown-item"><a style="color: black;" href="applications">Application</a></span></li>
             <li><span class="dropdown-item" href="#"><a style="color: black;" href="wishlist">Wishlist</a></span></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><span class="dropdown-item" href="#"><a style="color: black;" href="logout">Log Out</a></span></li>
             <?php
             }
             ?>
+            <li><hr class="dropdown-divider"></li>
+            <li><span class="dropdown-item" href="#"><a style="color: black;" href="logout">Log Out</a></span></li>
           </ul>
         </li>
             <?php
