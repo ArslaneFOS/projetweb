@@ -8,7 +8,7 @@ session_start();
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Home page</title>
+  <title>Only Stage</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
   <!--<link href="/views/assets/img/favicon.png" rel="icon">-->
@@ -27,7 +27,7 @@ session_start();
   <script src="/views/assets/vendor/aos/aos.js"></script>
   <script src="/views/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="/views/assets/js/main.js"></script>
-  <link rel="icon" href="https://img.icons8.com/external-smashingstocks-isometric-smashing-stocks/55/000000/external-web-link-seo-and-marketing-smashingstocks-isometric-smashing-stocks.png">
+  <link rel="icon" href="/views/assets/img/neo-neo-logo_1.svg">
 
 </head>
 

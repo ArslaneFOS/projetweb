@@ -5,7 +5,7 @@
         <img class="logo" src="/views/assets/img/neo-neo-logo_1.svg">
       </div>
 
-      <nav id="navbar" class="navbar navbar-light">
+      <nav id="navbar" class="navbar navbar-light md-6">
         <ul>
           <li><a class="nav-link scrollto" href="home">Home</a></li>
           <li><a class="nav-link scrollto" href="offers">Offers</a></li>
