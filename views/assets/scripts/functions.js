@@ -1460,18 +1460,202 @@ const getApplications = () => {
                             <p>Validation Form was signed by your pilot, an internship agreement will be sent very soon.</p>
                             <a download="resume.pdf" href="data:application/pdf;base64,${application.resume}">Resume</a>
                             <a download="motivation.pdf" href="data:application/pdf;base64,${application.motivation_letter}">Motivation Letter</a>
-                            <a download="validation.pdf" href="data:application/pdf;base64,${application.validation_form}">Validation Form</a>
+                            <a download="signed-validation.pdf" href="data:application/pdf;base64,${application.validation_form}">Validation Form</a>
         
-                            <input type="range" min="1" max="6" class="form-range" id="disabledRange" disabled value="">
+                            <input type="range" min="1" max="6" class="form-range" id="disabledRange" disabled value="4">
                         </div>
                     </div>
                         `
                         break;
                     case 'step 5':
-
+                        cards.innerHTML += `
+                        <div class="card">
+                        <h5 class="card-header" style="color:  #664D03 ; background-color:#FFE69C;">${application.name_offer} - <em>Contract Sent</em></h5>
+                        <div class="card-body">
+                            <h5 class="card-title">Applied: ${application.app_date}</h5>
+                            <p class="card-text">${application.description_offer.substring(0, 100)}... </p>
+                            <p>Internship Contract was sent to ${application.name_com}. You should receive a response very soon</p>
+                            <a download="resume.pdf" href="data:application/pdf;base64,${application.resume}">Resume</a>
+                            <a download="motivation.pdf" href="data:application/pdf;base64,${application.motivation_letter}">Motivation Letter</a>
+                            <a download="signed-validation.pdf" href="data:application/pdf;base64,${application.validation_form}">Validation Form</a>
+                            <a download="agreement.pdf" href="data:application/pdf;base64,${application.internship_agreement}">Validation Form</a>
+                            <input type="range" min="1" max="6" class="form-range" id="disabledRange" disabled value="5">
+                        </div>
+                    </div>
+                        `
                         break;
                     case 'step 6':
+                        cards.innerHTML += `
+                        <div class="card">
+                        <h5 class="card-header" style="color:  #D1E7DD ; background-color: #0A3622;">${application.name_offer} - <em>You Got It!</em></h5>
+                        <div class="card-body">
+                            <h5 class="card-title">Applied: ${application.app_date}</h5>
+                            <p class="card-text">${application.description_offer.substring(0, 100)}... </p>
+                            <p>Internship Contract was signed by ${application.name_com}. You are accepted for this internship! Your Center will handle the rest.</p>
+                            <a download="resume.pdf" href="data:application/pdf;base64,${application.resume}">Resume</a>
+                            <a download="motivation.pdf" href="data:application/pdf;base64,${application.motivation_letter}">Motivation Letter</a>
+                            <a download="signed-validation.pdf" href="data:application/pdf;base64,${application.validation_form}">Validation Form</a>
+                            <a download="signed-agreement.pdf" href="data:application/pdf;base64,${application.internship_agreement}">Internship Contract</a>
+                            <input type="range" min="1" max="6" class="form-range" id="disabledRange" disabled value="6">
+                        </div>
+                    </div>
+                        `
+                        break;
+                    default:
+                        break;
+                }
+                
+            });
+        }
+        else { }
+    };
+    xhr.send(); //Envoi de la requête au serveur (asynchrone par défaut)
+}
 
+const getApplicationsAdmin = () => {
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "/controllers/get-applications.php?limit=10000", true);
+    xhr.withCredentials = true;
+    xhr.onload = function () {
+        if (xhr.status == 200) {
+            var result = JSON.parse(xhr.response);
+            var cards = document.getElementById('applications-cards');
+            var applications = result.data;
+            applications.forEach(application => {
+                switch (application.status) {
+                    case 'step 1':
+                        cards.innerHTML += `
+                        <div class="card">
+        <h5 class="card-header">${application.id_student} - ${application.id_offer} - ${application.firstname} ${application.lastname} - ${application.name_offer} ${application.status}</h5>
+        <div class="card-body">
+          <h5 class="card-title">Applied: ${application.app_date}</h5>
+          <form method="post" action="/controllers/update-application.php" enctype="multipart/form-data">
+              <input type="number" name="id_offer" id="id_offer" value="${application.id_offer}" style="display: none;"/>
+              <input type="number" name="id_student" id="id_student" value="${application.id_student}" style="display: none;"/>
+              <button type="submit" name="submit" value="step 2-response" class="btn btn-primary">Response</button>
+              <button type="submit" name="submit" value="step 2-no-response" class="btn btn-danger">No Response</button>
+          </form>
+          <a download="resume.pdf" href="data:application/pdf;base64,${application.resume}">Resume</a>
+          <a download="motivation.pdf" href="data:application/pdf;base64,${application.motivation_letter}">Motivation Letter</a>
+
+          <input type="range" min="1" max="6" class="form-range" id="disabledRange" disabled value="1">
+        </div>
+      </div>
+                        `
+                        break;
+                    case 'step 2-no-response':
+                        cards.innerHTML += `<div class="card">
+                    <h5 class="card-header" style="color: #dc3545; background-color: lightpink;">${application.id_student} - ${application.id_offer} - ${application.firstname} ${application.lastname} - ${application.name_offer} ${application.status}</h5>
+                    <div class="card-body">
+                        <h5 class="card-title">Applied: ${application.app_date}</h5>
+                        <p class="card-text" style="color: #dc3545;">No Response</p>
+                        <a download="resume.pdf" href="data:application/pdf;base64,${application.resume}">Resume</a>
+                        <a download="motivation.pdf" href="data:application/pdf;base64,${application.motivation_letter}">Motivation Letter</a>
+
+                        <input type="range" min="1" max="6" class="form-range" id="disabledRange" disabled value="2">
+                        </div>
+                </div>`;
+                        break;
+                    case 'step 2-response':
+                        cards.innerHTML += `
+                        <div class="card">
+                <h5 class="card-header" style="color: #0d6efd; background-color: lightcyan;">${application.id_student} - ${application.id_offer} - ${application.firstname} ${application.lastname} - ${application.name_offer} ${application.status}</h5>
+                <div class="card-body">
+                    <h5 class="card-title">Applied: ${application.app_date}</h5>
+                    <form method="post" action="/controllers/update-application.php" enctype="multipart/form-data">
+                        <input type="number" name="id_student" id="id_student" value="${application.id_student}" style="display:none;"/>
+                        <input type="number" name="id_offer" id="id_offer" value=${application.id_offer} style="display:none;"/>
+                        <label for="validation_form" class="btn btn-primary">Upload Validation Form</label>
+                        <input type="file" id="validation_form" name="validation_form" style="display:none;"/><br>
+                        <button type='submit' name='submit' value='step 3' class='btn btn-secondary'>Submit</button>
+                    </form>
+                    <a download="resume.pdf" href="data:application/pdf;base64,${application.resume}">Resume</a>
+                        <a download="motivation.pdf" href="data:application/pdf;base64,${application.motivation_letter}">Motivation Letter</a>
+                    <input type="range" min="1" max="6" class="form-range" id="disabledRange" disabled value="2">
+                    </div>
+            </div>
+                        `;
+                        break;
+                    case 'step 3':
+                        cards.innerHTML += `
+                        <div class="card">
+                <h5 class="card-header" style="color:  #198754 ; background-color: lightgreen;">${application.id_student} - ${application.id_offer} - ${application.firstname} ${application.lastname} - ${application.name_offer} ${application.status}</h5>
+                <div class="card-body">
+                    <h5 class="card-title">Applied: ${application.app_date}</h5>
+                        <form method="post" action="/controllers/update-application.php" enctype="multipart/form-data">
+                            <input type="number" name="id_student" id="id_student" value="${application.id_student}" style="display:none;"/>
+                            <input type="number" name="id_offer" id="id_offer" value=${application.id_offer} style="display:none;"/>
+                            <label for="validation_form" class="btn btn-primary">Upload Signed Validation Form</label>
+                            <input type="file" id="validation_form" name="validation_form" style="display:none;"/><br>
+                            <button type='submit' name='submit' value='step 4' class='btn btn-secondary'>Submit</button>
+                        </form>
+                        <a download="motivation.pdf" href="data:application/pdf;base64,${application.motivation_letter}">Motivation Letter</a>
+                        <a download="validation.pdf" href="data:application/pdf;base64,${application.validation_form}">Validation Form</a>
+
+                    <input type="range" min="1" max="6" class="form-range" id="disabledRange" disabled value="3">
+                </div>
+            </div>
+                        `;
+                        break;
+                    case 'step 4':
+                        cards.innerHTML += `
+                    <div class="card">
+                        <h5 class="card-header" style="color:  #6f42c1 ; background-color: #E2D9F3;">${application.id_student} - ${application.id_offer} - ${application.firstname} ${application.lastname} - ${application.name_offer} ${application.status}</h5>
+                        <div class="card-body">
+                            <h5 class="card-title">Applied: ${application.app_date}</h5>
+                            <form method="post" action="/controllers/update-application.php" enctype="multipart/form-data">
+                                <input type="number" name="id_student" id="id_student" value="${application.id_student}" style="display:none;"/>
+                                <input type="number" name="id_offer" id="id_offer" value=${application.id_offer} style="display:none;"/>
+                                <label for="internship_agreement" class="btn btn-primary">Upload Internship Agreement</label>
+                                <input type="file" id="internship_agreement" name="internship_agreement" style="display:none;"/><br>
+                                <button type='submit' name='submit' value='step 5' class='btn btn-secondary'>Submit</button>
+                            </form>
+                            <a download="resume.pdf" href="data:application/pdf;base64,${application.resume}">Resume</a>
+                            <a download="motivation.pdf" href="data:application/pdf;base64,${application.motivation_letter}">Motivation Letter</a>
+                            <a download="signed-validation.pdf" href="data:application/pdf;base64,${application.validation_form}">Validation Form</a>
+        
+                            <input type="range" min="1" max="6" class="form-range" id="disabledRange" disabled value="4">
+                        </div>
+                    </div>
+                        `
+                        break;
+                    case 'step 5':
+                        cards.innerHTML += `
+                        <div class="card">
+                        <h5 class="card-header" style="color:  #664D03 ; background-color:#FFE69C;">${application.id_student} - ${application.id_offer} - ${application.firstname} ${application.lastname} - ${application.name_offer} ${application.status}</h5>
+                        <div class="card-body">
+                            <h5 class="card-title">Applied: ${application.app_date}</h5>
+                            <form method="post" action="/controllers/update-application.php" enctype="multipart/form-data">
+                                <input type="number" name="id_student" id="id_student" value="${application.id_student}" style="display:none;"/>
+                                <input type="number" name="id_offer" id="id_offer" value=${application.id_offer} style="display:none;"/>
+                                <label for="internship_agreement" class="btn btn-primary">Upload Internship Agreement</label>
+                                <input type="file" id="internship_agreement" name="internship_agreement" style="display:none;"/><br>
+                                <button type='submit' name='submit' value='step 6' class='btn btn-secondary'>Submit</button>
+                            </form>
+                            <a download="resume.pdf" href="data:application/pdf;base64,${application.resume}">Resume</a>
+                            <a download="motivation.pdf" href="data:application/pdf;base64,${application.motivation_letter}">Motivation Letter</a>
+                            <a download="signed-validation.pdf" href="data:application/pdf;base64,${application.validation_form}">Validation Form</a>
+                            <a download="agreement.pdf" href="data:application/pdf;base64,${application.internship_agreement}">Validation Form</a>
+                            <input type="range" min="1" max="6" class="form-range" id="disabledRange" disabled value="5">
+                        </div>
+                    </div>
+                        `
+                        break;
+                    case 'step 6':
+                        cards.innerHTML += `
+                        <div class="card">
+                        <h5 class="card-header" style="color:  #D1E7DD ; background-color: #0A3622;">${application.id_student} - ${application.id_offer} - ${application.firstname} ${application.lastname} - ${application.name_offer} ${application.status}</h5>
+                        <div class="card-body">
+                            <h5 class="card-title">Applied: ${application.app_date}</h5>
+                            <p>Accepted</p>
+                            <a download="resume.pdf" href="data:application/pdf;base64,${application.resume}">Resume</a>
+                            <a download="motivation.pdf" href="data:application/pdf;base64,${application.motivation_letter}">Motivation Letter</a>
+                            <a download="signed-validation.pdf" href="data:application/pdf;base64,${application.validation_form}">Validation Form</a>
+                            <a download="signed-agreement.pdf" href="data:application/pdf;base64,${application.internship_agreement}">Internship Contract</a>
+                            <input type="range" min="1" max="6" class="form-range" id="disabledRange" disabled value="6">
+                        </div>
+                    </div>
+                        `
                         break;
                     default:
                         break;

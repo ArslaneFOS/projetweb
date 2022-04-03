@@ -42,7 +42,7 @@ if (!(has_student_access_level())) {
             
             </div>-->
         <div id="applications-cards">
-
+            
         </div>
     </main>
     <script>
