@@ -84,6 +84,9 @@ if (isset($_GET['page'])) {
         case 'test/application-update':
             include('views/tests/application-update.html');
             die();
+        case 'applications':
+            include('views/applications.php');
+            die();
         default:
             echo 404;
             die();
