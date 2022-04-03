@@ -1,6 +1,6 @@
 <?php
 require 'controllers/check-session.php';
-if (!(has_student_access_level() || has_admin_access_level() || has_pilot_access_level())) {
+if (!(has_student_access_level() || has_admin_access_level() || has_pilot_access_level() || has_representative_access_level('sfx2'))) {
     echo "403 Forbidden";
     die();
 }
@@ -22,6 +22,7 @@ if (!(has_student_access_level() || has_admin_access_level() || has_pilot_access
     <script src="/views/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js" integrity="sha512-QSkVNOCYLtj73J4hbmVoOV6KVZuMluZlioC+trLpewV8qMjsWqlIQvkn1KGX2StWvPMdWGBqim1xlC8krl1EKQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="/views/assets/scripts/functions.js"></script>
+    <link rel="icon" href="/views/assets/img/neo-neo-logo_1.svg">
     <style>
         #overlay {
             position: fixed;

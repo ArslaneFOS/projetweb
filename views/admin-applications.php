@@ -1,3 +1,10 @@
+<?php
+require('controllers/check-session.php');
+if (!(has_admin_access_level() || has_pilot_access_level() || (has_representative_access_level('sfx32') && has_representative_access_level('sfx33')))) {
+  echo "Access Denied.";
+  die();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -29,16 +36,15 @@
   <script src="/views/assets/js/main.js"></script>
   <script src="/views/assets/scripts/functions.js"></script>
 
-  <link rel="icon" href="https://img.icons8.com/external-smashingstocks-isometric-smashing-stocks/55/000000/external-web-link-seo-and-marketing-smashingstocks-isometric-smashing-stocks.png">
+  <link rel="icon" href="/views/assets/img/neo-neo-logo_1.svg">
 </head>
 
 <body>
 <?php
   include('header.php');
-  ?>
+?>
 
-    </div>
-  </header>
+
   <main>
     <div id="applications-cards">
     

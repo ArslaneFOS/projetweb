@@ -1,5 +1,4 @@
 <?php
-require_once('models/model.php');
 require 'controllers/check-session.php';
 
 // admins and pilots
@@ -46,6 +45,7 @@ $id_rep = $_GET['id_rep'];
   <script src="/views/assets/vendor/php-email-form/validate.js"></script>
   <script src="/views/assets/js/main.js"></script>
     <script src="/views/assets/scripts/functions.js"></script>
+    <link rel="icon" href="/views/assets/img/neo-neo-logo_1.svg">
 </head>
 <body>
 <?php

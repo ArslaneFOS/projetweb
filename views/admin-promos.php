@@ -26,7 +26,7 @@
   <script src="/views/assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="/views/assets/vendor/php-email-form/validate.js"></script>
   <script src="/views/assets/js/main.js"></script>
-  <link rel="icon" href="https://img.icons8.com/external-smashingstocks-isometric-smashing-stocks/55/000000/external-web-link-seo-and-marketing-smashingstocks-isometric-smashing-stocks.png">
+  <link rel="icon" href="/views/assets/img/neo-neo-logo_1.svg">
 </head>
 <body>
 <?php

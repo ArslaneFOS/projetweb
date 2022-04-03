@@ -12,13 +12,14 @@ if (isset($_SESSION['id_user'])) {
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title></title>
+    <title>Login</title>
     <meta name="description" content="">
     <link href="/views/assets/css/login.css" rel="stylesheet">
     <link href="/views/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="/views/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="/views/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <link rel="icon" href="/views/assets/img/neo-neo-logo_1.svg">
 
 </head>
 

@@ -1,3 +1,10 @@
+<?php
+require 'controllers/check-session.php';
+if (!(has_student_access_level() || has_admin_access_level() || has_pilot_access_level() || has_representative_access_level('sfx13') || has_representative_access_level('sfx17') || has_representative_access_level('sfx22'))) {
+    echo "403 Forbidden";
+    die();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,50 +17,14 @@
     <link href="/views/assets/vendor/fontawesome/css/fontawesome.min.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="/views/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <link rel="icon" href="/views/assets/img/neo-neo-logo_1.svg">
 
     <title>Interns</title>
 </head>
 <body>
-<header id="header" class="d-flex align-items-center">
-            <div class="container d-flex align-items-center justify-content-between">
-        
-              <div class="logo">
-                <img class="logo" src="/views/assets/img/neo-neo-logo_1.svg">
-              </div>
-        
-              <nav id="navbar" class="navbar">
-                <ul>
-                  <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-                  <li><a class="nav-link scrollto" href="/views/offers.php">Offers</a></li>
-                  <li><a class="nav-link scrollto" href="/views/companies.php">Companies</a></li>
-                  <li><a class="nav-link scrollto" href="/views/users.php">Interns</a></li>
-                  <li><a class="nav-link scrollto" href="#portfolio">|</a></li>
-                  <!--<li><a class="nav-link scrollto" href="#team">Login</a></li>
-                  <li class="dropdown"><a href="#"><span>Random DropDown</span> <i class="bi bi-chevron-down"></i></a>
-                    <ul>
-                      <li><a href="#">Drop Down 1</a></li>
-                      <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
-                        <ul>
-                          <li><a href="#">Deep Drop Down 1</a></li>
-                          <li><a href="#">Deep Drop Down 2</a></li>
-                          <li><a href="#">Deep Drop Down 3</a></li>
-                          <li><a href="#">Deep Drop Down 4</a></li>
-                          <li><a href="#">Deep Drop Down 5</a></li>
-                        </ul>
-                      </li>
-                      <li><a href="#">Drop Down 2</a></li>
-                      <li><a href="#">Drop Down 3</a></li>
-                      <li><a href="#">Drop Down 4</a></li>
-                    </ul>
-                  </li>
-                  <li><a class="nav-link scrollto" href="#contact">Contact</a></li> -->
-                  <li><a class="nav-link scrollto" href="/views/login.php">Login</a></li>
-                </ul>
-                
-              </nav><!-- .navbar -->
-        
-            </div>
-          </header><!-- End Header -->
+<?php
+  include('header.php');
+  ?>
 
 <main>
     <div class="hero">
@@ -71,6 +42,9 @@
 
     <script src="/views/assets/scripts/functions.js"></script>
     <script>
+      <?php
+  include('footer.php');
+  ?>
     document.body.onload = () => {
       searchUsers('', '', 1);
       

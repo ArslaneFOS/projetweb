@@ -1,5 +1,9 @@
 <?php
-session_start();
+require 'controllers/check-session.php';
+if (!(has_student_access_level())) {
+    echo "403 Forbidden";
+    die();
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,6 +18,7 @@ session_start();
     <link href="/views/assets/vendor/fontawesome/css/fontawesome.min.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="/views/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <link rel="icon" href="/views/assets/img/neo-neo-logo_1.svg">
     <title>My Wishlist</title>
 </head>
 <body>

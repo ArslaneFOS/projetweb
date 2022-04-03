@@ -1,6 +1,6 @@
 <?php
-require_once('/home/arslane/www-prj/projetweb-1/controllers/check-session.php');
-if (!(has_admin_access_level() || has_pilot_access_level() || (has_representative_access_level('sfx3') && has_representative_access_level('sfx4') && has_representative_access_level('sfx5') && has_representative_access_level('sfx6')))) {
+require('controllers/check-session.php');
+if (!(has_admin_access_level() || has_pilot_access_level() || (has_representative_access_level('sfx13') && has_representative_access_level('sfx14') && has_representative_access_level('sfx15') && has_representative_access_level('sfx16')))) {
   echo "Access Denied.";
   die();
 }
@@ -34,32 +34,12 @@ if (!(has_admin_access_level() || has_pilot_access_level() || (has_representativ
   <script src="/views/assets/vendor/php-email-form/validate.js"></script>
   <script src="/views/assets/js/main.js"></script>
   <script src="/views/assets/scripts/functions.js"></script>
-  <link rel="icon" href="https://img.icons8.com/external-smashingstocks-isometric-smashing-stocks/55/000000/external-web-link-seo-and-marketing-smashingstocks-isometric-smashing-stocks.png">
+  <link rel="icon" href="/views/assets/img/neo-neo-logo_1.svg">
 </head>
 <body>
-<header >
-    <div class="container d-flex align-items-center justify-content-between">
-
-      <div class="logo">
-        <h1 class="text-light"><a href="home.php"><span>PILOTS</span></a></h1>
-        <!-- Uncomment below if you prefer to use an image logo -->
-        <!-- <a href="index.html"><img src="/views/assets/img/logo.png" alt="" class="img-fluid"></a>-->
-      </div>
-
-      <nav id="navbar" class="navbar">
-        <ul>
-          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-          <li><a class="nav-link scrollto" href="#offers">Offers</a></li>
-          <li><a class="nav-link scrollto" href="#companies">Companies</a></li>
-          <li><a class="nav-link scrollto" href="#portfolio">Interns</a></li>
-        
-          <li><a class="getstarted scrollto" href="./login.html">Login</a></li>
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
-
-    </div>
-  </header>
+<?php
+include('header.php');
+?>
   <main>
 <table id="example" class="table table-striped" style="width:100%">
         <thead>

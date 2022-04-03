@@ -1,5 +1,5 @@
 <?php
-require_once('/home/arslane/www-prj/projetweb-1/controllers/check-session.php');
+require('controllers/check-session.php');
 if (!(has_admin_access_level() || has_pilot_access_level() || (has_representative_access_level('sfx3') && has_representative_access_level('sfx4') && has_representative_access_level('sfx5') && has_representative_access_level('sfx6')))) {
   echo "Access Denied.";
   die();
@@ -38,6 +38,7 @@ if (!(has_admin_access_level() || has_pilot_access_level() || (has_representativ
   <script src="/views/assets/js/main.js"></script>
 
   <script src="/views/assets/scripts/functions.js"></script>
+  <link rel="icon" href="/views/assets/img/neo-neo-logo_1.svg">
 
 </head>
 

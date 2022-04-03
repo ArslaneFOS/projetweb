@@ -1,13 +1,16 @@
 <?php
-session_start();
-?>
+require 'controllers/check-session.php';
+if (!(has_student_access_level() || has_admin_access_level() || has_pilot_access_level() || has_representative_access_level('sfx11'))) {
+    echo "403 Forbidden";
+    die();
+}?>
 <!DOCTYPE html>
 <html>
 
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title></title>
+  <title>Offers</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -25,6 +28,7 @@ session_start();
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js" integrity="sha512-QSkVNOCYLtj73J4hbmVoOV6KVZuMluZlioC+trLpewV8qMjsWqlIQvkn1KGX2StWvPMdWGBqim1xlC8krl1EKQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
   <script src="/views/assets/scripts/functions.js"></script>
+  <link rel="icon" href="/views/assets/img/neo-neo-logo_1.svg">
 
 
   <style>

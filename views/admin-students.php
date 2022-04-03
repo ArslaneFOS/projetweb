@@ -1,6 +1,6 @@
 <?php
-require_once('/home/arslane/www-prj/projetweb-1/controllers/check-session.php');
-if (!(has_admin_access_level() || has_pilot_access_level() || (has_representative_access_level('sfx3') && has_representative_access_level('sfx4') && has_representative_access_level('sfx5') && has_representative_access_level('sfx6')))) {
+require('controllers/check-session.php');
+if (!(has_admin_access_level() || has_pilot_access_level() || (has_representative_access_level('sfx22') && has_representative_access_level('sfx23') && has_representative_access_level('sfx24') && has_representative_access_level('sfx25') && has_representative_access_level('sfx26')))) {
   echo "Access Denied.";
   die();
 }
@@ -34,7 +34,8 @@ if (!(has_admin_access_level() || has_pilot_access_level() || (has_representativ
   <script src="/views/assets/vendor/php-email-form/validate.js"></script>
   <script src="/views/assets/js/main.js"></script>
   <script src="/views/assets/scripts/functions.js"></script>
-  <link rel="icon" href="https://img.icons8.com/external-smashingstocks-isometric-smashing-stocks/55/000000/external-web-link-seo-and-marketing-smashingstocks-isometric-smashing-stocks.png">
+  <link rel="icon" href="/views/assets/img/neo-neo-logo_1.svg">
+  
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js" integrity="sha512-QSkVNOCYLtj73J4hbmVoOV6KVZuMluZlioC+trLpewV8qMjsWqlIQvkn1KGX2StWvPMdWGBqim1xlC8krl1EKQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <style>
         #overlay {
@@ -95,11 +96,15 @@ if (!(has_admin_access_level() || has_pilot_access_level() || (has_representativ
             </tr>
             <tr>
               <form>
-                <th> <input size="5" id="id_user" type="text" name="id_user"></th>
+                <th> <input size="5" id="id_user" type="text" name="id_user" disabled></th>
                 <th><input size="15" id="lastname" type="text" name="lastname"></th>
                 <th><input size="15" id="firstname" type="text" name="firstname"></th>
                 <th><select name="id_prom" id="id_prom">
-                  <option value="1">A2 2022</option>
+                  <option value="1">A1 2022</option>
+                  <option value="2">A2 2022</option>
+                  <option value="3">A3 2022</option>
+                  <option value="4">A4 2022</option>
+                  <option value="5">A5 2022</option>
                 </select></th> 
                 <th><input size="10" id="login" type="text" name="login"></th>
                 <th><input size="10" id="password" type="text" name="password"></th>
@@ -117,7 +122,7 @@ if (!(has_admin_access_level() || has_pilot_access_level() || (has_representativ
                   <option value="11">CESI Sin City</option>
                 </select></th> 
                 <th><button class="btn btn-primary" type="button" id="create">Add</button></th>
-                <th><button class="btn btn-info" type="button" id="update">Download</button></th>
+                <th><button class="btn btn-info" type="button" id="update" disabled>Download</button></th>
               </form>
             </tr>
         </thead>

@@ -45,6 +45,7 @@ const deleteCompanyAdmin = (id_com) => {
     xhr.withCredentials = true;
     xhr.onload = function () {
         if (xhr.status == 200) {
+            alert(xhr.response);
             window.location.reload(true);
         }
         else { }
@@ -249,6 +250,7 @@ const deleteFromWishlist = (id_offer) => {
     xhr.withCredentials = true;
     xhr.onload = function () {
         if (xhr.status == 200) {
+            alert(xhr.response);
             window.location.reload(true);
         }
         else { }
@@ -303,6 +305,7 @@ const company = () => {
         // log response
         xhr.onload = () => {
             alert(xhr.responseText);
+            window.location.reload(true);
         };
 
         // create and send the reqeust
@@ -342,6 +345,7 @@ const company = () => {
         // log response
         xhr.onload = () => {
             alert(xhr.responseText);
+            window.location.reload(true);
         };
 
         // create and send the reqeust
@@ -386,6 +390,7 @@ const offer = () => {
         // log response
         xhr.onload = () => {
             alert(xhr.responseText);
+            window.location.reload(true);
         };
 
         // create and send the reqeust
@@ -421,6 +426,7 @@ const offer = () => {
         // log response
         xhr.onload = () => {
             alert(xhr.responseText);
+            window.location.reload(true);
         };
 
         // create and send the reqeust
@@ -463,6 +469,8 @@ const deleteOfferAdmin = (id_offer) => {
     xhr.withCredentials = true;
     xhr.onload = function () {
         if (xhr.status == 200) {
+            alert(xhr.response);
+
             window.location.reload(true);
         }
         else { }
@@ -640,7 +648,8 @@ const deleteUserAdmin = (login) => {
     xhr.withCredentials = true;
     xhr.onload = function () {
         if (xhr.status == 200) {
-            //window.location.reload(true);
+            alert(xhr.response);
+            window.location.reload(true);
         }
         else { }
     };
@@ -685,7 +694,7 @@ const searchStudentsAdmin = (search, page) => {
 
 const getStudentAdmin = (id_user) => {
     var xhr = new XMLHttpRequest();
-    xhr.open("GET", "/controllers/get-user.php?id_user=" + id_user, true);
+    xhr.open("GET", "/controllers/get-user.php?user_type=student&id_user=" + id_user, true);
     xhr.withCredentials = true;
     xhr.onload = function () {
         if (xhr.status == 200) {
@@ -736,6 +745,7 @@ const student = () => {
         // log response
         xhr.onload = () => {
             alert(xhr.responseText);
+            window.location.reload(true);
         };
 
         // create and send the reqeust
@@ -771,6 +781,7 @@ const student = () => {
         // log response
         xhr.onload = () => {
             alert(xhr.responseText);
+            window.location.reload(true);
         };
 
         // create and send the reqeust
@@ -814,6 +825,7 @@ const representative = () => {
         // log response
         xhr.onload = () => {
             alert(xhr.responseText);
+            window.location.reload(true);
         };
 
         // create and send the reqeust
@@ -849,6 +861,7 @@ const representative = () => {
         // log response
         xhr.onload = () => {
             alert(xhr.responseText);
+            window.location.reload(true);
         };
 
         // create and send the reqeust
@@ -951,6 +964,7 @@ const pilot = () => {
         // log response
         xhr.onload = () => {
             alert(xhr.responseText);
+            window.location.reload(true);
         };
 
         // create and send the reqeust
@@ -986,6 +1000,7 @@ const pilot = () => {
         // log response
         xhr.onload = () => {
             alert(xhr.responseText);
+            window.location.reload(true);
         };
 
         // create and send the reqeust

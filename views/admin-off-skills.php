@@ -1,11 +1,8 @@
 <?php
-require_once('models/model.php');
-require 'controllers/check-session.php';
-
-// admins and pilots
-if (!(has_admin_access_level() || has_pilot_access_level())) {
-    echo "Access Denied";
-    die();
+require('controllers/check-session.php');
+if (!(has_admin_access_level() || has_pilot_access_level() || (has_representative_access_level('sfx8') && has_representative_access_level('sfx9') && has_representative_access_level('sfx10') && has_representative_access_level('sfx11')))) {
+  echo "Access Denied.";
+  die();
 }
 
 if (!isset($_GET['id_offer'])) {
@@ -23,7 +20,7 @@ $id_offer = $_GET['id_offer'];
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Offer Skills</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css" rel="stylesheet">
   <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
@@ -46,6 +43,7 @@ $id_offer = $_GET['id_offer'];
   <script src="/views/assets/vendor/php-email-form/validate.js"></script>
   <script src="/views/assets/js/main.js"></script>
     <script src="/views/assets/scripts/functions.js"></script>
+    <link rel="icon" href="/views/assets/img/neo-neo-logo_1.svg">
 </head>
 <body>
 <?php

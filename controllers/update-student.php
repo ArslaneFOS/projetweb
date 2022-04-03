@@ -53,7 +53,7 @@ if (isset($_POST['id_user'])) {
     
     // --------------------------------------------------
     $success = $bdd->update(
-        "UPDATE login SET login = :login WHERE id_login = (SELECT id_login from student where id_user = :id_user);
+        "UPDATE login SET login = :login WHERE id_login = (SELECT id_login from user where id_user = :id_user);
         UPDATE user SET lastname = :lastname, firstname = :firstname, id_center = :id_center WHERE id_user = :id_user;
         UPDATE student SET lastname = :lastname, firstname = :firstname, id_center = :id_center, id_prom = :id_prom WHERE id_user = :id_user;", $binds);
 

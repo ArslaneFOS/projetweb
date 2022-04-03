@@ -1,11 +1,10 @@
 <?php
-require_once('models/model.php');
 require 'controllers/check-session.php';
 
 // admins and pilots
-if (!(has_admin_access_level() || has_pilot_access_level())) {
-    echo "Access Denied";
-    die();
+if (!(has_admin_access_level() || has_pilot_access_level() || (has_representative_access_level('sfx17') && has_representative_access_level('sfx18') && has_representative_access_level('sfx19') && has_representative_access_level('sfx20')))) {
+  echo "Access Denied.";
+  die();
 }
 ?>
 
@@ -39,7 +38,8 @@ if (!(has_admin_access_level() || has_pilot_access_level())) {
   <script src="/views/assets/vendor/php-email-form/validate.js"></script>
   <script src="/views/assets/js/main.js"></script>
   <script src="/views/assets/scripts/functions.js"></script>
-  <link rel="icon" href="https://img.icons8.com/external-smashingstocks-isometric-smashing-stocks/55/000000/external-web-link-seo-and-marketing-smashingstocks-isometric-smashing-stocks.png">
+
+  <link rel="icon" href="/views/assets/img/neo-neo-logo_1.svg">
 </head>
 
 <body>

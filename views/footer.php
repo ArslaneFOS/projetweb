@@ -10,7 +10,7 @@
               <h4> Navigate</h4>
               <ul>
                 <li><a href="home">Home</a></li>
-                <li><a href="offer">Offers</a></li>
+                <li><a href="offers">Offers</a></li>
                 <li><a href="companies">Companies</a></li>
                 <li><a href="users">Interns</a></li>
               </ul>

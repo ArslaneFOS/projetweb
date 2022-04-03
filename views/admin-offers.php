@@ -1,6 +1,6 @@
 <?php
-require_once('/home/arslane/www-prj/projetweb-1/controllers/check-session.php');
-if (!(has_admin_access_level() || has_pilot_access_level() || (has_representative_access_level('sfx3') && has_representative_access_level('sfx4') && has_representative_access_level('sfx5') && has_representative_access_level('sfx6')))) {
+require('controllers/check-session.php');
+if (!(has_admin_access_level() || has_pilot_access_level() || (has_representative_access_level('sfx8') && has_representative_access_level('sfx9') && has_representative_access_level('sfx10') && has_representative_access_level('sfx11')))) {
   echo "Access Denied.";
   die();
 }
@@ -37,7 +37,7 @@ if (!(has_admin_access_level() || has_pilot_access_level() || (has_representativ
   <script src="/views/assets/vendor/php-email-form/validate.js"></script>
   <script src="/views/assets/js/main.js"></script>
   <script src="/views/assets/scripts/functions.js"></script>
-  <link rel="icon" href="https://img.icons8.com/external-smashingstocks-isometric-smashing-stocks/55/000000/external-web-link-seo-and-marketing-smashingstocks-isometric-smashing-stocks.png">
+  <link rel="icon" href="/views/assets/img/neo-neo-logo_1.svg">
 </head>
 <body>
 <?php
