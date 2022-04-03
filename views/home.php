@@ -50,26 +50,10 @@ $user_type = @$_SESSION['user-type'];
         
               <nav id="navbar" class="navbar">
                 <ul>
-<<<<<<< HEAD
-                <div class="col-md-2">
-                    <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-                </div>
-                <div class="col-md-2">
-                    <li><a class="nav-link scrollto" href="#offers">Offers</a></li>
-                </div>
-                <div class="col-md-3">
-                    <li><a class="nav-link scrollto" href="#companies">Companies</a></li>
-                </div>
-                <div class="col-md-2">
-                  <li><a class="nav-link scrollto" href="#users">Interns</a></li>
-                </div>
-                <div class="col-md-1">
-=======
                   <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
                   <li><a class="nav-link scrollto" href="#offerz">Offers</a></li>
                   <li><a class="nav-link scrollto" href="#companiz">Companies</a></li>
                   <li><a class="nav-link scrollto" href="#internz">Interns</a></li>
->>>>>>> 83f64f9c6cd407611401ef740be6f316d185cf02
                   <li><a class="nav-link scrollto" href="#portfolio">|</a></li>
                   <!--<li><a class="nav-link scrollto" href="#team">Login</a></li>
                   <li class="dropdown"><a href="#"><span>Random DropDown</span> <i class="bi bi-chevron-down"></i></a>
@@ -90,10 +74,7 @@ $user_type = @$_SESSION['user-type'];
                     </ul>
                   </li>
                   <li><a class="nav-link scrollto" href="#contact">Contact</a></li> -->
-<<<<<<< HEAD
-=======
                   <li><a class="nav-link scrollto" href="/views/login.php">Login</a></li>
->>>>>>> 83f64f9c6cd407611401ef740be6f316d185cf02
                 </ul>
                 
               </nav><!-- .navbar -->
