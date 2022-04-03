@@ -6,8 +6,6 @@
   border-radius: 16px;
   display: flex;
   flex-direction: column;
-  height: auto;
-  margin: 0 20px 20px 20px;
   overflow: hidden;
-  width: 800px;
+
 }
