@@ -1,11 +1,10 @@
 .card{
  
+  display: flex;
+  justify-content: center;
   align-items: center;
-  align-self: flex-end;
   background-color: var(--white);
   border-radius: 16px;
-  display: flex;
-  flex-direction: column;
   overflow: hidden;
   
   
