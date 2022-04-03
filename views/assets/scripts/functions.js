@@ -1397,6 +1397,9 @@ const getApplications = () => {
                                     <button type="submit" name="submit" value="step 2-response" class="btn btn-primary">Company Responded</button>
                                     <button type="submit" name="submit" value="step 2-no-response" class="btn btn-primary">Company Didn't Respond</button>
                                 </form>
+                                <a download="resume.pdf" href="data:application/pdf;base64,${application.resume}">Resume</a>
+                                <a download="motivation.pdf" href="data:application/pdf;base64,${application.motivation_letter}">Motivation Letter</a>
+
                                 <input type="range" min="1" max="6" class="form-range" id="disabledRange" disabled value="1">
                             </div>
                         </div>
@@ -1408,6 +1411,9 @@ const getApplications = () => {
                     <div class="card-body">
                         <h5 class="card-title">Applied: ${application.app_date}</h5>
                         <p class="card-text">${application.description_offer.substring(0, 100)}... </p>
+                        <a download="resume.pdf" href="data:application/pdf;base64,${application.resume}">Resume</a>
+                        <a download="motivation.pdf" href="data:application/pdf;base64,${application.motivation_letter}">Motivation Letter</a>
+
                         <input type="range" min="1" max="6" class="form-range" id="disabledRange" disabled value="2">
                         </div>
                 </div>`;
@@ -1420,16 +1426,46 @@ const getApplications = () => {
                     <h5 class="card-title">Applied: ${application.app_date}</h5>
                     <p class="card-text">${application.description_offer.substring(0, 100)}... </p>
                     <p>A Validation Form will be sent as soon as possible</p>
+                    <a download="resume.pdf" href="data:application/pdf;base64,${application.resume}">Resume</a>
+                        <a download="motivation.pdf" href="data:application/pdf;base64,${application.motivation_letter}">Motivation Letter</a>
                     <input type="range" min="1" max="6" class="form-range" id="disabledRange" disabled value="2">
                     </div>
             </div>
-                        `
+                        `;
                         break;
                     case 'step 3':
+                        cards.innerHTML += `
+                        <div class="card">
+                <h5 class="card-header" style="color:  #198754 ; background-color: lightgreen;">${application.name_offer} - <em>Validation Form Received</em></h5>
+                <div class="card-body">
+                    <h5 class="card-title">Applied: ${application.app_date}</h5>
+                    <p class="card-text">${application.description_offer.substring(0, 100)}... </p>
+                    <p>A Validation Form was received by you pilot and will be signed as soon as possible</p>
+                    <a download="resume.pdf" href="data:application/pdf;base64,${application.resume}">Resume</a>
+                        <a download="motivation.pdf" href="data:application/pdf;base64,${application.motivation_letter}">Motivation Letter</a>
+                        <a download="validation.pdf" href="data:application/pdf;base64,${application.validation_form}">Validation Form</a>
 
+                    <input type="range" min="1" max="6" class="form-range" id="disabledRange" disabled value="3">
+                </div>
+            </div>
+                        `;
                         break;
                     case 'step 4':
-
+                        cards.innerHTML += `
+                    <div class="card">
+                        <h5 class="card-header" style="color:  #6f42c1 ; background-color: #E2D9F3;">${application.name_offer} - <em>Validation Form Signed</em></h5>
+                        <div class="card-body">
+                            <h5 class="card-title">Applied: ${application.app_date}</h5>
+                            <p class="card-text">${application.description_offer.substring(0, 100)}... </p>
+                            <p>Validation Form was signed by your pilot, an internship agreement will be sent very soon.</p>
+                            <a download="resume.pdf" href="data:application/pdf;base64,${application.resume}">Resume</a>
+                            <a download="motivation.pdf" href="data:application/pdf;base64,${application.motivation_letter}">Motivation Letter</a>
+                            <a download="validation.pdf" href="data:application/pdf;base64,${application.validation_form}">Validation Form</a>
+        
+                            <input type="range" min="1" max="6" class="form-range" id="disabledRange" disabled value="">
+                        </div>
+                    </div>
+                        `
                         break;
                     case 'step 5':
 
