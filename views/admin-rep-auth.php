@@ -48,7 +48,9 @@ $id_rep = $_GET['id_rep'];
     <script src="/views/assets/scripts/functions.js"></script>
 </head>
 <body>
-    <!--Header Here-->
+<?php
+  include('header.php');
+  ?>
 
     <main>
     <form action="/controllers/set-rep-auths.php" method="post">
@@ -59,6 +61,9 @@ $id_rep = $_GET['id_rep'];
         <button class="btn btn-primary" type="submit" name="submit">Submit</button>
     </form>
     </main>
+    <?php
+  include('footer.php');
+  ?>
 <script>
     document.body.onload = () => {
         getRepAuths(<?=$id_rep?>);

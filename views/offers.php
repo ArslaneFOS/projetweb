@@ -82,52 +82,7 @@ session_start();
   ?>
 
 
-  <!--<div class="searchbar">
-        
-    </div>
- </div>
-  </header> End Header -->
-
-  <!--
-  <div class="searchbar">
-
-    <div class="container">
-      <div class="row height d-flex  align-items-center">
-        <div class="col-md-6">
-          <div class="form-outline">
-            <input type="search" id="form1" class="form-control" placeholder="Type query" aria-label="Search" />
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="search-select">
-      <div class="container">
-        <div class="row height d-flex justify-content-center align-items-center">
-          <div class="col-md-3">
-            <select class="form-select" aria-label="Default select example">
-
-              <option selected>Select a Location</option>
-              <option value="1">One</option>
-              <option value="2">Two</option>
-              <option value="3">Three</option>
-            </select>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div>-->
-  <!--
-    <div class="searchbar2">
-        <div class="container">
-            <div class="row">
-                <div class="col">
-
-                </div>
-            </div>
-        </div>
-    </div>-->
-
+  
   <div class="hero">
     <div class="search">
 
@@ -153,4 +108,7 @@ session_start();
     }
     // testfgsdgfds
   </script>
+  <?php
+  include('footer.php');
+  ?>
 </body>

@@ -76,29 +76,9 @@ if (!(has_admin_access_level() || has_pilot_access_level() || (has_representativ
     </style>
 </head>
 <body>
-<header >
-    <div class="container d-flex align-items-center justify-content-between">
-
-      <div class="logo">
-        <h1 class="text-light"><a href="home.php"><span>STUDENTS</span></a></h1>
-        <!-- Uncomment below if you prefer to use an image logo -->
-        <!-- <a href="index.html"><img src="/views/assets/img/logo.png" alt="" class="img-fluid"></a>-->
-      </div>
-
-      <nav id="navbar" class="navbar">
-        <ul>
-          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-          <li><a class="nav-link scrollto" href="#offers">Offers</a></li>
-          <li><a class="nav-link scrollto" href="#companies">Companies</a></li>
-          <li><a class="nav-link scrollto" href="#portfolio">Interns</a></li>
-        
-          <li><a class="getstarted scrollto" href="./login.html">Login</a></li>
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
-
-    </div>
-  </header>
+<?php
+  include('header.php');
+  ?>
   <main>
 <table id="example" class="table table-striped" style="width:100%">
         <thead>
@@ -160,81 +140,7 @@ if (!(has_admin_access_level() || has_pilot_access_level() || (has_representativ
         </tfoot>
     </table>
 </main>
-<footer id="footer">
 
-    <div class="footer-newsletter">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-lg-6">
-            
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="footer-top">
-      <div class="container">
-        <div class="row">
-
-          <div class="col-lg-3 col-md-6 footer-contact">
-            <h3>Telhaguhoum Inc</h3>
-            <p>
-             Je m'en fou <br>
-              Birkhadem<br>
-              United Tixeraines <br><br>
-              <strong>Phone:</strong> +213 550 214 991<br>
-              <strong>Email:</strong> amine.adoul.dz@viacesi.fr<br>
-            </p>
-          </div>
-
-          <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Useful Links</h4>
-            <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
-            </ul>
-          </div>
-
-          <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Our Services</h4>
-            <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
-            </ul>
-          </div>
-
-          <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Our Social Networks</h4>
-            <p>Je rigole khatina les reseaux</p>
-            <div class="social-links mt-3">
-              <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-              <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-              <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-              <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-              <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-
-    <div class="container py-4">
-      <div class="copyright">
-      
-      </div>
-      <div class="credits">
-        
-        Designed by <a href="#">Tonton</a>
-      </div>
-    </div>
-  </footer>
   <div id="overlay">
 
 
@@ -246,5 +152,8 @@ if (!(has_admin_access_level() || has_pilot_access_level() || (has_representativ
       document.getElementById('id_user').oninput = () => getStudentAdmin(document.getElementById('id_user').value);
     }
   </script>
+  <?php
+  include('footer.php');
+  ?>
 </body>
 </html>
